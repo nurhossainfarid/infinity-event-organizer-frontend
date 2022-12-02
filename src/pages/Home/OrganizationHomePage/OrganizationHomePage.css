@@ -1,0 +1,31 @@
+.organizer-text-bg{
+    background-image: url(../../../images/black-smooth-bg.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.organizers-header {
+    font-family: 'Playball', cursive;
+}
+
+.organization-bg {
+    height:350px;
+}
+
+.organization-info {
+    display: none;
+    background-image: url(../../../images/black-border-bg.jpg);
+    background-position: full center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.organization-bg:hover .organization-info {
+    display: block;
+}
+
+.organization-bg:hover .organization-name {
+    display: none;
+}
+
+

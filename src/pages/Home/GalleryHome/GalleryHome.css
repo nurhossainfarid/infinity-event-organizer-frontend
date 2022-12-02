@@ -1,0 +1,33 @@
+.gallery-bg {
+    background-image: url(../../../images/banner_bg5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.gallery-header {
+    font-family: 'Playball', cursive;
+}
+
+/* Images Gallery */
+.gallery-img-bg div img {
+    height: 100%;
+}
+.gallery-img1 {
+    position: relative;
+}
+.user-bg {
+    display: none;
+}
+.gallery-img-bg:hover .user-bg {
+    display: block;
+}
+.user-info {
+    display: none;
+}
+.gallery-img-bg:hover .user-info {
+    display: block;
+}
+
+.gallery-view-button {
+    margin-top: 52rem;
+}

@@ -1,0 +1,41 @@
+.organizer-header-bg {
+    background-image: url(../../images/banner_bg4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.organizer-subtext {
+    font-family: 'Playball', cursive;
+}
+
+.organizer-text-bg{
+    background-image: url(../../images/black-smooth-bg.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.organizers-header {
+    font-family: 'Playball', cursive;
+}
+
+.organizer-bg {
+    height:330px;
+}
+
+.organizer-info {
+    display: none;
+    background-image: url(../../images/black-border-bg.jpg);
+    background-position: full center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.organizer-bg:hover .organizer-info {
+    display: block;
+}
+
+
+.organizer-bg:hover .organizer-name {
+    display: none;
+}

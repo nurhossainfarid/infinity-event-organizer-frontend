@@ -1,0 +1,11 @@
+.service-bg {
+    background-image: url(../../images/organization8-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.icon-div {
+    width:100px;
+    height:80px;
+}

@@ -1,0 +1,20 @@
+nav{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    transition:  0.32s ease-in-out;
+    color: white;
+    background: rgba(33, 33, 33, 0.375);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(0.4px);
+    /* background: rgba(36, 36, 36, 0.688); */
+    /* background: rgb(119 28 185); */
+}
+nav.scrolled {
+    padding: 0px 0;
+    background: rgb(119 28 185);
+    /* background: rgb(145 28 185); */
+    backdrop-filter: blur(1.5px);
+}

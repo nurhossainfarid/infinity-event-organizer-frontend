@@ -1,0 +1,34 @@
+/* service */
+.service-img {
+    height: 320px;
+}
+
+.service-package-slide {
+    width: 40%;
+    height: 40%;
+}
+
+.service-package-slide .latest-img {
+    width: 550px;
+    height: 500px;
+}
+
+.service-package-slide:hover .latest-event {
+    display: block;
+    transition:  0.32s ease-in-out;
+    color: white;
+    background: rgba(154, 20, 211, 0.463);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(0.4px);
+}
+.latest-bg {
+    background-image: url(../../../images/banner_bg6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.latest-planner {
+    font-family: 'Playball', cursive;
+    color: white;
+}

@@ -1,0 +1,29 @@
+.sponsors-header {
+    font-family: 'Playball', cursive;
+}
+
+.sponsor-bg {
+    background-image: url(../../../images/sponsore-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sponsor-button {
+    display: none;
+}
+.sponsor-showup-sec:hover .sponsor-button {
+    display: block;
+}
+.create-sponsor-bg {
+    background-image: url(../../../images/contact.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.create-sponsor-bg2 {
+    background-image: url(../../../images/organization8-min.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

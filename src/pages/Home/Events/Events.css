@@ -1,0 +1,21 @@
+/* Dependencies */
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+.bg-img {
+    background-image: url(../../../images/banner_bg4.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-img2 {
+    background-image: url(../../../images/couple-dancing-ther-wedding.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider-div {
+    height: 450px;
+}
+.event-planner {
+    font-family: 'Playball', cursive;
+}

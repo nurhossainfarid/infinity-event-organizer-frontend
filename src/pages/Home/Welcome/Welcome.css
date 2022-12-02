@@ -1,0 +1,10 @@
+.welcome-header {
+    font-family: 'Playball', cursive;
+}
+.card:hover .welcome-p {
+    color: rgba(255, 255, 255, 0.912);
+}
+.card:hover .read-btn{
+    background: white;
+    color: rgb(156, 28, 185);
+}
