@@ -38,23 +38,23 @@ const GalleryHome = () => {
                     <div className="grid grid-cols-3 gap-3 gallery-img-bg">
                         <div className="relative">
                             <img src={img1} alt="wedding"/>
-                            <div className="absolute top-0 left-0 bg-secondary opacity-70 user-bg w-full"></div>
+                            {/* <div className="absolute top-0 left-0 bg-secondary opacity-70 user-bg w-full"></div>
                             <div className="absolute top-0 left-0 user-info mx-20 my-32">
                                 <FcSearch className="text-white text-5xl"></FcSearch>
                                 <h1 className="text-white font-bold text-2xl">Nur Afsana Wedding</h1>
                                 <p className="text-white text-lg">Wedding</p>
                                 <h3 className="text-white font-semibold text-xl">Venue: Grand Central</h3>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="relative">
                             <img src={img2} alt="private party" className="gallery-img" />
-                            <div className="absolute top-0 left-0 bg-secondary opacity-70 user-bg w-full"></div>
+                            {/* <div className="absolute top-0 left-0 bg-secondary opacity-70 user-bg w-full"></div>
                             <div className="absolute top-0 left-0 user-info mx-20 my-32">
                                 <FcSearch className="text-white text-5xl"></FcSearch>
                                 <h1 className="text-white font-bold text-2xl">Nur Afsana Wedding</h1>
                                 <p className="text-white text-lg">Wedding</p>
                                 <h3 className="text-white font-semibold text-xl">Venue: Grand Central</h3>
-                            </div>
+                            </div> */}
                         </div>
                         <div>
                             <img src={img3} alt="birthday party" />

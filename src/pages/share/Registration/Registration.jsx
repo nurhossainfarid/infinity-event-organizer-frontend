@@ -8,7 +8,7 @@ import './Registration.css';
 
 const Registration = () => {
        // sing in with google
-       const [
+    const [
         signInWithGoogle,
         gUser,
         gError,
@@ -268,7 +268,7 @@ const Registration = () => {
                             <button className="btn btn-primary w-1/3 mb-5 text-white hover:bg-pink-500 ease-in duration-300 hover:scale-105 text-lg" value="Login">
                             Login
                             </button>
-                            <button className="btn btn-primary w-1/3 mb-5 text-white hover:bg-pink-500 ease-in duration-300 hover:scale-105 text-md" value="Login">
+                            <button onClick={() => signInWithGoogle()} className="btn btn-primary w-1/3 mb-5 text-white hover:bg-pink-500 ease-in duration-300 hover:scale-105 text-md" value="Login">
                             Login with Google
                             </button>
                         </div>

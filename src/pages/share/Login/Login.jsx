@@ -11,8 +11,13 @@ import "./Login.css";
 // custom css
 
 const Login = () => {
-  // sign in with google
-  const [signInWithGoogle, gUser, gError, gLoading] = useSignInWithGoogle(auth);
+    // sign in with google
+    const [
+      signInWithGoogle,
+      gUser,
+      gError,
+      gLoading
+    ] = useSignInWithGoogle(auth);
 
   // sign in with email and password
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -34,7 +39,7 @@ const Login = () => {
   if (loading) {
     return (
       <div>
-        <p>Initialising User...</p>
+        <p>Initialing User...</p>
       </div>
     );
   }
@@ -46,7 +51,7 @@ const Login = () => {
     );
   }
   return (
-    <div className="h-screen">
+    <div className="">
       <section className="login-bg relative">
         <div className="">
           <div className="absolute bg-black w-full h-full opacity-60"></div>
@@ -136,12 +141,12 @@ const Login = () => {
                       </a>
                     </label>
                   </div>
-                  <div className="form-control mt-6">
-                    <button className="btn btn-primary w-2/3 mb-5 text-white hover:text-black" value="Login">
-                      Login with Google
-                    </button>
+                  <div className="form-control mt-6 flex flex-col items-center gap-5">
                     <button className="btn btn-primary w-2/3 text-white hover:text-black" value="Login">
                       Login
+                    </button>
+                    <button onClick={() => signInWithGoogle()} className="btn btn-primary w-2/3 text-white hover:text-black" value="Login">
+                      Login with Google
                     </button>
                   </div>
                 </form>
