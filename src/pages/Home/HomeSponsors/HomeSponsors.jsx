@@ -19,16 +19,16 @@ const HomeSponsors = () => {
             {/* sponsors info */}
             <section>
                 {/* sponsors header */}
-                <section className="sponsor-bg relative">
+                {/* <section className="sponsor-bg relative">
                     <div className="absolute bg-black opacity-60 h-full w-full"></div>
                     <div className="relative py-16">
                         <h3 className="font-semibold text-sm text-primary text-center mb-3">WE PROVIDE AWESOME DEALS</h3>
                         <h1 className="sponsors-header text-primary text-center text-5xl animate-bounce">Event Sponsors</h1>
                         <p className="text-lg text-gray-100 mx-auto py-5 md:w-2/3 text-center">Aiusmod tempor incididunt ut labore magna aliqua.</p>
                     </div>
-                </section>
+                </section> */}
                 {/* show sponsors */}
-                <section className="bg-slate-100 py-20">
+                {/* <section className="bg-slate-100 py-20">
                     <div className="grid grid-cols-4 gap-5 mx-28">
                         <div className="sponsor-showup-sec bg-primary hover:scale-105 hover:border-4 hover:border-secondary ease-in duration-300">
                             <img src={sponsorImg1} className="z-10" alt="" />
@@ -55,7 +55,7 @@ const HomeSponsors = () => {
                             <img src={sponsorImg8} className="z-10" alt="" />
                         </div>
                     </div>
-                </section>
+                </section> */}
             </section>
             {/* create sponsors */}
             <section className="bg-slate-100 pt-48">
@@ -63,7 +63,7 @@ const HomeSponsors = () => {
                     <div className="w-1/2 mx-auto create-sponsor-bg relative border-8 border-primary">
                         <div className="absolute bg-secondary opacity-80 h-full w-full"></div>
                         <div className="py-16 relative">
-                            <h1 className="text-center text-5xl text-white animate-pulse mb-3">BECOME A SPONSOR</h1>
+                            <h1 className="text-center text-5xl text-white animate-pulse mb-3">Our Happy Customer</h1>
                             <p className="text-lg text-gray-200 mx-auto py-5 md:w-2/3 text-center">Integer sollicitudin ligula non enim sodales, non lacinia nunc ornare. Sed commodo tempor dapibus tortor volutpat, eget rhoncus nisi fringilla. Phasellus ornare risus ineuismod varius.</p>
                         </div>
                     </div>

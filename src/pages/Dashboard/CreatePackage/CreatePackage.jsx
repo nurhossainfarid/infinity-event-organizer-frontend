@@ -1,248 +1,322 @@
-import React from 'react';
+import React from "react";
 import { useForm } from "react-hook-form";
 
 const CreatePackage = () => {
-    
-    const { register, formState: { errors }, handleSubmit } = useForm();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
-    const onSubmit = data => {
-        console.log(data);
-        const addPackage = {
-            name: data.name,
-            price: data.price,
-            time: data.time,
-            attend: data.attend,
-            eventName: data.eventName,
-            organization: {
-                name: data.organizationName,
-                id: data.organizationId
-            }, 
-            foodMenu: data.foodMenu,
-            status: data.status,
-            category: data.category,
-        };
-        let url = 'http://localhost:5000/v1/package';
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "content-type": 'application/json'
-            },
-            body: JSON.stringify(addPackage)
-        })
-            .then(res => res.json())
-            .then(result => console.log(result));
+  const onSubmit = (data) => {
+    console.log(data);
+    const addPackage = {
+      name: data.name,
+      price: data.price,
+      time: data.time,
+      attend: data.attend,
+      eventName: data.eventName,
+      organization: {
+        name: data.organizationName,
+        id: data.organizationId,
+      },
+      foodMenu: data.foodMenu,
+      status: data.status,
+      category: data.category,
     };
-    return (
-        <div>
-            <div className="flex justify-between my-5">
-                <h1 className="text-3xl text-center dashboard-header">Add Package</h1>
-            </div>
-            <form onSubmit={handleSubmit(onSubmit)} action="" className="grid grid-cols-2">
-                {/* name */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text text-black text-lg">Package Name</span>
-                    </label>
-                    <input type="text" className="input input-bordered w-full max-w-xs"
-                        {...register("name", { 
-                            required: {
-                                value: true,
-                                message: "Name is require"
-                            }
-                        })} />
-                    <label class="label">
-                        {errors.name?.type === 'required' && <span class="label-text-alt text-red-500">{errors.name.message}</span>}
-                    </label>
-                </div>
-                {/* Price */}
-                <div className="form-control">
-                <label className="label">
-                    <span className="label-text text-black text-lg">Price($)</span>
-                </label>
-                <input
-                    type="number"
-                    className="input input-bordered w-full max-w-xs"
-                    {...register("price", {
-                    required: {
-                        value: true,
-                        message: "price is require",
-                    },
-                    })}
-                />
-                <label class="label">
-                    {errors.price?.type === "required" && (
-                    <span class="label-text-alt text-red-500">
-                        {errors.price.message}
-                    </span>
-                    )}
-                </label>
-                </div>
-                {/* Time */}
-                <div className="form-control">
-                <label className="label">
-                    <span className="label-text text-black text-lg">Time</span>
-                </label>
-                <input
-                    type="text"
-                    className="input input-bordered w-full max-w-xs"
-                    {...register("time", {
-                    required: {
-                        value: true,
-                        message: "Time is require",
-                    },
-                    })}
-                />
-                    <label class="label">
-                        {errors.time?.type === "required" && (
-                        <span class="label-text-alt text-red-500">
-                            {errors.time.message}
-                        </span>
-                        )}
-                    </label>
-                </div>
-                {/* Attendant people */}      
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text text-black text-lg">Maximum Attendant</span>
-                    </label>
-                    <input type="number" className="input input-bordered w-full max-w-xs"
-                        {...register("attend", { 
-                            required: {
-                                value: true,
-                                message: "Attend is require"
-                            }
-                        })} />
-                    <label class="label">
-                        {errors.attend?.type === 'required' && <span class="label-text-alt text-red-500">{errors.attend.message}</span>}
-                    </label>
-                </div>   
-                {/* Event Name */}      
-                <div className="form-control">
-                    <label className="label">
-                    <span className="label-text text-black text-lg">Event Name</span>
-                    </label>
-                    <input type="text" className="input input-bordered w-full max-w-xs"
-                        {...register("eventName", { 
-                            required: {
-                                value: true,
-                                message: "Event Name is require"
-                            }
-                        })} />
-                    <label class="label">
-                        {errors.eventName?.type === 'required' && <span class="label-text-alt text-red-500">{errors.eventName.message}</span>}
-                    </label>
-                </div>   
-                {/* Organization Name and id */}
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text text-black text-lg">Organization Name</span>
-                    </label>
-                    <input type="text" className="input input-bordered w-full max-w-xs"
-                        {...register("organizationName", { 
-                            required: {
-                                value: true,
-                                message: "Organization Name is require"
-                            }
-                        })} />
-                    <label class="label">
-                        {errors.organizationName?.type === 'required' && <span class="label-text-alt text-red-500">{errors.organizationName.message}</span>}
-                    </label>
-                </div>    
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text text-black text-lg">Organization ID</span>
-                    </label>
-                    <input type="text" className="input input-bordered w-full max-w-xs"
-                        {...register("organizationId", { 
-                            required: {
-                                value: true,
-                                message: "Organization Id is require"
-                            }
-                        })} />
-                    <label class="label">
-                        {errors.organizationId?.type === 'required' && <span class="label-text-alt text-red-500">{errors.organizationId.message}</span>}
-                    </label>
-                </div>    
-                {/* Food Menu */}
-                <div className="form-control">
-                    <label className="label">
-                    <span className="label-text text-black text-lg">Food Menu</span>
-                    </label>
-                    <input type="text" className="input input-bordered w-full max-w-xs"
-                        {...register("menu", { 
-                            required: {
-                                value: true,
-                                message: "Food Menu is require"
-                            }
-                        })} />
-                    <label class="label">
-                        {errors.menu?.type === 'required' && <span class="label-text-alt text-red-500">{errors.menu.message}</span>}
-                    </label>
-                </div>   
-                {/* Category*/}
-                <div className="form-control">
-                    <label className="label">
-                    <span className="label-text text-black text-lg">Category</span>
-                    </label>
-                    <select className="select select-bordered w-full max-w-xs"
-                        {...register("category", { 
-                            required: {
-                                value: true,
-                                message: "Category is require"
-                            }
-                        })}>
-                        <option>breakfast</option>
-                        <option selected>lunch</option>
-                        <option>snacks</option>
-                        <option>dinner</option>
-                    </select>
-                    <label class="label">
-                        {errors.category?.type === 'required' && <span class="label-text-alt text-red-500">{errors.category.message}</span>}
-                    </label>
-                </div>   
-                {/* Food Menu */}
-                <div className="form-control">
-                    <label className="label">
-                    <span className="label-text text-black text-lg">Status</span>
-                    </label>
-                    <select className="select select-bordered w-full max-w-xs"
-                        {...register("status", { 
-                            required: {
-                                value: true,
-                                message: "Status is require"
-                            }
-                        })}>
-                        <option selected>active</option>
-                        <option>inactive</option>
-                    </select>
-                    <label class="label">
-                        {errors.menu?.type === 'required' && <span class="label-text-alt text-red-500">{errors.menu.message}</span>}
-                    </label>
-                </div>   
-                {/* Image */}
-                <div className="form-control">
-                    <label className="label">
-                    <span className="label-text text-black text-lg">Image</span>
-                    </label>
-                    <input type="text" className="input input-bordered w-full max-w-xs"
-                        {...register("image", { 
-                            required: {
-                                value: true,
-                                message: "Image is require"
-                            }
-                        })} />
-                    <label class="label">
-                        {errors.image?.type === 'required' && <span class="label-text-alt text-red-500">{errors.image.message}</span>}
-                    </label>
-                </div>        
-                <div className="form-control mt-6">
-                    <button className="btn btn-primary w-1/2" value="registration">
-                        Add
-                    </button>
-                </div>
-            </form>
+    let url = "https://test-back-dep.vercel.app/v1/package";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addPackage),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+  };
+  return (
+    <div>
+      <div className="flex justify-between my-5">
+        <h1 className="text-3xl text-center dashboard-header">Add Package</h1>
+      </div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        action=""
+        className="grid grid-cols-2"
+      >
+        {/* name */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Package Name</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("name", {
+              required: {
+                value: true,
+                message: "Name is require",
+              },
+            })}
+          />
+          <label class="label">
+            {errors.name?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.name.message}
+              </span>
+            )}
+          </label>
         </div>
-    );
+        {/* Price */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Price($)</span>
+          </label>
+          <input
+            type="number"
+            className="input input-bordered w-full max-w-xs"
+            {...register("price", {
+              required: {
+                value: true,
+                message: "price is require",
+              },
+            })}
+          />
+          <label class="label">
+            {errors.price?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.price.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Time */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Time</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("time", {
+              required: {
+                value: true,
+                message: "Time is require",
+              },
+            })}
+          />
+          <label class="label">
+            {errors.time?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.time.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Attendant people */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">
+              Maximum Attendant
+            </span>
+          </label>
+          <input
+            type="number"
+            className="input input-bordered w-full max-w-xs"
+            {...register("attend", {
+              required: {
+                value: true,
+                message: "Attend is require",
+              },
+            })}
+          />
+          <label class="label">
+            {errors.attend?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.attend.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Event Name */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Event Name</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("eventName", {
+              required: {
+                value: true,
+                message: "Event Name is require",
+              },
+            })}
+          />
+          <label class="label">
+            {errors.eventName?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.eventName.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Organization Name and id */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">
+              Organization Name
+            </span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("organizationName", {
+              required: {
+                value: true,
+                message: "Organization Name is require",
+              },
+            })}
+          />
+          <label class="label">
+            {errors.organizationName?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.organizationName.message}
+              </span>
+            )}
+          </label>
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">
+              Organization ID
+            </span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("organizationId", {
+              required: {
+                value: true,
+                message: "Organization Id is require",
+              },
+            })}
+          />
+          <label class="label">
+            {errors.organizationId?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.organizationId.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Food Menu */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Food Menu</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("menu", {
+              required: {
+                value: true,
+                message: "Food Menu is require",
+              },
+            })}
+          />
+          <label class="label">
+            {errors.menu?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.menu.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Category*/}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Category</span>
+          </label>
+          <select
+            className="select select-bordered w-full max-w-xs"
+            {...register("category", {
+              required: {
+                value: true,
+                message: "Category is require",
+              },
+            })}
+          >
+            <option>breakfast</option>
+            <option selected>lunch</option>
+            <option>snacks</option>
+            <option>dinner</option>
+          </select>
+          <label class="label">
+            {errors.category?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.category.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Food Menu */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Status</span>
+          </label>
+          <select
+            className="select select-bordered w-full max-w-xs"
+            {...register("status", {
+              required: {
+                value: true,
+                message: "Status is require",
+              },
+            })}
+          >
+            <option selected>active</option>
+            <option>inactive</option>
+          </select>
+          <label class="label">
+            {errors.menu?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.menu.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Image */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Image</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("image", {
+              required: {
+                value: true,
+                message: "Image is require",
+              },
+            })}
+          />
+          <label class="label">
+            {errors.image?.type === "required" && (
+              <span class="label-text-alt text-red-500">
+                {errors.image.message}
+              </span>
+            )}
+          </label>
+        </div>
+        <div className="form-control mt-6">
+          <button className="btn btn-primary w-1/2" value="registration">
+            Add
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default CreatePackage;
