@@ -4,6 +4,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 // import custom css
@@ -36,7 +37,7 @@ const Registration = () => {
     };
     console.log(userData);
     if (data.password === data.confirmPassword) {
-      let url = "https://test-back-dep.vercel.app/v1/user";
+      let url = "https://infinity-event-organizer-backend.vercel.app/v1/user";
       fetch(url, {
         method: "POST",
         headers: {
@@ -84,6 +85,9 @@ const Registration = () => {
             </div>
             <div className="card flex-shrink-0 w-3/5 shadow-2xl bg-secondary mr-5">
               <div className="card-body">
+                <p className="text-cyan-300 fs-semibold text-md">Already have an account???? <Link to={'/login'}> 
+                 <small className='text-white ml-1 fs-bold text-md'>Please 
+                 login</small></Link></p>
                 <form onSubmit={handleSubmit(onSubmit)} action="">
                   <div className="grid grid-cols-2 gap-5">
                     {/* first name */}
@@ -103,9 +107,9 @@ const Registration = () => {
                           },
                         })}
                       />
-                      <label class="label">
+                      <label className="label">
                         {errors.firstName?.type === "required" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.firstName.message}
                           </span>
                         )}
@@ -128,9 +132,9 @@ const Registration = () => {
                           },
                         })}
                       />
-                      <label class="label">
+                      <label className="label">
                         {errors.lastName?.type === "required" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.lastName.message}
                           </span>
                         )}
@@ -155,14 +159,14 @@ const Registration = () => {
                           },
                         })}
                       />
-                      <label class="label">
+                      <label className="label">
                         {errors.email?.type === "required" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.email.message}
                           </span>
                         )}
                         {errors.email?.type === "pattern" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.email.message}
                           </span>
                         )}
@@ -189,14 +193,14 @@ const Registration = () => {
                           },
                         })}
                       />
-                      <label class="label">
+                      <label className="label">
                         {errors.password?.type === "required" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.password.message}
                           </span>
                         )}
                         {errors.password?.type === "minLength" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.password.message}
                           </span>
                         )}
@@ -223,14 +227,14 @@ const Registration = () => {
                           },
                         })}
                       />
-                      <label class="label">
+                      <label className="label">
                         {errors.password?.type === "required" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.password.message}
                           </span>
                         )}
                         {errors.password?.type === "minLength" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.password.message}
                           </span>
                         )}
@@ -253,9 +257,9 @@ const Registration = () => {
                           minLength: 11,
                         })}
                       />
-                      <label class="label">
+                      <label className="label">
                         {errors.phone?.type === "required" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.address.message}
                           </span>
                         )}
@@ -276,9 +280,9 @@ const Registration = () => {
                           },
                         })}
                       />
-                      <label class="label">
+                      <label className="label">
                         {errors.address?.type === "required" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.address.message}
                           </span>
                         )}
@@ -299,11 +303,11 @@ const Registration = () => {
                         })}
                       >
                         <option selected>user</option>
-                        <option>organization admin</option>
+                        <option>organizationAdmin</option>
                       </select>
-                      <label class="label">
+                      <label className="label">
                         {errors.role?.type === "required" && (
-                          <span class="label-text-alt text-red-500">
+                          <span className="label-text-alt text-red-500">
                             {errors.role.message}
                           </span>
                         )}
@@ -313,9 +317,9 @@ const Registration = () => {
                   <div className="form-control flex flex-col justify-center items-center mt-5">
                     <button
                       className="btn btn-primary w-1/3 mb-5 text-white hover:bg-pink-500 ease-in duration-300 hover:scale-105 text-lg"
-                      value="Login"
+                      value="registration"
                     >
-                      Login
+                      Registration
                     </button>
                     <button
                       onClick={() => signInWithGoogle()}

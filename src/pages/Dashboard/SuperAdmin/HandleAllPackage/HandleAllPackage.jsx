@@ -1,32 +1,45 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const HandlePackges = () => {
-  const [packageData, setPackageData] = useState([]);
+const HandlePackages = () => {
+  const [packagesData, setPackagesData] = useState([]);
   // const [deletePackage, setDeletePackage] = useState(null);
 
   useEffect(() => {
-    const url = "https://test-back-dep.vercel.app/v1/package";
+    const url =
+      "https://infinity-event-organizer-backend.vercel.app/v1/package";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setPackageData(data.data);
+        setPackagesData(data.data);
       });
-  }, []);
+  }, [packagesData]);
 
-  // const valueId = packageData?.map((pack) => pack._id);
-  // const id = valueId[0];
+  const navigate = useNavigate();
+  const navigatePackage = (packageId) => {
+    navigate(`/updatePackage/${packageId}`);
+  };
 
-  // useEffect(() => {
-  //   const url = `https://test-back-dep.vercel.app/v1/package/${id}`;
-  //   fetch(url, {
-  //     method: "DELETE",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setPackageData(data.data);
-  //     });
-  // }, []);
+  const handleDelete = (id) => {
+    const url = `https://infinity-event-organizer-backend.vercel.app/v1/package/${id}`;
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        // if (data.deletedCount) {
+        //     toast.success(`Product ${name} is deleted successfully`);
+        //     refetch();
+        //     setDeletingProduct(null);
+        // } else {
+        //     toast.error(`Failed delete`)
+        // }
+      });
+  };
   return (
     <div className="mt-5">
       <div className="flex justify-between mt-5">
@@ -54,25 +67,32 @@ const HandlePackges = () => {
             </tr>
           </thead>
           <tbody>
-            {packageData.map((pack) => (
+            {packagesData.map((packs) => (
               <tr>
-                <td>{pack.name}</td>
-                <td>${pack.price}</td>
-                <td>{pack.time}</td>
-                <td>{pack.attend}</td>
-                <td>{pack.organization.name}</td>
-                <td>{pack.category}</td>
-                <td>{pack.status}</td>
+                <td>{packs.name}</td>
+                <td>${packs.price}</td>
+                <td>{packs.time}</td>
+                <td>{packs.attend}</td>
+                <td>{packs.organization.name}</td>
+                <td>{packs.category}</td>
+                <td>{packs.status}</td>
                 <td>Null</td>
                 <td>
                   Decoration, <br />
                   Catering{" "}
                 </td>
                 <td className="flex flex-col gap-2">
-                  <button className="btn btn-xs hover:btn-secondary">
+                  <label
+                    htmlFor="my-modal"
+                    className="btn btn-xs hover:btn-secondary"
+                    onClick={() => navigatePackage(packs._id)}
+                  >
                     Update
-                  </button>
-                  <button className="btn btn-xs hover:btn-secondary">
+                  </label>
+                  <button
+                    onClick={() => handleDelete(packs._id)}
+                    className="btn btn-xs hover:btn-secondary"
+                  >
                     Delete
                   </button>
                 </td>
@@ -85,4 +105,4 @@ const HandlePackges = () => {
   );
 };
 
-export default HandlePackges;
+export default HandlePackages;

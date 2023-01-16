@@ -4,6 +4,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
 
 import "./Login.css";
@@ -11,13 +12,8 @@ import "./Login.css";
 // custom css
 
 const Login = () => {
-    // sign in with google
-    const [
-      signInWithGoogle,
-      gUser,
-      gError,
-      gLoading
-    ] = useSignInWithGoogle(auth);
+  // sign in with google
+  const [signInWithGoogle, gUser, gError, gLoading] = useSignInWithGoogle(auth);
 
   // sign in with email and password
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -73,6 +69,10 @@ const Login = () => {
             </div>
             <div className="card flex-shrink-0 w-2/5 shadow-2xl bg-secondary mr-8">
               <div className="card-body">
+                <p className="text-cyan-300 fs-semibold text-md">New To IEO???? <Link to= 
+                 {'/registration'}> 
+                  <small className='text-white ml-1 fs-bold text-md'>Create An Account</small></Link>
+                </p>
                 <form onSubmit={handleSubmit(onSubmit)} action="">
                   <div className="form-control">
                     <label className="label">
@@ -92,14 +92,14 @@ const Login = () => {
                         },
                       })}
                     />
-                    <label class="label">
+                    <label className="label">
                       {errors.email?.type === "required" && (
-                        <span class="label-text-alt text-red-500">
+                        <span className="label-text-alt text-red-500">
                           {errors.email.message}
                         </span>
                       )}
                       {errors.email?.type === "pattern" && (
-                        <span class="label-text-alt text-red-500">
+                        <span className="label-text-alt text-red-500">
                           {errors.email.message}
                         </span>
                       )}
@@ -123,14 +123,14 @@ const Login = () => {
                         },
                       })}
                     />
-                    <label class="label">
+                    <label className="label">
                       {errors.password?.type === "required" && (
-                        <span class="label-text-alt text-red-500">
+                        <span className="label-text-alt text-red-500">
                           {errors.password.message}
                         </span>
                       )}
                       {errors.password?.type === "minLength" && (
-                        <span class="label-text-alt text-red-500">
+                        <span className="label-text-alt text-red-500">
                           {errors.password.message}
                         </span>
                       )}
@@ -142,10 +142,17 @@ const Login = () => {
                     </label>
                   </div>
                   <div className="form-control mt-6 flex flex-col items-center gap-5">
-                    <button className="btn btn-primary w-2/3 text-white hover:text-black" value="Login">
+                    <button
+                      className="btn btn-primary w-2/3 text-white hover:text-black"
+                      value="Login"
+                    >
                       Login
                     </button>
-                    <button onClick={() => signInWithGoogle()} className="btn btn-primary w-2/3 text-white hover:text-black" value="Login">
+                    <button
+                      onClick={() => signInWithGoogle()}
+                      className="btn btn-primary w-2/3 text-white hover:text-black"
+                      value="Login"
+                    >
                       Login with Google
                     </button>
                   </div>

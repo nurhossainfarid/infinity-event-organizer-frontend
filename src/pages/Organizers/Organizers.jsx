@@ -11,7 +11,8 @@ const Organizers = () => {
   const [organizationData, setOrganizationData] = useState([]);
 
   useEffect(() => {
-    const url = "https://test-back-dep.vercel.app/v1/organization";
+    const url =
+      "https://infinity-event-organizer-backend.vercel.app/v1/organization";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -51,8 +52,8 @@ const Organizers = () => {
                 <h1 className="text-5xl font-bold mt-20">{organizer.name}</h1>
               </div>
               <div className="organizer-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
-                <span class="flex">
-                  <span class="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
+                <span className="flex">
+                  <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
                 </span>
                 <h1 className="mt-10 text-3xl font-bold">{organizer.name}</h1>
                 <ul className="text-white flex flex-col gap-1 justify-center items-start ml-8 my-5">

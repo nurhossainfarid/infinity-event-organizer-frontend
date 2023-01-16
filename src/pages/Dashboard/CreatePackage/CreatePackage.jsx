@@ -24,7 +24,7 @@ const CreatePackage = () => {
       status: data.status,
       category: data.category,
     };
-    let url = "https://test-back-dep.vercel.app/v1/package";
+    let url = "https://infinity-event-organizer-backend.vercel.app/v1/package";
     fetch(url, {
       method: "POST",
       headers: {
@@ -60,9 +60,9 @@ const CreatePackage = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.name?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.name.message}
               </span>
             )}
@@ -83,9 +83,9 @@ const CreatePackage = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.price?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.price.message}
               </span>
             )}
@@ -106,9 +106,9 @@ const CreatePackage = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.time?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.time.message}
               </span>
             )}
@@ -131,9 +131,9 @@ const CreatePackage = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.attend?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.attend.message}
               </span>
             )}
@@ -154,9 +154,9 @@ const CreatePackage = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.eventName?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.eventName.message}
               </span>
             )}
@@ -179,9 +179,9 @@ const CreatePackage = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.organizationName?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.organizationName.message}
               </span>
             )}
@@ -203,9 +203,9 @@ const CreatePackage = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.organizationId?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.organizationId.message}
               </span>
             )}
@@ -226,9 +226,9 @@ const CreatePackage = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.menu?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.menu.message}
               </span>
             )}
@@ -253,15 +253,15 @@ const CreatePackage = () => {
             <option>snacks</option>
             <option>dinner</option>
           </select>
-          <label class="label">
+          <label className="label">
             {errors.category?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.category.message}
               </span>
             )}
           </label>
         </div>
-        {/* Food Menu */}
+        {/* Status Menu */}
         <div className="form-control">
           <label className="label">
             <span className="label-text text-black text-lg">Status</span>
@@ -278,9 +278,9 @@ const CreatePackage = () => {
             <option selected>active</option>
             <option>inactive</option>
           </select>
-          <label class="label">
+          <label className="label">
             {errors.menu?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.menu.message}
               </span>
             )}
@@ -301,9 +301,9 @@ const CreatePackage = () => {
               },
             })}
           />
-          <label class="label">
+          <label className="label">
             {errors.image?.type === "required" && (
-              <span class="label-text-alt text-red-500">
+              <span className="label-text-alt text-red-500">
                 {errors.image.message}
               </span>
             )}

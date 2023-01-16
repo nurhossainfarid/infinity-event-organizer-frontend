@@ -49,6 +49,15 @@ import PrivateParties from './pages/Packages/PrivateParties/PrivateParties';
 import Concerts from './pages/Packages/Concerts/Concerts';
 import AnniversariesPackages from './pages/Packages/Anniversaries/AnniversariesPackages';
 import ComparePackage from './pages/Packages/ComparePackage/ComparePackage';
+import UpdatePackage from './pages/Dashboard/SuperAdmin/HandleAllPackage/UpdatePackage';
+import CreateOrganizer from './pages/Dashboard/SuperAdmin/HandleOrganizers/CreateOrganizer';
+import UpdateUser from './pages/Dashboard/SuperAdmin/HandleUser/UpdateUser';
+import Profile from './pages/share/Profile/Profile';
+import UpdateOrganizer from './pages/Dashboard/SuperAdmin/HandleOrganizers/UpdateOrganizer';
+import RequireAuth from './pages/share/Require/RequireAuth';
+import RequireSuperAdmin from './pages/share/Require/RequireSuperAdmin';
+import RequireOrganizerAdmin from './pages/share/Require/RequireOrganizerAdmin';
+
 
 function App() {
   return (
@@ -57,12 +66,24 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/organizers" element={<Organizers></Organizers>}></Route>
+        <Route path="/events" element={<Events></Events>}></Route>
+        <Route path="/updatePackage/:packageId" element={<UpdatePackage></UpdatePackage>}></Route>
+        <Route path="/updateOrganizer/:orgId" element={<UpdateOrganizer></UpdateOrganizer>}></Route>
+        <Route path="/updateUser/:userId" element={<UpdateUser></UpdateUser>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/registration" element={<Registration></Registration>}></Route>
+        <Route path="/profile" element={<Profile></Profile>}></Route>
+
+        {/* --------------------------------- All nested routes -------------------------------------- */}
+        {/* all about routes */}
         <Route path="/about" element={<About></About>}>
           <Route index element={<WhoWeAre></WhoWeAre>}></Route>
           <Route path="mission" element={<Mission></Mission>}></Route>
           <Route path="vision" element={<Vision></Vision>}></Route>
           <Route path="honorAward" element={<HonorAward></HonorAward>}></Route>
         </Route>
+        {/* all service routes */}
         <Route path="/services" element={<Services></Services>}>
           <Route index element={<Anniversaries></Anniversaries>}></Route>
           <Route path="holidayParties" element={<HolidayParties></HolidayParties>}></Route>
@@ -71,6 +92,7 @@ function App() {
           <Route path="conferencePlanning" element={<ConferencePlanning></ConferencePlanning>}></Route>
           <Route path="stageDecoration" element={<StageDecoration></StageDecoration>}></Route>
         </Route>
+        {/* all packages routes */}
         <Route path="/packages" element={<Packages></Packages>}>
         <Route index element={<Wedding></Wedding>}></Route>
           <Route path="birthdayParties" element={<BirthdayParties></BirthdayParties>}></Route>
@@ -81,23 +103,72 @@ function App() {
           <Route path="anniversariesPackages" element={<AnniversariesPackages></AnniversariesPackages>}></Route>
           <Route path="comparePackage" element={<ComparePackage></ComparePackage>}></Route>
         </Route>
-        <Route path="/organizers" element={<Organizers></Organizers>}></Route>
-        <Route path="/events" element={<Events></Events>}></Route>
-        <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-          <Route index element={<HandleAllPackage></HandleAllPackage>}></Route>
-          <Route path="bookingHistory" element={<BookingHistory></BookingHistory>}></Route>
-          <Route path="handleOrganizer" element={<HandleOrganizers></HandleOrganizers>}></Route>
-          <Route path="handleUser" element={<HandleUser></HandleUser>}></Route>
-          <Route path="handleClientFeedBack" element={<HandleClientFeedBack></HandleClientFeedBack>}></Route>
-          <Route path="organizerAdminBookingHistory" element={<OrganizerAdminBookingHistory></OrganizerAdminBookingHistory>}></Route>
-          <Route path="organizerAdminClientFeedback" element={<OrganizerAdminClientFeedback></OrganizerAdminClientFeedback>}></Route>
-          <Route path="organizerAdminPackage" element={<OrganizerAdminPackage></OrganizerAdminPackage>}></Route>
-          <Route path="createPackage" element={<CreatePackage></CreatePackage>}></Route>
-          <Route path="createCustomPackage" element={<CreateCustomPackage></CreateCustomPackage>}></Route>
+        {/* all dashboard routes */}
+        <Route path="/dashboard" element={
+          <RequireAuth>
+            <Dashboard></Dashboard>
+          </RequireAuth>
+        }>
+          {/* RequireSuperAdmin */}
+          <Route path="allPackage" element={
+            <RequireSuperAdmin>
+              <HandleAllPackage></HandleAllPackage>
+            </RequireSuperAdmin>
+          }></Route>
+          <Route path="bookingHistory" element={
+            <RequireSuperAdmin>
+              <BookingHistory></BookingHistory>
+            </RequireSuperAdmin>
+          }></Route>
+          <Route path="handleOrganizer" element={
+            <RequireSuperAdmin>
+              <HandleOrganizers></HandleOrganizers>
+            </RequireSuperAdmin>
+          }></Route>
+          <Route path="handleUser" element={
+            <RequireSuperAdmin>
+              <HandleUser></HandleUser>
+            </RequireSuperAdmin>
+          }></Route>
+          <Route path="handleClientFeedBack" element={
+            <RequireSuperAdmin>
+              <HandleClientFeedBack></HandleClientFeedBack>
+            </RequireSuperAdmin>
+          }></Route>
+          <Route path="createPackage" element={
+            <RequireSuperAdmin>
+              <CreatePackage></CreatePackage>
+            </RequireSuperAdmin>
+          }></Route>
+          <Route path="createOrganization" element={
+            <RequireSuperAdmin>
+              <CreateOrganizer></CreateOrganizer>
+            </RequireSuperAdmin>
+          }></Route>
+          
+          {/* RequireOrganizerAdmin */}
+          <Route path="organizerAdminBookingHistory" element={
+            <RequireOrganizerAdmin>
+              <OrganizerAdminBookingHistory> 
+              </OrganizerAdminBookingHistory>
+            </RequireOrganizerAdmin>
+          }></Route>
+          <Route path="organizerAdminClientFeedback" element={
+            <RequireOrganizerAdmin>
+              <OrganizerAdminClientFeedback> 
+              </OrganizerAdminClientFeedback>
+            </RequireOrganizerAdmin>
+          }></Route>
+          <Route path="organizerAdminPackage" element={
+            <RequireOrganizerAdmin>
+              <OrganizerAdminPackage></OrganizerAdminPackage>
+            </RequireOrganizerAdmin>
+          }></Route>
+
+          {/* require for all */}
           <Route path="userBookingHistory" element={<UserBookingHistory></UserBookingHistory>}></Route>
+          <Route path="createCustomPackage" element={<CreateCustomPackage></CreateCustomPackage>}></Route>
         </Route>
-        <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/registration" element={<Registration></Registration>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

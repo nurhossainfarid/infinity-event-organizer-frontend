@@ -1,6 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 
 const BookingHistory = () => {
+    const [bookingData, setBookingData] = useState([]);
+    useEffect(() => {
+        const url = 'https://infinity-event-organizer-backend.vercel.app/v1/booking';
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+                setBookingData(data.data);
+            })
+    }, [bookingData]);
+
+    const handleDelete = (id) => {
+        const url = `https://infinity-event-organizer-backend.vercel.app/v1/booking/${id}`;
+        fetch(url, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            // if (data.deletedCount) {
+            //     toast.success(`Product ${name} is deleted successfully`);
+            //     refetch();
+            //     setDeletingProduct(null);
+            // } else {
+            //     toast.error(`Failed delete`)
+            // }
+          });
+      };
     return (
         <div className="mt-5">
             <h1 className="dashboard-header text-3xl text-center animate-bounce">Booking History</h1>
@@ -8,88 +39,37 @@ const BookingHistory = () => {
                 <table className="table w-full">
                     <thead>
                     <tr>
-                        <th></th>
                         <th>User Name</th>
                         <th>User Email</th>
+                        <th>U.Number</th>
+                        <th>U.Address</th>
                         <th>Package Name</th>
                         <th>Package Price</th>
-                        <th>Organizer</th>
+                        <th>Organizer Name</th>
+                        <th>Organizer Address</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>1</th>
-                            <td>Nur Hossain</td>
-                            <td>nur1516@gmail.com</td>
-                            <td>B.C.P Friday Black Night</td>
-                            <td>$100</td>
-                            <td>Grandiose</td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>Sabbir Hossain</td>
-                            <td>sabbir74@gmail.com</td>
-                            <td>Wedding with Lama</td>
-                            <td>$1000</td>
-                            <td>Lama</td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Kiron Chowdhury</td>
-                            <td>kiron932@gmail.com</td>
-                            <td>B.C.P Friday Black Night</td>
-                            <td>$100</td>
-                            <td>Red Chili</td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>4</th>
-                            <td>Tareque Ahmed</td>
-                            <td>tareque93@gmail.com</td>
-                            <td>WEDDING STAGE DECORATION</td>
-                            <td>$500</td>
-                            <td>Sultan Dayan</td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>5</th>
-                            <td>Ebrahim Rahaman</td>
-                            <td>ebrahim49@gmail.com</td>
-                            <td>Birthday photography</td>
-                            <td>$200</td>
-                            <td>Remison</td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>6</th>
-                            <td>Salman Afsar</td>
-                            <td>salman1516@gmail.com</td>
-                            <td>B.C.P Friday Black Night</td>
-                            <td>$100</td>
-                            <td>Grandiose</td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                        </tr>
+                        {
+                            bookingData.map((booking) => 
+                                <tr>
+                                    <td>{booking?.customerName}</td>
+                                    <td>{booking?.customerEmail}</td>
+                                    <td>{booking?.customerNumber}</td>
+                                    <td>{booking?.customerAddress}</td>
+                                    <td>{booking?.packageName}</td>
+                                    <td>{booking?.packagePrice}</td>
+                                    <td>{booking?.organizerName}</td>
+                                    <td>{booking?.organizerAddress}</td>
+                                    <td className="flex flex-col gap-2">
+                                        <button className="btn btn-xs hover:btn-secondary">Update</button>
+                                        <button className="btn btn-xs hover:btn-secondary" onClick={() => 
+                                             handleDelete(booking?._id)}>Delete</button>
+                                    </td>
+                                </tr>
+                            )
+                        }
                     </tbody>
                 </table>
             </div>
