@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaAddressCard, FaMailBulk, FaPhoneAlt } from "react-icons/fa";
 import { ImLocation2 } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
 
 import img from "../../images/organization6-min.jpg";
 
@@ -9,6 +10,11 @@ import "./Organizers.css";
 
 const Organizers = () => {
   const [organizationData, setOrganizationData] = useState([]);
+  const navigate = useNavigate();
+
+  const navigateOrganizer = (oId) => {
+    navigate(`/organizerDetails/${oId}`)
+  }
 
   useEffect(() => {
     const url =
@@ -42,9 +48,9 @@ const Organizers = () => {
             repudiandae.
           </p>
         </div>
-        <div>
+        <div className="grid grid-cols-3 gap-5 mx-28">
           {organizationData.map((organizer) => (
-            <div className="organizer-bg relative w-96 mx-28">
+            <div className="organizer-bg relative w-96">
               <div>
                 <img className="h-full w-full" src={img} alt="" />
               </div>
@@ -53,7 +59,7 @@ const Organizers = () => {
               </div>
               <div className="organizer-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
                 <span className="flex">
-                  <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
+                  <span className="absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
                 </span>
                 <h1 className="mt-10 text-3xl font-bold">{organizer.name}</h1>
                 <ul className="text-white flex flex-col gap-1 justify-center items-start ml-8 my-5">
@@ -75,7 +81,8 @@ const Organizers = () => {
                   </li>
                 </ul>
                 <div className="flex justify-center pb-16">
-                  <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
+                  <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn- 
+                   secondary" onClick={() => navigateOrganizer(organizer?._id)}>
                     See Details..
                   </button>
                 </div>

@@ -57,6 +57,7 @@ import UpdateOrganizer from './pages/Dashboard/SuperAdmin/HandleOrganizers/Updat
 import RequireAuth from './pages/share/Require/RequireAuth';
 import RequireSuperAdmin from './pages/share/Require/RequireSuperAdmin';
 import RequireOrganizerAdmin from './pages/share/Require/RequireOrganizerAdmin';
+import OrganizerDetails from './pages/Organizers/OrganizerDetails';
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/organizers" element={<Organizers></Organizers>}></Route>
         <Route path="/events" element={<Events></Events>}></Route>
+        <Route path="/organizerDetails/:oId" element={<OrganizerDetails></OrganizerDetails>}></Route>
         <Route path="/updatePackage/:packageId" element={<UpdatePackage></UpdatePackage>}></Route>
         <Route path="/updateOrganizer/:orgId" element={<UpdateOrganizer></UpdateOrganizer>}></Route>
         <Route path="/updateUser/:userId" element={<UpdateUser></UpdateUser>}></Route>

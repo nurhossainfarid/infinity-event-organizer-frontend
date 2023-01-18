@@ -20,7 +20,7 @@ const Dashboard = () => {
         />
         <div className="drawer-content bg-slate-100 flex flex-col pt-20 px-5">
           <h2 className="text-3xl text-secondary font-bold">
-            <span className="uppercase">{userRole?.role}</span> DashBoard
+            <span className="uppercase text-center">Welcome To {userRole?.role}</span> DashBoard
           </h2>
           <Outlet />
         </div>

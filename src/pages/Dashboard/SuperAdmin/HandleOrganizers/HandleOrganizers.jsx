@@ -62,6 +62,8 @@ const HandleOrganizers = () => {
                                 <p>Phone: {org.contactNumber}</p>
                                 <p>Address: {org.address}</p>
                                 <p className=''>Status: {org.status}</p>
+                                <p className=''>Package Name: {org?.packages.map(p => <small className="flex 
+                                flex-col">{p?.name},</small>)}</p>
                                 <div className="card-actions mt-5">
                                     <button className="btn btn-sm hover:btn-secondary">
                                         Details

@@ -14,7 +14,6 @@ const UpdateOrganizer = () => {
                 setOrgData(data.data);
             })
     }, [orgData])
-
     // use form for update
     const {
         register,
@@ -204,6 +203,7 @@ const UpdateOrganizer = () => {
                 )}
                 </label>
             </div>
+                {/* <h1>Package Name: {orgData?.packages.map(p => <span>{p?.name}</span>)}</h1> */}
             <div className="form-control mt-6">
                 <button className="btn btn-primary w-1/2" value="registration">
                     Update
