@@ -22,11 +22,11 @@ const UpdateUser = () => {
   
     const onSubmit = (data) => {
       const updateUser = {
-        firstName: data.firstName,
-        lastName: data.lastName,
-        contactNumber: data.contactNumber,
-        address: data.address,
-        status: data.status,
+        firstName: !data.firstName ? userData.firstName : data.firstName,
+        lastName: !data.lastName ? userData.lastName : data.lastName,
+        contactNumber: !data.contactNumber ? userData.contactNumber : data.contactNumber,
+        address: !data.address ? userData.address : data.address,
+        status: !data.status ? userData.status : data.status,
       };
       console.log(updateUser);
       let url = `https://infinity-event-organizer-backend.vercel.app/v1/user/${userId}`;
@@ -57,12 +57,7 @@ const UpdateUser = () => {
                 type="text"
                 Value={userData?.firstName}
                 className="input input-bordered w-full max-w-xs"
-                {...register("firstName", {
-                    required: {
-                        value: true,
-                        message: "First Name is require",
-                        },
-                })}
+                {...register("firstName")}
               />
             </div>
             <label className="label">
@@ -83,12 +78,7 @@ const UpdateUser = () => {
                 type="text"
                 Value={userData?.lastName}
                 className="input input-bordered w-full max-w-xs"
-                    {...register("lastName", {
-                        required: {
-                            value: true,
-                            message: "Last Name is require",
-                            },
-                    })}
+                    {...register("lastName")}
               />
             </div>
             <label className="label">
@@ -110,10 +100,6 @@ const UpdateUser = () => {
                 value={userData?.email}
                 className="input input-bordered w-full max-w-xs"
                 {...register("email", {
-                required: {
-                    value: true,
-                    message: "Email is require",
-                },
                 pattern: {
                     value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                     message: "Provide a valid email",
@@ -145,10 +131,6 @@ const UpdateUser = () => {
                 Value={userData?.contactNumber}
                     className="input input-bordered w-full max-w-xs"
                 {...register("contactNumber", {
-                    required: {
-                    value: true,
-                    message: "Phone is require",
-                    },
                     maxLength: 11,
                     minLength: 11,
                 })}
@@ -172,12 +154,7 @@ const UpdateUser = () => {
                  type="text"
                  Value={userData?.address}
                   className="input input-bordered w-full max-w-xs"
-                 {...register("address", {
-                   required: {
-                     value: true,
-                     message: "Address is require",
-                   },
-                 })}
+                 {...register("address")}
                 />      
             </div>
            <label className="label">
@@ -198,12 +175,7 @@ const UpdateUser = () => {
               type="text"
               Value={userData?.status}
               className="input input-bordered w-full max-w-xs"
-                {...register("status", {
-                  required: {
-                    value: true,
-                    message: "Status is require",
-                    },
-                })}
+                {...register("status")}
             />
           </div>
           <label className="label">

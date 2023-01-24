@@ -1,6 +1,21 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from '../../../../firebase.init';
 
 const OrganizerPackage = () => {
+    const [user] = useAuthState(auth);
+    const email = user?.email;
+    const [organizer, setOrganizer] = useState();
+    useEffect(() => {
+        const url = `https://infinity-event-organizer-backend.vercel.app/v1/organization/email/${email}`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+                setOrganizer(data.data);
+            })
+    }, [organizer]);
     return (
         <div className="mt-5">
             <div className="flex justify-between mt-5">
@@ -11,7 +26,6 @@ const OrganizerPackage = () => {
                 <table className="table w-full">
                     <thead>
                     <tr>
-                        <th></th>
                         <th>Name</th>
                         <th>Price</th>
                         <th>Time</th>
@@ -23,90 +37,23 @@ const OrganizerPackage = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th>1</th>
-                        <td>B.C.P Friday Black Night</td>
-                        <td>$100</td>
-                        <td>5 Hours</td>
-                        <td>Max. 10</td>
-                        <td>Grandiose</td>
-                        <td>Null</td>
-                        <td>Decoration, <br />Catering </td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                    </tr>
-                    <tr>
-                        <th>2</th>
-                        <td>B.C.P Friday Black Night</td>
-                        <td>$100</td>
-                        <td>5 Hours</td>
-                        <td>Max. 10</td>
-                        <td>Grandiose</td>
-                        <td>Null</td>
-                        <td>Decoration, <br />Catering </td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                    </tr>
-                    <tr>
-                        <th>3</th>
-                        <td>B.C.P Friday Black Night</td>
-                        <td>$100</td>
-                        <td>5 Hours</td>
-                        <td>Max. 10</td>
-                        <td>Grandiose</td>
-                        <td>Null</td>
-                        <td>Decoration, <br />Catering </td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                    </tr>
-                    <tr>
-                        <th>4</th>
-                        <td>B.C.P Friday Black Night</td>
-                        <td>$100</td>
-                        <td>5 Hours</td>
-                        <td>Max. 10</td>
-                        <td>Grandiose</td>
-                        <td>Null</td>
-                        <td>Decoration, <br />Catering </td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                    </tr>
-                    <tr>
-                        <th>5</th>
-                        <td>B.C.P Friday Black Night</td>
-                        <td>$100</td>
-                        <td>5 Hours</td>
-                        <td>Max. 10</td>
-                        <td>Grandiose</td>
-                        <td>Null</td>
-                        <td>Decoration, <br />Catering </td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                    </tr>
-                    <tr>
-                        <th>6</th>
-                        <td>B.C.P Friday Black Night</td>
-                        <td>$100</td>
-                        <td>5 Hours</td>
-                        <td>Max. 10</td>
-                        <td>Grandiose</td>
-                        <td>Null</td>
-                        <td>Decoration, <br />Catering </td>
-                            <td className="flex flex-col gap-2">
-                                <button className="btn btn-xs hover:btn-secondary">Update</button>
-                                <button className="btn btn-xs hover:btn-secondary">Delete</button>
-                            </td>
-                    </tr>
+                    {
+                        organizer?.packages.map(pack => 
+                        <tr>
+                            <td>{pack?.name}</td>
+                            <td>{pack?.price}</td>
+                            <td>{pack?.time}</td>
+                            <td>{pack?.attend}</td>
+                            <td>{organizer?.name}</td>
+                            <td>Null</td>
+                            <td>Decoration, <br />Catering </td>
+                                <td className="flex flex-col gap-2">
+                                    <button className="btn btn-xs hover:btn-secondary">Update</button>
+                                    <button className="btn btn-xs hover:btn-secondary">Delete</button>
+                                </td>
+                        </tr>
+                        )
+                    }
                     </tbody>
                 </table>
             </div>

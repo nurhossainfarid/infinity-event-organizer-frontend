@@ -1,6 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../../firebase.init';
 
 const OrganizerBookingHistory = () => {
+    const [user] = useAuthState(auth);
+    const email = user?.email;
+    const [organizer, setOrganizer] = useState();
+    const [booking, setBooking] = useState([]);
+    useEffect(() => {
+        const url = `https://infinity-event-organizer-backend.vercel.app/v1/organization/email/${email}`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+                setOrganizer(data.data);
+            })
+    }, [organizer]);
+    const organizerName = organizer?.name;
+    useEffect(() => {
+        const url = `https://infinity-event-organizer- 
+         backend.vercel.app/v1/booking/organizerName/${organizerName}`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+                setBooking(data.data);
+            })
+    }, [booking]);
     return (
         <div className="mt-5">
             <h1 className="dashboard-header text-3xl text-center animate-bounce">Booking History</h1>
@@ -8,56 +32,27 @@ const OrganizerBookingHistory = () => {
                 <table className="table w-full">
                     <thead>
                     <tr>
-                        <th></th>
                         <th>User Name</th>
                         <th>User Email</th>
+                        <th>User Number</th>
+                        <th>User Address</th>
                         <th>Package Name</th>
                         <th>Package Price</th>
                     </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th>1</th>
-                            <td>Nur Hossain</td>
-                            <td>nur1516@gmail.com</td>
-                            <td>B.C.P Friday Black Night</td>
-                            <td>$100</td>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <td>Sabbir Hossain</td>
-                            <td>sabbir74@gmail.com</td>
-                            <td>Wedding with Lama</td>
-                            <td>$1000</td>
-                        </tr>
-                        <tr>
-                            <th>3</th>
-                            <td>Kiron Chowdhury</td>
-                            <td>kiron932@gmail.com</td>
-                            <td>B.C.P Friday Black Night</td>
-                            <td>$100</td>
-                        </tr>
-                        <tr>
-                            <th>4</th>
-                            <td>Tareque Ahmed</td>
-                            <td>tareque93@gmail.com</td>
-                            <td>WEDDING STAGE DECORATION</td>
-                            <td>$500</td>
-                        </tr>
-                        <tr>
-                            <th>5</th>
-                            <td>Ebrahim Rahaman</td>
-                            <td>ebrahim49@gmail.com</td>
-                            <td>Birthday photography</td>
-                            <td>$200</td>
-                        </tr>
-                        <tr>
-                            <th>6</th>
-                            <td>Salman Afsar</td>
-                            <td>salman1516@gmail.com</td>
-                            <td>B.C.P Friday Black Night</td>
-                            <td>$100</td>
-                        </tr>
+                        {
+                            booking.map((book) => 
+                            <tr>
+                                <td>{book?.customerName}</td>
+                                <td>{book?.customerEmail}</td>
+                                <td>{book?.customerNumber}</td>
+                                <td>{book?.customerAddress}</td>
+                                <td>{book?.packageName}</td>
+                                <td>{book?.packagePrice}</td>
+                            </tr>
+                            )
+                        }
                     </tbody>
                 </table>
             </div>

@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 
 const UpdateOrganizer = () => {
     const { orgId } = useParams();
-    const [orgData, setOrgData] = useState([]);
+    const [orgData, setOrgData] = useState();
     useEffect(() => {
         const url = `https://infinity-event-organizer-backend.vercel.app/v1/organization/${orgId}`;
         fetch(url)
@@ -14,6 +14,7 @@ const UpdateOrganizer = () => {
                 setOrgData(data.data);
             })
     }, [orgData])
+    console.log(orgData?.packages[0]);
     // use form for update
     const {
         register,
@@ -24,12 +25,12 @@ const UpdateOrganizer = () => {
     const onSubmit = (data) => {
       console.log(data);
       const addOrganizer = {
-        name: data.name,
-        email: data.email,
-        contactNumber: data.contactNumber,
-        address: data.address,
-        image: data.image,
-        status: data.status,
+        name: !data.name ? orgData.name : data.name,
+        email: !data.email ? orgData.email : data.email,
+        contactNumber: !data.contactNumber ? orgData.contactNumber : data.contactNumber,
+        address: !data.address ? orgData.address : data.address,
+        image: !data.image ? orgData.image : data.image,
+        status: !data.status ? orgData.status : data.status,
       };
       let url = `https://infinity-event-organizer-backend.vercel.app/v1/organization/${orgId}`;
       fetch(url, {
@@ -58,12 +59,7 @@ const UpdateOrganizer = () => {
                 type="text"
                 Value={orgData?.name}
                 className="input input-bordered w-full max-w-xs"
-                {...register("name", {
-                    required: {
-                    value: true,
-                    message: "Organizer Name is require",
-                    },
-                })}
+                {...register("name")}
                 />
                 <label className="label">
                 {errors.name?.type === "required" && (
@@ -83,10 +79,6 @@ const UpdateOrganizer = () => {
                 Value={orgData?.email}
                 className="input input-bordered w-full max-w-xs"
                 {...register("email", {
-                    required: {
-                    value: true,
-                    message: "Email is require",
-                    },
                     pattern: {
                     value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
                     message: "Provide a valid email",
@@ -116,10 +108,6 @@ const UpdateOrganizer = () => {
                 Value={orgData?.contactNumber}
                 className="input input-bordered w-full max-w-xs"
                 {...register("contactNumber", {
-                    required: {
-                    value: true,
-                    message: "Phone is require",
-                    },
                     maxLength: 11,
                     minLength: 11,
                 })}
@@ -141,12 +129,7 @@ const UpdateOrganizer = () => {
                 type="text"
                 Value={orgData?.address}
                 className="input input-bordered w-full max-w-xs"
-                {...register("address", {
-                    required: {
-                    value: true,
-                    message: "Address is require",
-                    },
-                })}
+                {...register("address")}
                 />
                 <label className="label">
                 {errors.address?.type === "required" && (
@@ -164,12 +147,7 @@ const UpdateOrganizer = () => {
                 <input
                 type="text"
                 className="input input-bordered w-full max-w-xs"
-                {...register("image", {
-                    required: {
-                    value: true,
-                    message: "Image is require",
-                    },
-                })}
+                {...register("image")}
                 />
                 <label className="label">
                 {errors.image?.type === "required" && (
@@ -188,12 +166,7 @@ const UpdateOrganizer = () => {
                 type="text"
                 Value={orgData?.status}
                 className="input input-bordered w-full max-w-xs"
-                {...register("status", {
-                    required: {
-                    value: true,
-                    message: "Status is require",
-                    },
-                })}
+                {...register("status")}
                 />
                 <label className="label">
                 {errors.menu?.type === "required" && (
@@ -210,6 +183,28 @@ const UpdateOrganizer = () => {
                 </button>
             </div>
             </form>
+            <div className="mt-10">
+                <h1 className="text-center text-5xl">Handle All Packages</h1>
+                <div className='grid grid-cols-3 gap-5'>
+                    {orgData?.packages.map(pack => 
+                        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                            <div className="card-body">
+                                <h2 className="card-title">{pack?.name}</h2>
+                                <p className="text-lg">Price: ${pack?.price}</p>
+                                <p className="text-lg">Time: {pack?.time}</p>
+                                <p className="text-lg">Attend: {pack?.attend}</p>
+                                <p className="text-lg">Category: {pack?.category}</p>
+                                <p className="text-lg">Event Name: {pack?.eventName}</p>
+                                <p className="text-lg">Food Menu: {pack?.foodMenu}</p>
+                                <p className="text-lg">Status: {pack?.status}</p>
+                                <div className="card-actions justify-end">
+                                    <button className="btn btn-primary">Update Package</button>
+                                </div>
+                            </div>
+                        </div>    
+                    )}
+                </div>  
+            </div>
         </div>
     );
 };

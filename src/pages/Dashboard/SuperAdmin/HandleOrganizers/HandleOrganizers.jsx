@@ -15,6 +15,16 @@ const HandleOrganizers = () => {
                 setOrganizersData(data.data);
             })
     }, [organizersData]);
+    // console.time('map');
+    // organizersData.map((organizer) => organizer.name);
+    // console.timeEnd('map');
+    // console.time('reduce');
+    // const arrayToObject = organizersData.reduce((acc, cur) => {
+    //     const id = cur._id;
+    //     acc[id] = cur;
+    //     return acc;
+    // }, {});
+    // console.timeEnd('reduce');
 
     // navigate organizer
     const navigate = useNavigate();
