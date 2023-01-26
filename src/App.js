@@ -58,6 +58,7 @@ import RequireAuth from './pages/share/Require/RequireAuth';
 import RequireSuperAdmin from './pages/share/Require/RequireSuperAdmin';
 import RequireOrganizerAdmin from './pages/share/Require/RequireOrganizerAdmin';
 import OrganizerDetails from './pages/Organizers/OrganizerDetails';
+import BookingPackage from './pages/BookingPackage/BookingPackage';
 
 
 function App() {
@@ -76,6 +77,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/registration" element={<Registration></Registration>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
+        <Route path="/bookingPackage" element={<BookingPackage></BookingPackage>}></Route>
 
         {/* --------------------------------- All nested routes -------------------------------------- */}
         {/* all about routes */}

@@ -22,8 +22,11 @@ const HomeBlogs = () => {
         <div className="bg-slate-100 py-28">
             {/* blogs header section */}
             <section className="md:mx-28">
-                <h1 className="blogs-header text-secondary text-center text-5xl animate-bounce">Our Latest News/Blogs</h1>
-                <p className="text-lg text-gray-500 mx-auto py-5 md:w-2/3 text-center">Integer sollicitudin ligula non enim sodales, non lacinia nunc ornare. Sed commodo tempor dapibus tortor volutpat, eget rhoncus nisi fringilla. Phasellus ornare risus ineuismod varius.</p>
+                <h1 className="blogs-header text-secondary text-center text-5xl animate-bounce">Our Latest
+                    News/Blogs</h1>
+                <p className="text-lg text-gray-500 mx-auto py-5 md:w-2/3 text-center">Integer sollicitudin
+                    ligula non enim sodales, non lacinia nunc ornare. Sed commodo tempor dapibus tortor volutpat,
+                    eget rhoncus nisi fringilla. Phasellus ornare risus ineuismod varius.</p>
             </section>
             <section className="md:mx-28 mt-10">
                 <Swiper
@@ -46,13 +49,17 @@ const HomeBlogs = () => {
                                 <img src={img1} className="" alt="birthday"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
-                                        <li className="text-red-600 "><span className="text-3xl font-bold">1</span><br /> <span className="">Oct</span></li>
+                                        <li className="text-red-600 "><span className="text-3xl 
+                                        font-bold">1</span><br /> <span className="">Oct</span></li>
                                         <li className="text-4xl text-gray-500">|</li>
-                                        <li><h1 className="text-2xl font-bold">Best Kids’ Birthday Party Ideas</h1></li>
+                                        <li><h1 className="text-2xl font-bold">Best Kids’ Birthday Party
+                                            Ideas</h1></li>
                                     </ul>
-                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10...</p>
+                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the
+                                        1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary hover:text-primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-secondary 
+                                        hover:text-primary">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -60,13 +67,17 @@ const HomeBlogs = () => {
                                 <img src={img2} className="" alt="party"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
-                                        <li className="text-red-600 "><span className="text-3xl font-bold">24</span><br /> <span className="">Oct</span></li>
+                                        <li className="text-red-600 "><span className="text-3xl 
+                                        font-bold">24</span><br /> <span className="">Oct</span></li>
                                         <li className="text-4xl text-gray-500">|</li>
-                                        <li><h1 className="text-2xl font-bold">5 Steps To Planning A Sweet Party</h1></li>
+                                        <li><h1 className="text-2xl font-bold">5 Steps To Planning A Sweet
+                                            Party</h1></li>
                                     </ul>
-                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10...</p>
+                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the
+                                        1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary hover:text-primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-secondary 
+                                        hover:text-primary">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -77,13 +88,20 @@ const HomeBlogs = () => {
                                 <div className="card-body">
                                     <div className="m-5">
                                         <ul className="flex items-center gap-5 mb-5">
-                                            <li className="text-red-600 "><span className="text-3xl font-bold">6</span><br /> <span className="">Jan</span></li>
+                                            <li className="text-red-600 "><span className="text-3xl 
+                                            font-bold">6</span><br /> <span className="">Jan</span></li>
                                             <li className="text-4xl text-gray-500">|</li>
-                                            <li><h1 className="text-2xl font-bold">How to Find the Perfect Event Venue</h1></li>
+                                            <li>
+                                                <h1 className="text-2xl font-bold">How to Find the Perfect Event
+                                                Venue</h1>
+                                            </li>
                                         </ul>
-                                        <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10...</p>
+                                        <p className="text-gray-500">The standard chunk of Lorem Ipsum used since
+                                            the 1500s is reproduced below for those interested. Sections 1.10...
+                                        </p>
                                         <div className="mt-10">
-                                            <button className="btn btn-secondary text-secondary hover:text-primary">Read More ...</button>
+                                            <button className="btn btn-secondary text-secondary 
+                                            hover:text-primary">Read More ...</button>
                                         </div>
                                     </div>
                                 </div>
@@ -96,13 +114,17 @@ const HomeBlogs = () => {
                                 <img src={img1} className="" alt="birthday"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
-                                        <li className="text-red-600 "><span className="text-3xl font-bold">1</span><br /> <span className="">Oct</span></li>
+                                        <li className="text-red-600 "><span className="text-3xl 
+                                        font-bold">1</span><br /> <span className="">Oct</span></li>
                                         <li className="text-4xl text-gray-500">|</li>
-                                        <li><h1 className="text-2xl font-bold">Best Kids’ Birthday Party Ideas</h1></li>
+                                        <li><h1 className="text-2xl font-bold">Best Kids’ Birthday Party
+                                            Ideas</h1></li>
                                     </ul>
-                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10...</p>
+                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the
+                                        1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary hover:text-primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-secondary 
+                                        hover:text-primary">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -110,13 +132,17 @@ const HomeBlogs = () => {
                                 <img src={img2} className="" alt="party"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
-                                        <li className="text-red-600 "><span className="text-3xl font-bold">24</span><br /> <span className="">Oct</span></li>
+                                        <li className="text-red-600 "><span className="text-3xl font- 
+                                         bold">24</span><br /> <span className="">Oct</span></li>
                                         <li className="text-4xl text-gray-500">|</li>
-                                        <li><h1 className="text-2xl font-bold">5 Steps To Planning A Sweet Party</h1></li>
+                                        <li><h1 className="text-2xl font-bold">5 Steps To Planning A Sweet 
+                                         Party</h1></li>
                                     </ul>
-                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10...</p>
+                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 
+                                     1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary hover:text-primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-secondary hover:text- 
+                                         primary">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -127,13 +153,19 @@ const HomeBlogs = () => {
                                 <div className="card-body">
                                     <div className="m-5">
                                         <ul className="flex items-center gap-5 mb-5">
-                                            <li className="text-red-600 "><span className="text-3xl font-bold">6</span><br /> <span className="">Jan</span></li>
+                                            <li className="text-red-600 "><span className="text-3xl 
+                                            font-bold">6</span><br /> <span className="">Jan</span></li>
                                             <li className="text-4xl text-gray-500">|</li>
-                                            <li><h1 className="text-2xl font-bold">How to Find the Perfect Event Venue</h1></li>
+                                            <li><h1 className="text-2xl font-bold">How to Find the Perfect Event
+                                                Venue</h1>
+                                            </li>
                                         </ul>
-                                        <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10...</p>
+                                        <p className="text-gray-500">The standard chunk of Lorem Ipsum used since
+                                            the 1500s is reproduced below for those interested. Sections 1.10...
+                                        </p>
                                         <div className="mt-10">
-                                            <button className="btn btn-secondary text-secondary hover:text-primary">Read More ...</button>
+                                            <button className="btn btn-secondary text-secondary 
+                                            hover:text-primary">Read More ...</button>
                                         </div>
                                     </div>
                                 </div>
@@ -146,13 +178,18 @@ const HomeBlogs = () => {
                                 <img src={img1} className="" alt="birthday"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
-                                        <li className="text-red-600 "><span className="text-3xl font-bold">1</span><br /> <span className="">Oct</span></li>
+                                        <li className="text-red-600 "><span className="text-3xl 
+                                        font-bold">1</span><br /> <span className="">Oct</span></li>
                                         <li className="text-4xl text-gray-500">|</li>
-                                        <li><h1 className="text-2xl font-bold">Best Kids’ Birthday Party Ideas</h1></li>
+                                        <li><h1 className="text-2xl font-bold">Best Kids’ Birthday Party
+                                            Ideas</h1>
+                                        </li>
                                     </ul>
-                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10...</p>
+                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the
+                                        1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary hover:text-primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-secondary 
+                                        hover:text-primary">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -160,13 +197,19 @@ const HomeBlogs = () => {
                                 <img src={img2} className="" alt="party"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
-                                        <li className="text-red-600 "><span className="text-3xl font-bold">24</span><br /> <span className="">Oct</span></li>
+                                        <li className="text-red-600 "><span className="text-3xl 
+                                        font-bold">24</span><br /> <span className="">Oct</span></li>
                                         <li className="text-4xl text-gray-500">|</li>
-                                        <li><h1 className="text-2xl font-bold">5 Steps To Planning A Sweet Party</h1></li>
+                                        <li>
+                                            <h1 className="text-2xl font-bold">5 Steps To Planning A Sweet
+                                            Party</h1>
+                                        </li>
                                     </ul>
-                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10...</p>
+                                    <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the
+                                        1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary hover:text-primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-secondary 
+                                        hover:text-primary">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -177,13 +220,20 @@ const HomeBlogs = () => {
                                 <div className="card-body">
                                     <div className="m-5">
                                         <ul className="flex items-center gap-5 mb-5">
-                                            <li className="text-red-600 "><span className="text-3xl font-bold">6</span><br /> <span className="">Jan</span></li>
+                                            <li className="text-red-600 "><span className="text-3xl 
+                                            font-bold">6</span><br /> <span className="">Jan</span></li>
                                             <li className="text-4xl text-gray-500">|</li>
-                                            <li><h1 className="text-2xl font-bold">How to Find the Perfect Event Venue</h1></li>
+                                            <li>
+                                                <h1 className="text-2xl font-bold">How to Find the Perfect Event
+                                                    Venue</h1>
+                                            </li>
                                         </ul>
-                                        <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10...</p>
+                                        <p className="text-gray-500">The standard chunk of Lorem Ipsum used since
+                                            the 1500s is reproduced below for those interested. Sections 1.10...
+                                        </p>
                                         <div className="mt-10">
-                                            <button className="btn btn-secondary text-secondary hover:text-primary">Read More ...</button>
+                                            <button className="btn btn-secondary text-secondary 
+                                            hover:text-primary">Read More ...</button>
                                         </div>
                                     </div>
                                 </div>

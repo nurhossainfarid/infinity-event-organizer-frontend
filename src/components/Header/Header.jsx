@@ -10,6 +10,30 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [user] = useAuthState(auth);
+  const [collectUser, setCollectUser] = useState();
+
+  useEffect(() => {
+      const email = user?.email;
+      if (email) {
+          fetch(`https://infinity-event-organizer-backend.vercel.app/v1/user/role/${email}`, {
+              method: 'GET',
+              headers: {
+                  'content-type': 'application/json',
+                  authorization: `Bear ${localStorage.getItem('accessToken')}`
+              },
+          })
+              .then(res => res.json())
+              .then(data => {
+                setCollectUser(data.data);
+              })
+      }
+  }, [user]);
+  // const str = 'The quick brown fox jumps over the lazy dog.';
+  // console.log(str.slice(0, 2));
+  const firstNm = collectUser?.firstName.slice(0,1);
+  const lastNm = collectUser?.lastName.slice(0,1);
+  console.log(firstNm, lastNm);
+
   const logout = () => {
     signOut(auth);
     localStorage.removeItem("accessToken");
@@ -82,9 +106,9 @@ const Header = () => {
                 )}
               </ul>
             </div>
-            <a className="btn btn-ghost bg-none normal-case text-xl">
+            <Link to="/home" className="bg-none normal-case text-xl font-semibold">
               Infinity Event Organizer
-            </a>
+            </Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal p-0">
@@ -132,10 +156,10 @@ const Header = () => {
                 <div className="dropdown dropdown-end">
                   <label
                     tabIndex="0"
-                    className="btn btn-ghost btn-circle avatar"
+                    className="btn btn-circle avatar border-none"
                   >
-                    <div className="w-10 rounded-full">
-                      <img src="https://placeimg.com/80/80/people" />
+                    <div className="bg-white text-neutral-content rounded-full w-full">
+                      <p className="text-3xl mt-1">{ undefined ? '' : firstNm + lastNm}</p>
                     </div>
                   </label>
                   <ul

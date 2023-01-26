@@ -81,8 +81,9 @@ const Organizers = () => {
                   </li>
                 </ul>
                 <div className="flex justify-center pb-16">
-                  <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn- 
-                   secondary" onClick={() => navigateOrganizer(organizer?._id)}>
+                  <button className="btn btn-primary hover:bg-purple-700 text-white text-md animate-pulse 
+                  border-2 hover:border-purple-700 " 
+                   onClick={() => navigateOrganizer(organizer?._id)}>
                     See Details..
                   </button>
                 </div>

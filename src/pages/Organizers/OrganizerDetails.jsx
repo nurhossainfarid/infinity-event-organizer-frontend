@@ -29,7 +29,7 @@ const OrganizerDetails = () => {
         <div className="mx-28 mt-28 mb-10">
             <section className='grid md:grid-cols-2'>
                 <div>
-                    <h1 className="text-5xl">{organizerData?.name}</h1>
+                    <h1 className="text-5xl uppercase">{organizerData?.name}</h1>
                     <div className="mt-10">
                         <h3 className="text-2xl">Contact Information</h3>
                         <div className="ml-24 mt-1">
@@ -85,10 +85,10 @@ const OrganizerDetails = () => {
                 </Swiper>
             </section>
             <section className='mt-20'>
-                <h1 className='text-3xl text-center'>{organizerData?.name} All Packages</h1>
+                <h1 className='text-3xl text-center uppercase mb-10'>{organizerData?.name} All Packages</h1>
                 <div className='grid grid-cols-3 gap-5'>
                     {organizerData?.packages.map(pack => 
-                        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                        <div className="card card-compact w-96 bg-fuchsia-600 shadow-xl text-white">
                             <div className="card-body">
                                 <h2 className="card-title">{pack?.name}</h2>
                                 <p className="text-lg">Price: ${pack?.price}</p>
@@ -98,11 +98,12 @@ const OrganizerDetails = () => {
                                 <p className="text-lg">Event Name: {pack?.eventName}</p>
                                 <p className="text-lg">Food Menu: {pack?.foodMenu}</p>
                                 <p className="text-lg">Status: {pack?.status}</p>
-                            <div className="card-actions justify-center">
-                                <button className="btn btn-primary">Custom Packages</button>
-                            </div>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Booking Now</button>
+                            <div className="card-actions justify-end mt-4">
+                                <button className="btn bg-white hover:bg-white text-white 
+                                hover:text-fuchsia-600">Custom 
+                                 Package</button>
+                                <button className="btn bg-white hover:bg-white text-white 
+                                hover:text-fuchsia-600">Booking Now</button>
                             </div>
                             </div>
                         </div>    

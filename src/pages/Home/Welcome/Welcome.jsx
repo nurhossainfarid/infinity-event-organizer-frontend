@@ -25,7 +25,8 @@ const Welcome = () => {
               nostrud exercitation
             </p>
             <div className="flex justify-end">
-              <button className="border-2 read-btn btn-outline hover:btn-outline-0 btn-secondary w-1/3 text-center rounded-md font-semibold ease-in duration-300 hover:rotate-6">
+              <button className="border-2 read-btn btn-outline hover:btn-outline-0 btn-secondary w-1/3 
+              text-center rounded-md font-semibold ease-in duration-300 hover:rotate-6">
                 Read More....
               </button>
             </div>
