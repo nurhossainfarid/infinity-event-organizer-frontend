@@ -97,11 +97,16 @@ function App() {
           <Route path="stageDecoration" element={<StageDecoration></StageDecoration>}></Route>
         </Route>
         {/* all packages routes */}
-        <Route path="/packages" element={<Packages></Packages>}>
-        <Route index element={<Wedding></Wedding>}></Route>
+        <Route path="/packages" element={
+          <RequireAuth>
+            <Packages></Packages>
+          </RequireAuth>
+        }>
+          <Route index element={<Wedding></Wedding>}></Route>
           <Route path="birthdayParties" element={<BirthdayParties></BirthdayParties>}></Route>
           <Route path="corporateFunction" element={<CorporateParties></CorporateParties>}></Route>
-          <Route path="holidayPartiesPackages" element={<HolidayPartiesPackages></HolidayPartiesPackages>}></Route>
+          <Route path="holidayPartiesPackages" element={<HolidayPartiesPackages></HolidayPartiesPackages>}>   
+          </Route>
           <Route path="privateParties" element={<PrivateParties></PrivateParties>}></Route>
           <Route path="concerts" element={<Concerts></Concerts>}></Route>
           <Route path="anniversariesPackages" element={<AnniversariesPackages></AnniversariesPackages>}></Route>

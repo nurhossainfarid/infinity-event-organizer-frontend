@@ -58,42 +58,51 @@ const HomeSponsors = () => {
                 </section> */}
             </section>
             {/* create sponsors */}
-            <section className="bg-slate-100 pt-48">
+            <section className="bg-slate-100 pt-10 md:pt-20 lg:pt-48">
                 <div className="absolute z-10 -mt-40 ">
-                    <div className="w-1/2 mx-auto create-sponsor-bg relative border-8 border-primary">
+                    <div className="w-10/12 md:w-1/2 mx-auto create-sponsor-bg relative border-8 border-primary">
                         <div className="absolute bg-secondary opacity-80 h-full w-full"></div>
-                        <div className="py-16 relative">
-                            <h1 className="text-center text-5xl text-white animate-pulse mb-3">Our Happy Customer</h1>
-                            <p className="text-lg text-gray-200 mx-auto py-5 md:w-2/3 text-center">Integer sollicitudin ligula non enim sodales, non lacinia nunc ornare. Sed commodo tempor dapibus tortor volutpat, eget rhoncus nisi fringilla. Phasellus ornare risus ineuismod varius.</p>
+                        <div className="py-10 lg:py-16 relative">
+                            <h1 className="text-center text-xl md:text-3xl lg:text-5xl text-white animate-pulse 
+                             mb-3">Our Happy Customer</h1>
+                            <p className="text-sm md:text-md lg:text-lg text-gray-200 mx-auto py-5 w-11/12 
+                            lg:w-2/3 text-center">Integer 
+                             sollicitudin ligula non enim sodales, non lacinia nunc ornare. Sed commodo tempor 
+                              dapibus tortor volutpat, eget rhoncus nisi fringilla. Phasellus ornare risus 
+                               ineuismod varius.</p>
                         </div>
                     </div>
                 </div>
                 <div className="create-sponsor-bg2 relative">
                     <div className="absolute bg-secondary opacity-70 h-full w-full"></div>
-                    <div className="py-20 relative z-20 mx-36">
-                        <div className="grid grid-cols-4 gap-8 mt-40">
-                            <div className="relative hover:scale-95 hover:border-4 hover:border-primary ease-in-out duration">
-                                <div className="absolute bg-black opacity-80 h-full w-full"></div>
-                                <div className="relative text-center py-10">
-                                    <h1 className="text-white text-2xl text-uppercase font-bold">FUN PARTIES</h1>
-                                    <h2 className="text-red-700 text-4xl font-bold">280</h2>
-                                </div>
-                            </div>
-                            <div className="relative hover:scale-95 hover:border-4 hover:border-primary ease-in-out duration">
+                    <div className="py-10 lg:py-20 relative z-20 mx-16 md:mx-36">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-32 md:mt-40">
+                            <div className="relative hover:scale-95 hover:border-4 hover:border-primary 
+                            ease-in-out duration">
                                 <div className="absolute bg-black opacity-80 h-full w-full"></div>
                                 <div className="relative text-center py-20">
                                     <h1 className="text-white text-2xl text-uppercase font-bold">FUN PARTIES</h1>
                                     <h2 className="text-red-700 text-4xl font-bold">280</h2>
                                 </div>
                             </div>
-                            <div className="relative hover:scale-95 hover:border-4 hover:border-primary ease-in-out duration">
+                            <div className="relative hover:scale-95 hover:border-4 hover:border-primary 
+                            ease-in-out duration">
                                 <div className="absolute bg-black opacity-80 h-full w-full"></div>
                                 <div className="relative text-center py-20">
                                     <h1 className="text-white text-2xl text-uppercase font-bold">FUN PARTIES</h1>
                                     <h2 className="text-red-700 text-4xl font-bold">280</h2>
                                 </div>
                             </div>
-                            <div className="relative hover:scale-95 hover:border-4 hover:border-primary ease-in-out duration">
+                            <div className="relative hover:scale-95 hover:border-4 hover:border-primary 
+                            ease-in-out duration">
+                                <div className="absolute bg-black opacity-80 h-full w-full"></div>
+                                <div className="relative text-center py-20">
+                                    <h1 className="text-white text-2xl text-uppercase font-bold">FUN PARTIES</h1>
+                                    <h2 className="text-red-700 text-4xl font-bold">280</h2>
+                                </div>
+                            </div>
+                            <div className="relative hover:scale-95 hover:border-4 hover:border-primary 
+                            ease-in-out duration">
                                 <div className="absolute bg-black opacity-80 h-full w-full"></div>
                                 <div className="relative text-center py-20">
                                     <h1 className="text-white text-2xl text-uppercase font-bold">FUN PARTIES</h1>

@@ -27,8 +27,8 @@ const Events = () => {
   return (
     <div className="bg-img relative">
       <div className="absolute bg-black w-full h-full opacity-60"></div>
-      <div className="grid grid-cols-2 gap-5 py-28 mx-28 ">
-        <section className="w-3/5 mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-16 lg:py-28 lg:mx-28 ">
+        <section className="lg:w-3/5 md:w-1/2 w-2/3 mx-auto">
           <Swiper
             effect={"cards"}
             grabCursor={true}
@@ -42,7 +42,7 @@ const Events = () => {
             className="mySwiper"
           >
             <SwiperSlide className="relative">
-              <div className="card w-96 bg-base-100 shadow-xl slider-div">
+              <div className="card md:w-96 w-full bg-base-100 shadow-xl slider-div">
                 <figure>
                   <img className="w-full" src={event1} alt="event" />
                 </figure>
@@ -60,7 +60,7 @@ const Events = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide className="relative">
-              <div className="card w-96 bg-base-100 shadow-xl slider-div">
+              <div className="card md:w-96 w-full bg-base-100 shadow-xl slider-div">
                 <figure>
                   <img className="w-full" src={event2} alt="event" />
                 </figure>
@@ -78,7 +78,7 @@ const Events = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide className="relative">
-              <div className="card w-96 bg-base-100 shadow-xl slider-div">
+              <div className="card md:w-96 w-full bg-base-100 shadow-xl slider-div">
                 <figure>
                   <img className="w-full" src={event3} alt="event" />
                 </figure>
@@ -96,7 +96,7 @@ const Events = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide className="relative">
-              <div className="card w-96 bg-base-100 shadow-xl slider-div">
+              <div className="card md:w-96 w-full bg-base-100 shadow-xl slider-div">
                 <figure>
                   <img className="w-full" src={event4} alt="event" />
                 </figure>
@@ -114,7 +114,7 @@ const Events = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide className="relative">
-              <div className="card w-96 bg-base-100 shadow-xl slider-div">
+              <div className="card md:w-96 w-full bg-base-100 shadow-xl slider-div">
                 <figure>
                   <img className="w-full" src={event5} alt="event" />
                 </figure>
@@ -132,7 +132,7 @@ const Events = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide className="relative">
-              <div className="card w-96 bg-base-100 shadow-xl slider-div">
+              <div className="card md:w-96 w-full bg-base-100 shadow-xl slider-div">
                 <figure>
                   <img className="w-full" src={event6} alt="event" />
                 </figure>
@@ -152,15 +152,15 @@ const Events = () => {
           </Swiper>
         </section>
         <section className="">
-          <div className="card w-3/4 mx-auto bg-base-100 shadow-xl bg-img2">
+          <div className="card md:w-3/4 w-11/12 mx-auto bg-base-100 shadow-xl bg-img2">
             <div className="absolute rounded-lg bg-purple-700 w-full h-full opacity-70"></div>
             <div className="card-body z-20 text-white">
-              <h2 className="card-title text-5xl event-planner">
-                The Best Event <br /> Planner
+              <h2 className="card-title md:text-5xl text-3xl event-planner">
+                The Best Event Planner
               </h2>
               <p className="my-3 text-lg">
-                With our passion, knowledge, creative flair and inspiration, we
-                are dedicated in helping you to achieve.
+              আমাদের আবেগ, জ্ঞান, সৃজনশীল ফ্লেয়ার এবং অনুপ্রেরণা সহ, আমরা আপনাকে অর্জন করতে সাহায্য করার জন্য 
+               নিবেদিত।
               </p>
               <ul>
                 <li className="text-xl mb-2 fs-bold flex gap-2 items-center">
@@ -189,7 +189,8 @@ const Events = () => {
                 </li>
               </ul>
               <div className="flex justify-start mt-3">
-                <button className="border-2 py-2 read-btn btn-outline hover:btn-outline-0 btn-secondary w-1/3 text-center rounded-md font-semibold ease-in duration-300 hover:rotate-6 animate-pulse">
+                <button className="border-2 py-2 read-btn btn-outline hover:btn-outline-0 btn-secondary md:w-1/3 
+                w-1/2 text-center rounded-md font-semibold ease-in duration-300 hover:rotate-6 animate-pulse">
                   View More....
                 </button>
               </div>

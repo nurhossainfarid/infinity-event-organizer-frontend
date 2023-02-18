@@ -4,6 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import CustomLink from "./CustomLink";
+import { FcBusinessman } from "react-icons/fc";
 import "./Header.css";
 
 const Header = () => {
@@ -31,8 +32,7 @@ const Header = () => {
   // const str = 'The quick brown fox jumps over the lazy dog.';
   // console.log(str.slice(0, 2));
   const firstNm = collectUser?.firstName.slice(0,1);
-  const lastNm = collectUser?.lastName.slice(0,1);
-  console.log(firstNm, lastNm);
+  const lastNm = collectUser?.lastName.slice(0, 1);
 
   const logout = () => {
     signOut(auth);
@@ -57,7 +57,7 @@ const Header = () => {
   };
   return (
     <nav className={scrolled ? "scrolled" : ""}>
-      <div className="mx-28">
+      <div className="lg:mx-28 md:mx-2">
         <div className="navbar">
           <div className="navbar-start">
             <div className="dropdown">
@@ -79,7 +79,8 @@ const Header = () => {
               </label>
               <ul
                 tabIndex="0"
-                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 
+                res-nav"
               >
                 <li>
                   <CustomLink to="/home">Home</CustomLink>
@@ -106,7 +107,7 @@ const Header = () => {
                 )}
               </ul>
             </div>
-            <Link to="/home" className="bg-none normal-case text-xl font-semibold">
+            <Link to="/home" className="bg-none normal-case text-md md:text-xl font-semibold">
               Infinity Event Organizer
             </Link>
           </div>
@@ -150,7 +151,7 @@ const Header = () => {
               )}
             </ul>
           </div>
-          <div className="navbar-end">
+          <div className="md:navbar-end">
             <div>
               <div className="flex gap-3">
                 <div className="dropdown dropdown-end">
@@ -158,8 +159,9 @@ const Header = () => {
                     tabIndex="0"
                     className="btn btn-circle avatar border-none"
                   >
-                    <div className="bg-white text-neutral-content rounded-full w-full">
-                      <p className="text-3xl mt-1">{ undefined ? '' : firstNm + lastNm}</p>
+                    <div className="bg-white text-neutral-content rounded-full w-full"> 
+                      {!user ? <p className="text-3xl mt-1"></p> : <p className="text-3xl mt-1">{firstNm + 
+                       lastNm}</p>}
                     </div>
                   </label>
                   <ul

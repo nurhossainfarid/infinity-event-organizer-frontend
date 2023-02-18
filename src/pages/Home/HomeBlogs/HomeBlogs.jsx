@@ -19,22 +19,23 @@ import './HomeBlogs.css';
 
 const HomeBlogs = () => {
     return (
-        <div className="bg-slate-100 py-28">
+        <div className="bg-slate-100 md:py-16 lg:py-28">
             {/* blogs header section */}
-            <section className="md:mx-28">
-                <h1 className="blogs-header text-secondary text-center text-5xl animate-bounce">Our Latest
+            <section className=" md:mx-10 lg:mx-28">
+                <h1 className="blogs-header text-secondary text-center md:text-3xl lg:text-5xl 
+                animate-bounce">Our Latest
                     News/Blogs</h1>
-                <p className="text-lg text-gray-500 mx-auto py-5 md:w-2/3 text-center">Integer sollicitudin
-                    ligula non enim sodales, non lacinia nunc ornare. Sed commodo tempor dapibus tortor volutpat,
-                    eget rhoncus nisi fringilla. Phasellus ornare risus ineuismod varius.</p>
+                <p className="text-md lg:text-lg text-gray-500 mx-auto py-3 lg:py-5 lg:w-1/2 text-center">আপনিও 
+                 কন্ট্রিবিউট করতে পারেন আমাদের ব্লগের সাথে, আপনার মূল্যবান আইডিয়া গুলো শেয়ার করতে পারেন সবার 
+                  সাথে</p>
             </section>
-            <section className="md:mx-28 mt-10">
+            <section className="mx-6 md:mx-10 lg:mx-28 mt-10">
                 <Swiper
                     spaceBetween={30}
                     loop={true}
                     loopFillGroupWithBlank={true}
                     autoplay={{
-                        delay: 5000,
+                        delay: 8000,
                         disableOnInteraction: false,
                     }}
                     pagination={{
@@ -43,9 +44,10 @@ const HomeBlogs = () => {
                     modules={[Pagination, Autoplay]}
                     className="mySwiper"
                 >
-                    <SwiperSlide className="grid grid-flow-row-dense grid-cols-3 grid-rows-1 gap-10 ">
-                        <div className="col-span-2">
-                            <div className="grid grid-cols-2 gap-5 bg-white">
+                    <SwiperSlide className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+                     lg:grid-rows-1 gap-10 ">
+                        <div className="lg:col-span-2">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 bg-white">
                                 <img src={img1} className="" alt="birthday"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
@@ -63,7 +65,7 @@ const HomeBlogs = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-5 bg-white mt-8">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 bg-white mt-8">
                                 <img src={img2} className="" alt="party"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
@@ -83,7 +85,7 @@ const HomeBlogs = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                            <div className="card card-compact lg:w-96 bg-base-100 shadow-xl">
                                 <figure><img src={img3} alt="party" /></figure>
                                 <div className="card-body">
                                     <div className="m-5">
@@ -108,9 +110,10 @@ const HomeBlogs = () => {
                             </div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className="grid grid-flow-row-dense grid-cols-3 grid-rows-1 gap-10 ">
+                    <SwiperSlide className="grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 grid-rows-1 
+                    gap-10 ">
                         <div className="col-span-2">
-                            <div className="grid grid-cols-2 gap-5 bg-white">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-white">
                                 <img src={img1} className="" alt="birthday"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
@@ -128,7 +131,7 @@ const HomeBlogs = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-5 bg-white mt-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-white mt-8">
                                 <img src={img2} className="" alt="party"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
@@ -148,7 +151,7 @@ const HomeBlogs = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                            <div className="card card-compact w-full md:w-96 bg-base-100 shadow-xl">
                                 <figure><img src={img3} alt="party" /></figure>
                                 <div className="card-body">
                                     <div className="m-5">
@@ -172,9 +175,10 @@ const HomeBlogs = () => {
                             </div>
                         </div>
                     </SwiperSlide>
-                    <SwiperSlide className="grid grid-flow-row-dense grid-cols-3 grid-rows-1 gap-10 ">
+                    <SwiperSlide className="grid grid-flow-row-dense grid-cols-1 lg:grid-cols-3 lg:grid-rows-1 
+                     gap-10">
                         <div className="col-span-2">
-                            <div className="grid grid-cols-2 gap-5 bg-white">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-white">
                                 <img src={img1} className="" alt="birthday"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
@@ -193,7 +197,7 @@ const HomeBlogs = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-5 bg-white mt-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 bg-white mt-8">
                                 <img src={img2} className="" alt="party"/>
                                 <div className="m-5 mt-8">
                                     <ul className="flex items-center gap-5 mb-5">
@@ -215,7 +219,7 @@ const HomeBlogs = () => {
                             </div>
                         </div>
                         <div>
-                            <div className="card card-compact w-96 bg-base-100 shadow-xl">
+                            <div className="card card-compact w-full md:w-96 bg-base-100 shadow-xl">
                                 <figure><img src={img3} alt="party" /></figure>
                                 <div className="card-body">
                                     <div className="m-5">

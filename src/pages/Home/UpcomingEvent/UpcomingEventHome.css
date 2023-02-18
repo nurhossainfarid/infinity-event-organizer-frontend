@@ -80,3 +80,19 @@
     0 0 400px rgba(162 73 246 0.8),
     0 0 500px rgba(162 73 246 0.1),
 }
+
+/* responsive */
+@media only screen and (max-width: 640px) {
+    .cube {
+        width: 150px;
+        height: 150px;
+    }
+    .top {
+        width: 150px;
+        height: 1500px;
+    }
+    .top::before {
+        width: 150px;
+        height: 150px;
+    }
+}

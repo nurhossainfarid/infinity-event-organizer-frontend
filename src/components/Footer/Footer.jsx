@@ -23,8 +23,9 @@ const Footer = () => {
   return (
     <footer className="footer-bg relative">
       <div className="absolute bg-secondary w-full h-full opacity-70"></div>
-      <div className="relative py-20">
-        <div className="grid md:grid-cols-4 gap-10 pb-20 mx-28">
+      <div className="relative py-6 md:py-10 lg:py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-5 lg:gap-10 pb-20 mx-6 md:mx-10 
+         lg:mx-28">
           <div>
             <h1 className="text-primary text-3xl animate-pulse footer-header">
               Infinity Event Organizer
@@ -138,12 +139,16 @@ const Footer = () => {
             </div>
             <div>
               <ul className="flex gap-5">
-                <li
-                  className="tooltip bg-primary p-3 rounded-md hover:bg-secondary hover:text-primary ease-in duration-300"
+                <a 
+                  href="https://www.facebook.com/profile.php?id=100089942713091" 
+                  className="tooltip bg-primary p-3 rounded-md hover:bg-secondary hover:text-primary 
+                  ease-in duration-300"
                   data-tip="Facebook"
+                  target="_blank"
                 >
-                  <FaFacebookF className="text-lg"></FaFacebookF>
-                </li>
+                  <FaFacebookF
+                    className="text-lg"></FaFacebookF>
+                </a>
                 <li
                   className="tooltip bg-primary p-3 rounded-md hover:bg-secondary hover:text-primary ease-in duration-300"
                   data-tip="Twitter"

@@ -1,6 +1,7 @@
 .home-package-container {
-    margin-bottom: 38rem;
+    margin-bottom: 35rem;
 }
+
 .home-package {
     background-image: url(../../../images/home_package_bg.jpg);
     background-position: center;
@@ -34,4 +35,12 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+
+/* responsive */
+@media only screen and (max-width: 820px) {
+    .home-package-container {
+        margin-bottom: 0rem;
+    }
 }

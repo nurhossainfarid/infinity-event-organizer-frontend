@@ -24,19 +24,19 @@ import "./OrganizationHomePage.css";
 const OrganizationHomePage = () => {
   return (
     <div className=" bg-slate-100">
-      <div className="py-24 mx-28">
-        <section className="py-8 organizer-text-bg rounded-lg">
-          <div className="mx-28 text-center">
+      <div className="md:py-16 lg:py-24 md:mx-10 lg:mx-28">
+        <section className="py-5 lg:py-8 organizer-text-bg rounded-lg">
+          <div className="md:mx-4 lg:mx-28 text-center">
             <p className="font-semibold text-red-600 pb-3">
               Choose Best Organizers
             </p>
-            <h1 className="organizers-header text-primary text-5xl animate-bounce">
+            <h1 className="organizers-header text-primary text-3xl md:text-4xl lg:text-5xl animate-bounce">
               Organizers in BD
             </h1>
-            <p className="text-lg text-gray-200 mx-auto pt-5">
-              Integer sollicitudin ligula non enim sodales, non lacinia nunc
-              ornare. Sed commodo tempor dapibus tortor volutpat, eget rhoncus
-              nisi fringilla. Phasellus ornare risus ineuismod varius.
+            <p className="text-md lg:text-lg text-gray-200 mx-auto pt-3 lg:pt-5">
+            এখানে পাচ্ছেন বাংলাদেশের সব ধরনের অর্গানাইজার গুলোকে। যেখান থেকে আপনি চাইলে আপনার পছন্দ অনুযায়ী 
+             অর্গানাইজারের প্যাকেজগুলো বুকিং করতে পারেন অথবা কাস্টম ভাবে তৈরি করতে পারেন। এছাড়াও আপনি চাইলে 
+              আপনার অনুষ্ঠানের জন্য খাবার ও সাজসজ্জা জন্য ওডার করতে পারবেন।
             </p>
           </div>
         </section>
@@ -60,12 +60,14 @@ const OrganizationHomePage = () => {
             <div className="relative w-full h-full">
               <img className="h-full w-full" src={img1} alt="" />
             </div>
-            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 text-center opacity-10">
+            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 
+             text-center opacity-10">
               <h1 className="text-5xl font-bold mt-20 animation-pulse">
                 Grandiose Restaurant
               </h1>
             </div>
-            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
+            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 
+             ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
               <span className="flex">
                 <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
               </span>
@@ -88,7 +90,8 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
+                <button className="btn btn-primary text-white text-md animate-pulse border-2 
+                hover:btn-secondary">
                   See Details..
                 </button>
               </div>
@@ -98,10 +101,12 @@ const OrganizationHomePage = () => {
             <div className="relative w-full h-full">
               <img className="h-full w-full" src={img2} alt="" />
             </div>
-            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 text-center opacity-10">
+            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 
+             text-center opacity-10">
               <h1 className="text-5xl font-bold mt-20">Grandiose Restaurant</h1>
             </div>
-            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
+            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 
+             ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
               <span className="flex">
                 <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
               </span>
@@ -124,7 +129,8 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
+                <button className="btn btn-primary text-white text-md animate-pulse border-2 
+                hover:btn-secondary ">
                   See Details..
                 </button>
               </div>
@@ -134,10 +140,12 @@ const OrganizationHomePage = () => {
             <div className="relative w-full h-full">
               <img className="h-full w-full" src={img3} alt="" />
             </div>
-            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 text-center opacity-10">
+            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 
+             text-center opacity-10">
               <h1 className="text-5xl font-bold mt-20">Grandiose Restaurant</h1>
             </div>
-            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
+            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 
+             ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
               <span className="flex">
                 <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
               </span>
