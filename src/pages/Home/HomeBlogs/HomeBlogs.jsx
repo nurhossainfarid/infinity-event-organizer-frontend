@@ -60,8 +60,8 @@ const HomeBlogs = () => {
                                     <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the
                                         1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary 
-                                        hover:text-primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-white hover:bg-fuchsia-600 
+                                        ">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -78,8 +78,8 @@ const HomeBlogs = () => {
                                     <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the
                                         1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary 
-                                        hover:text-primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-white hover:bg-fuchsia-600 
+                                        ">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -102,8 +102,8 @@ const HomeBlogs = () => {
                                             the 1500s is reproduced below for those interested. Sections 1.10...
                                         </p>
                                         <div className="mt-10">
-                                            <button className="btn btn-secondary text-secondary 
-                                            hover:text-primary">Read More ...</button>
+                                            <button className="btn btn-secondary text-white hover:bg-fuchsia-600 
+                                        ">Read More ...</button>
                                         </div>
                                     </div>
                                 </div>
@@ -126,8 +126,8 @@ const HomeBlogs = () => {
                                     <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the
                                         1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary 
-                                        hover:text-primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-white hover:bg-fuchsia-600 
+                                        ">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -144,8 +144,8 @@ const HomeBlogs = () => {
                                     <p className="text-gray-500">The standard chunk of Lorem Ipsum used since the 
                                      1500s is reproduced below for those interested. Sections 1.10...</p>
                                     <div className="mt-10">
-                                        <button className="btn btn-secondary text-secondary hover:text- 
-                                         primary">Read More ...</button>
+                                        <button className="btn btn-secondary text-white hover:bg-fuchsia-600 
+                                        ">Read More ...</button>
                                     </div>
                                 </div>
                             </div>
@@ -167,8 +167,8 @@ const HomeBlogs = () => {
                                             the 1500s is reproduced below for those interested. Sections 1.10...
                                         </p>
                                         <div className="mt-10">
-                                            <button className="btn btn-secondary text-secondary 
-                                            hover:text-primary">Read More ...</button>
+                                            <button className="btn btn-secondary text-white hover:bg-fuchsia-600 
+                                        ">Read More ...</button>
                                         </div>
                                     </div>
                                 </div>

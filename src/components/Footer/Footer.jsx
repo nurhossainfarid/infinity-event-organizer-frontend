@@ -24,7 +24,7 @@ const Footer = () => {
     <footer className="footer-bg relative">
       <div className="absolute bg-secondary w-full h-full opacity-70"></div>
       <div className="relative py-6 md:py-10 lg:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 md:gap-5 lg:gap-10 pb-20 mx-6 md:mx-10 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-10 pb-20 mx-6 md:mx-10 
          lg:mx-28">
           <div>
             <h1 className="text-primary text-3xl animate-pulse footer-header">
@@ -123,8 +123,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="bg-gradient-to-r from-purple-500 to-pink-500 w-4/5">
-          <div className="py-6 flex justify-around">
+        <div className="bg-gradient-to-r from-purple-500 to-pink-500 mx-2 md:mx-6 md:w-4/5">
+          <div className="py-6 flex flex-col  md:flex-row justify-center items-center gap-5 md:gpa-0 
+          md:justify-around">
             <div className="form-control">
               <div className="input-group">
                 <input
@@ -150,19 +151,22 @@ const Footer = () => {
                     className="text-lg"></FaFacebookF>
                 </a>
                 <li
-                  className="tooltip bg-primary p-3 rounded-md hover:bg-secondary hover:text-primary ease-in duration-300"
+                  className="tooltip bg-primary p-3 rounded-md hover:bg-secondary hover:text-primary ease-in      
+                   duration-300"
                   data-tip="Twitter"
                 >
                   <FaTwitter className="text-lg"></FaTwitter>
                 </li>
                 <li
-                  className="tooltip bg-primary p-3 rounded-md hover:bg-secondary hover:text-primary ease-in duration-300"
+                  className="tooltip bg-primary p-3 rounded-md hover:bg-secondary hover:text-primary ease-in 
+                   duration-300"
                   data-tip="Dribble"
                 >
                   <FaDribbble className="text-lg"></FaDribbble>
                 </li>
                 <li
-                  className="tooltip bg-primary p-3 rounded-md hover:bg-secondary hover:text-primary ease-in duration-300"
+                  className="tooltip bg-primary p-3 rounded-md hover:bg-secondary hover:text-primary ease-in 
+                   duration-300"
                   data-tip="Linked In"
                 >
                   <FaLinkedinIn className="text-lg"></FaLinkedinIn>

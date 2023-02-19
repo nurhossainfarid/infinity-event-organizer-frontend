@@ -151,7 +151,7 @@ const Header = () => {
               )}
             </ul>
           </div>
-          <div className="md:navbar-end">
+          <div className="navbar-end">
             <div>
               <div className="flex gap-3">
                 <div className="dropdown dropdown-end">
