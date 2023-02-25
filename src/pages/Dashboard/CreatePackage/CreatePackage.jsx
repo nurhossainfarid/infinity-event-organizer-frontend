@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const CreatePackage = () => {
   const {
@@ -33,7 +34,13 @@ const CreatePackage = () => {
       body: JSON.stringify(addPackage),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((result) => {
+        if (result.status.toLowerCase() === "success") {
+          toast.success("Package Added Successfully");
+        } else {
+          toast.error("Package count not added successfully");
+        }
+      });
   };
   return (
     <div>

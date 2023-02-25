@@ -3,7 +3,7 @@ import React from 'react';
 const HandleClientFeedback = () => {
     return (
         <div className="mt-5">
-            <h1 className="dashboard-header text-3xl text-center animate-bounce">Create Admin</h1>
+            <h1 className="dashboard-header text-xl md:text-3xl text-center animate-bounce">Client Feedback</h1>
             <div className="overflow-x-auto mt-5">
                 <table className="table w-full">
                     <thead>

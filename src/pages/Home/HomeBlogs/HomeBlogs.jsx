@@ -21,11 +21,12 @@ const HomeBlogs = () => {
     return (
         <div className="bg-slate-100 md:py-16 lg:py-28">
             {/* blogs header section */}
-            <section className=" md:mx-10 lg:mx-28">
-                <h1 className="blogs-header text-secondary text-center md:text-3xl lg:text-5xl 
+            <section className=" pt-5 md:pt-10 md:mx-10 lg:mx-28">
+                <h1 className="blogs-header text-secondary text-center text-xl md:text-3xl lg:text-5xl 
                 animate-bounce">Our Latest
                     News/Blogs</h1>
-                <p className="text-md lg:text-lg text-gray-500 mx-auto py-3 lg:py-5 lg:w-1/2 text-center">আপনিও 
+                <p className="text-sm md:text-md lg:text-lg text-gray-500 mx-auto py-3 lg:py-5 lg:w-1/2 
+                text-center">আপনিও 
                  কন্ট্রিবিউট করতে পারেন আমাদের ব্লগের সাথে, আপনার মূল্যবান আইডিয়া গুলো শেয়ার করতে পারেন সবার 
                   সাথে</p>
             </section>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // custom css
 import "./Welcome.css";
 
@@ -28,10 +29,10 @@ const Welcome = () => {
             </p>
             <div className="flex justify-end">
               {/* The button to open modal */}
-              <button className="border-2 read-btn btn-outline btn-secondary lg:w-1/3 w-1/2 text-center 
-              rounded-md font-semibold ease-in duration-300 hover:rotate-6">
+              <Link to="/services" for="#great_service" className="border-2 read-btn btn-outline btn-secondary 
+               lg:w-1/3 w-1/2 text-center rounded-md font-semibold ease-in duration-300 hover:rotate-6">
                 Read More....
-              </button>
+              </Link>
               {/* Put this part before </body> tag */}
               <input type="checkbox" id="my-modal-3" className="modal-toggle" />
               <div className="modal">

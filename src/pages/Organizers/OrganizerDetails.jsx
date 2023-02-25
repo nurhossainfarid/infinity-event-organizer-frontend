@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cube";
@@ -32,21 +31,22 @@ const OrganizerDetails = () => {
                     <h1 className="text-5xl uppercase">{organizerData?.name}</h1>
                     <div className="mt-10">
                         <h3 className="text-2xl">Contact Information</h3>
-                        <div className="ml-24 mt-1">
+                        <div className="ml-24 mt-1 flex flex-col gap-1">
                             <div>
-                                <h5 className="text-lg">Phone Number: </h5>
+                                <h5 className="text-lg">Phone Number: {organizerData?.contactNumber}</h5>
                             </div>
                             <div>
-                                <h5 className="text-lg">Email: </h5>
+                                <h5 className="text-lg">Email: {organizerData?.email}</h5>
                             </div>
                             <div>
-                                <h5 className="text-lg">Facebook: </h5>
+                                <h5 className="text-lg">Facebook: {organizerData?.facebook}</h5>
                             </div>
                             <div>
-                                <h5 className="text-lg">Instagram: </h5>
+                                <h5 className="text-lg">Instagram: {organizerData?.instagram}</h5>
                             </div>
                             <div>
-                                <h5 className="text-lg">What's App: </h5>
+                                <h5 className="text-lg"><span className="text-xl">What's App: </span> 
+                                  {organizerData?.whatsapp}</h5>
                             </div>
                         </div>
                     </div>

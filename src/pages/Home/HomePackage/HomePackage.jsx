@@ -22,7 +22,7 @@ const HomePackage = () => {
             <section>
                 <div className="mx-2 md:mx-10 lg:mx-28 relative lg:absolute mt-10 lg:-mt-40">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-3 lg:gap-6 pb-20 
-                    lg:pb-32">
+                    lg:pb-32 justify-center items-center">
                         <div className="show-package1 border-8 border-white hover:border-secondary 
                         hover:scale-95 ease-in duration-300 ">
                             <div className="card lg:w-96 shadow-xl relative rounded-none mx-2 my-2 
@@ -95,9 +95,11 @@ const HomePackage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-center lg:pb-16 animate-bounce">
-                        <button className="btn btn-outline btn-secondary text-2xl hover:font-bold">View All !! 
-                         </button>
+                    <div className="flex justify-center lg:pb-16">
+                        <button className="border-2 rounded-lg border-purple-600 text-purple-600 p-2 text-xl 
+                        font-semibold hover:bg-purple-600 hover:text-white ease-out duration-150">
+                            View All !!
+                        </button>
                     </div>
                 </div>
             </section>

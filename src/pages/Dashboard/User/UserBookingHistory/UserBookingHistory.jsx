@@ -3,7 +3,7 @@ import React from 'react';
 const UserBookingHistory = () => {
     return (
         <div className="mt-5">
-        <h1 className="dashboard-header text-3xl text-center animate-bounce">Booking History</h1>
+        <h1 className="dashboard-header text-xl md:text-3xl text-center animate-bounce">Booking History</h1>
         <div className="overflow-x-auto mt-5">
             <table className="table w-full">
                 <thead>

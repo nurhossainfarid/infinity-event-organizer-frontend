@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 // custom css
 import './HandleOrganizers.css';
@@ -15,16 +16,6 @@ const HandleOrganizers = () => {
                 setOrganizersData(data.data);
             })
     }, [organizersData]);
-    // console.time('map');
-    // organizersData.map((organizer) => organizer.name);
-    // console.timeEnd('map');
-    // console.time('reduce');
-    // const arrayToObject = organizersData.reduce((acc, cur) => {
-    //     const id = cur._id;
-    //     acc[id] = cur;
-    //     return acc;
-    // }, {});
-    // console.timeEnd('reduce');
 
     // navigate organizer
     const navigate = useNavigate();
@@ -42,56 +33,57 @@ const HandleOrganizers = () => {
           },
         })
           .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            // if (data.deletedCount) {
-            //     toast.success(`Product ${name} is deleted successfully`);
-            //     refetch();
-            //     setDeletingProduct(null);
-            // } else {
-            //     toast.error(`Failed delete`)
-            // }
+          .then((result) => {
+            if (result.status.toLowerCase() === "success") {
+                toast.success("Organizer delete successfully")    
+            } else {
+                toast.error("Organizer could not delete successfully")
+            };
           });
       };
     return (
-        <div className="mt-10">
+        <div className="mx-1 md:mx-0 mt-5 md:mt-10">
             <div className="flex justify-between">
-                <h1 className="text-3xl text-center mb-10 dashboard-header">Handle Organizers</h1>
-                <Link to="/dashboard/createOrganization" className="btn btn-outline btn-secondary animate-bounce text-lg ">Add Organizers</Link>
+                <h1 className="text-xl md:text-3xl text-center mb-10 dashboard-header">Handle Organizers</h1>
+                <Link to="/dashboard/createOrganization" className="btn btn-outline btn-secondary animate-bounce 
+                  md:text-lg ">Add Organizers</Link>
             </div>
-            <div className="grid grid-cols-3 gap-10">
-                {
-                    organizersData.map((org) => (
-                        <div className="card w-80 bg-base-100 shadow-xl">
-                            <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-                            <div className="card-body">
-                                <h2 className="card-title">
-                                    Name: {org?.name}
-                                </h2>
-                                <p>Email: {org.email}</p>
-                                <p>Phone: {org.contactNumber}</p>
-                                <p>Address: {org.address}</p>
-                                <p className=''>Status: {org.status}</p>
-                                <p className=''>Package Name: {org?.packages.map(p => <small className="flex 
-                                flex-col">{p?.name},</small>)}</p>
-                                <div className="card-actions mt-5">
-                                    <button className="btn btn-sm hover:btn-secondary">
-                                        Details
-                                    </button> 
-                                    <button className="btn btn-sm hover:btn-secondary" onClick={() => 
-                                    navigateOrganizer(org._id)}>
-                                        Update
-                                    </button> 
-                                    <button className="btn btn-sm hover:btn-secondary" onClick={() => 
-                                    handleDelete(org._id)}>
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
+            <table className="table w-full">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Contact Number</th> 
+              <th>Address</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {organizersData.map((org) => (
+              <tr>
+                <td>{org?.name}</td>
+                <td>{org.email}</td>
+                <td>{org.contactNumber}</td>
+                <td>{org.address}</td>
+                <td>{org.status}</td>
+                <td className="flex flex-col gap-2">
+                <button className="btn btn-sm hover:btn-secondary">
+                        Details
+                        </button> 
+                        <button className="btn btn-sm hover:btn-secondary" onClick={() => 
+                        navigateOrganizer(org._id)}>
+                            Update
+                        </button> 
+                        <button className="btn btn-sm hover:btn-secondary" onClick={() => 
+                        handleDelete(org._id)}>
+                            Delete
+                        </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const UpdatePackage = () => {
   const { packageId } = useParams();
@@ -44,7 +45,13 @@ const UpdatePackage = () => {
       body: JSON.stringify(updatePackage),
     })
       .then((res) => res.json())
-      .then((result) => console.log(result));
+      .then((result) => {
+        if (result.status.toLowerCase() === "success") {
+          toast.success("Package Update Successfully");
+        } else {
+          toast.error("Failed for Update");
+        }
+      });
   };
   return (
     <div className="mx-28 mt-28">

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const HandlePackages = () => {
   const [packagesData, setPackagesData] = useState([]);
-  // const [deletePackage, setDeletePackage] = useState(null);
 
   useEffect(() => {
     const url =
@@ -29,24 +29,21 @@ const HandlePackages = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        // if (data.deletedCount) {
-        //     toast.success(`Product ${name} is deleted successfully`);
-        //     refetch();
-        //     setDeletingProduct(null);
-        // } else {
-        //     toast.error(`Failed delete`)
-        // }
+      .then((result) => {
+        if (result.status.toLowerCase() === "success") {
+            toast.success(`Package was deleted successfully`);
+        } else {
+            toast.error(`Failed delete`)
+        }
       });
   };
   return (
-    <div className="mt-5">
+    <div className="mt-5 mx-1 md:mx-0">
       <div className="flex justify-between mt-5">
-        <h1 className="text-3xl text-center mb-10 dashboard-header">
+        <h1 className="text-xl md:text-3xl text-center mb-10 dashboard-header">
           Handle Package
         </h1>
-        <button className="btn btn-outline btn-secondary animate-bounce text-lg">
+        <button className="btn btn-outline btn-secondary animate-bounce text-sm md:text-lg">
           <Link to="/dashboard/createPackage">Add Package</Link>
         </button>
       </div>

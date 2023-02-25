@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 const BookingHistory = () => {
     const [bookingData, setBookingData] = useState([]);
@@ -21,20 +22,17 @@ const BookingHistory = () => {
           },
         })
           .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            // if (data.deletedCount) {
-            //     toast.success(`Product ${name} is deleted successfully`);
-            //     refetch();
-            //     setDeletingProduct(null);
-            // } else {
-            //     toast.error(`Failed delete`)
-            // }
+          .then((result) => {
+            if (result.status.toLowerCase() === "success") {
+                toast.success("Booking deleted successfully")
+            } else {
+                toast.error("Booking could not be deleted successfully")
+            }
           });
       };
     return (
-        <div className="mt-5">
-            <h1 className="dashboard-header text-3xl text-center animate-bounce">Booking History</h1>
+        <div className="mx-1 md:mx-0 mt-5">
+            <h1 className="dashboard-header text-xl md:text-3xl text-center animate-bounce">Booking History</h1>
             <div className="overflow-x-auto mt-5">
                 <table className="table w-full">
                     <thead>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const UpdateOrganizer = () => {
     const { orgId } = useParams();
@@ -14,7 +15,6 @@ const UpdateOrganizer = () => {
                 setOrgData(data.data);
             })
     }, [orgData])
-    console.log(orgData?.packages[0]);
     // use form for update
     const {
         register,
@@ -41,7 +41,13 @@ const UpdateOrganizer = () => {
         body: JSON.stringify(addOrganizer),
       })
         .then((res) => res.json())
-        .then((result) => console.log(result));
+          .then((result) => {
+            if (result.status.toLowerCase() === "success") {
+                toast.success("Organizer updated successfully");
+            } else {
+                toast.error("Organizer could not be updated successfully");
+            }
+        });
     };
     return (
         <div className="mx-28 mt-28 mb-10">

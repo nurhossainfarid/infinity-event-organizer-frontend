@@ -61,9 +61,11 @@ const GalleryHome = () => {
                     </div>
                 </div>
             </section>
-            <div className="flex justify-center animate-bounce gallery-view-button relative my-10 lg:my-16">
-                    <button className="btn btn-outline btn-secondary text-2xl hover:font-bold">View All !! 
-                     </button>
+            <div className="flex justify-center gallery-view-button relative my-10 lg:my-16">
+                        <button className="border-2 rounded-lg border-purple-600 text-purple-600 p-2 text-xl 
+                        font-semibold hover:bg-purple-600 hover:text-white ease-out duration-150">
+                            View All !!
+                        </button>
             </div>
         </div>
     );

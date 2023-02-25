@@ -9,6 +9,8 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
 // import all components
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header/Header';
 import About from './pages/About/About';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -179,6 +181,7 @@ function App() {
           <Route path="createCustomPackage" element={<CreateCustomPackage></CreateCustomPackage>}></Route>
         </Route>
       </Routes>
+      <ToastContainer></ToastContainer>
       <Footer></Footer>
     </div>
   );

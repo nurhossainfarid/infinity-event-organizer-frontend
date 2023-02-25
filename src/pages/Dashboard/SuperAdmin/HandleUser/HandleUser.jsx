@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const UserHistory = () => {
   const [users, setUsers] = useState([]);
@@ -28,15 +29,12 @@ const UserHistory = () => {
       },
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        // if (data.deletedCount) {
-        //     toast.success(`Product ${name} is deleted successfully`);
-        //     refetch();
-        //     setDeletingProduct(null);
-        // } else {
-        //     toast.error(`Failed delete`)
-        // }
+      .then((result) => {
+        if (result.status === "success") {
+          toast.success('User deleted successfully')
+        } else {
+          toast.error("User could not be deleted successfully")
+        }
       });
   };
 
@@ -81,7 +79,7 @@ const UserHistory = () => {
   };
   return (
     <div className="mt-5">
-      <h1 className="dashboard-header text-3xl text-center animate-bounce">
+      <h1 className="dashboard-header text-xl md:text-3xl text-center animate-bounce">
         Handle User
       </h1>
       <div className="overflow-x-auto mt-5">
@@ -144,9 +142,7 @@ const UserHistory = () => {
                         </button>
                       </div>
                     )
-                    }
-
-                    
+                    } 
                   </div>
                 </td>
               </tr>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const CreateOrganizer = () => {
     const {
@@ -27,7 +28,14 @@ const CreateOrganizer = () => {
         body: JSON.stringify(addOrganizer),
       })
         .then((res) => res.json())
-        .then((result) => console.log(result));
+        .then((result) => {
+          console.log(result);
+          if (result.status === "Success") {
+            toast.success('Organizer added successfully')
+          } else {
+            toast.error(`Organizer could not be added successfully.`)
+          }
+        });
     };
     return (
         <div>
@@ -73,7 +81,7 @@ const CreateOrganizer = () => {
                     message: "Email is require",
                   },
                   pattern: {
-                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                    value: /[a-zA-Z1-9]+@[a-zA-Z]+\.[a-z]{2,3}/,
                     message: "Provide a valid email",
                   },
                 })}
@@ -91,6 +99,98 @@ const CreateOrganizer = () => {
                 )}
               </label>
             </div>
+            {/* website */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text text-black text-lg">Website</span>
+              </label>
+              <input
+                type="website"
+                className="input input-bordered w-full max-w-xs"
+                {...register("website")}
+              />
+              <label className="label">
+                {errors.website?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.website.message}
+                  </span>
+                )}
+                {errors.website?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.website.message}
+                  </span>
+                )}
+              </label>
+            </div>
+            {/* facebook */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text text-black text-lg">Facebook</span>
+              </label>
+              <input
+                type="facebook"
+                className="input input-bordered w-full max-w-xs"
+                {...register("facebook")}
+              />
+              <label className="label">
+                {errors.facebook?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.facebook.message}
+                  </span>
+                )}
+                {errors.facebook?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.facebook.message}
+                  </span>
+                )}
+              </label>
+            </div>
+            {/* instagram */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text text-black text-lg">Instagram</span>
+              </label>
+              <input
+                type="instagram"
+                className="input input-bordered w-full max-w-xs"
+                {...register("instagram")}
+              />
+              <label className="label">
+                {errors.instagram?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.instagram.message}
+                  </span>
+                )}
+                {errors.instagram?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.instagram.message}
+                  </span>
+                )}
+              </label>
+            </div>
+            {/* whatsapp */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text text-black text-lg">Whatsapp</span>
+              </label>
+              <input
+                type="whatsapp"
+                className="input input-bordered w-full max-w-xs"
+                {...register("whatsapp")}
+              />
+              <label className="label">
+                {errors.whatsapp?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.whatsapp.message}
+                  </span>
+                )}
+                {errors.whatsapp?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.whatsapp.message}
+                  </span>
+                )}
+              </label>
+            </div>
             {/* phone */}
             <div className="form-control">
               <label className="label">
@@ -104,14 +204,17 @@ const CreateOrganizer = () => {
                     value: true,
                     message: "Phone is require",
                   },
-                  maxLength: 11,
-                  minLength: 11,
                 })}
               />
               <label className="label">
-                {errors.phone?.type === "required" && (
+                {errors.contactNumber?.type === "required" && (
                   <span className="label-text-alt text-red-500">
-                    {errors.address.message}
+                    {errors.contactNumber.message}
+                  </span>
+                )}
+                {errors.contactNumber?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.contactNumber.message}
                   </span>
                 )}
               </label>
@@ -147,12 +250,7 @@ const CreateOrganizer = () => {
               <input
                 type="text"
                 className="input input-bordered w-full max-w-xs"
-                {...register("image", {
-                  required: {
-                    value: true,
-                    message: "Image is require",
-                  },
-                })}
+                {...register("image")}
               />
               <label className="label">
                 {errors.image?.type === "required" && (

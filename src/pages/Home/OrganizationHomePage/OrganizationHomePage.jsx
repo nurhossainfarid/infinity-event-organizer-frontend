@@ -62,7 +62,7 @@ const OrganizationHomePage = () => {
             </div>
             <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 
              text-center opacity-10">
-              <h1 className="text-5xl font-bold mt-20 animation-pulse">
+              <h1 className="text-5xl font-bold mt-20 ">
                 Grandiose Restaurant
               </h1>
             </div>
@@ -90,7 +90,7 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 
+                <button className="btn btn-primary text-white text-md border-2 
                 hover:btn-secondary">
                   See Details..
                 </button>
@@ -129,7 +129,7 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 
+                <button className="btn btn-primary text-white text-md border-2 
                 hover:btn-secondary ">
                   See Details..
                 </button>
@@ -168,7 +168,8 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
+                <button className="btn btn-primary text-white text-md border-2 
+                hover:btn-secondary ">
                   See Details..
                 </button>
               </div>
@@ -178,12 +179,14 @@ const OrganizationHomePage = () => {
             <div className="relative w-full h-full">
               <img className="h-full w-full" src={img1} alt="" />
             </div>
-            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 text-center opacity-10">
-              <h1 className="text-5xl font-bold mt-20 animation-pulse">
+            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 
+             text-center opacity-10">
+              <h1 className="text-5xl font-bold mt-20 ">
                 Grandiose Restaurant
               </h1>
             </div>
-            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
+            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 
+             ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
               <span className="flex">
                 <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
               </span>
@@ -206,7 +209,127 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
+                <button className="btn btn-primary text-white text-md border-2 
+                hover:btn-secondary ">
+                  See Details..
+                </button>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="organization-bg w-96">
+            <div className="relative w-full h-full">
+              <img className="h-full w-full" src={img2} alt="" />
+            </div>
+            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 
+             text-center opacity-10">
+              <h1 className="text-5xl font-bold mt-20">Grandiose Restaurant</h1>
+            </div>
+            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 
+             ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
+              <span className="flex">
+                <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
+              </span>
+              <h1 className="mt-10 text-3xl font-bold">Grandiose Restaurant</h1>
+              <ul className="text-white flex flex-col gap-1 justify-center items-start ml-8 my-5">
+                <li className="flex items-center gap-2">
+                  <ImLocation2 className="text-red-600"></ImLocation2>Dhaka
+                  Regency Hotel & Resort
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaAddressCard className="text-red-600"></FaAddressCard>Level
+                  6, Tongi Diversion Rd, Dhaka 1229
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaPhoneAlt className="text-red-600"></FaPhoneAlt>01713-332661
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaMailBulk className="text-red-600"></FaMailBulk>
+                  grandiose4774@gmail.com
+                </li>
+              </ul>
+              <div className="flex justify-center pb-16">
+                <button className="btn btn-primary text-white text-md border-2 
+                hover:btn-secondary ">
+                  See Details..
+                </button>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="organization-bg w-96">
+            <div className="relative w-full h-full">
+              <img className="h-full w-full" src={img3} alt="" />
+            </div>
+            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 
+             text-center opacity-10">
+              <h1 className="text-5xl font-bold mt-20">Grandiose Restaurant</h1>
+            </div>
+            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 
+             ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
+              <span className="flex">
+                <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
+              </span>
+              <h1 className="mt-10 text-3xl font-bold">Grandiose Restaurant</h1>
+              <ul className="text-white flex flex-col gap-1 justify-center items-start ml-8 my-5">
+                <li className="flex items-center gap-2">
+                  <ImLocation2 className="text-red-600"></ImLocation2>Dhaka
+                  Regency Hotel & Resort
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaAddressCard className="text-red-600"></FaAddressCard>Level
+                  6, Tongi Diversion Rd, Dhaka 1229
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaPhoneAlt className="text-red-600"></FaPhoneAlt>01713-332661
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaMailBulk className="text-red-600"></FaMailBulk>
+                  grandiose4774@gmail.com
+                </li>
+              </ul>
+              <div className="flex justify-center pb-16">
+                <button className="btn btn-primary text-white text-md border-2 
+                hover:btn-secondary ">
+                  See Details..
+                </button>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className="organization-bg w-96">
+            <div className="relative w-full h-full">
+              <img className="h-full w-full" src={img1} alt="" />
+            </div>
+            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 
+             text-center opacity-10">
+              <h1 className="text-5xl font-bold mt-20 ">
+                Grandiose Restaurant
+              </h1>
+            </div>
+            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 
+             ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
+              <span className="flex">
+                <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
+              </span>
+              <h1 className="mt-10 text-3xl font-bold">Grandiose Restaurant</h1>
+              <ul className="text-white flex flex-col gap-1 justify-center items-start ml-8 my-5">
+                <li className="flex items-center gap-2">
+                  <ImLocation2 className="text-red-600"></ImLocation2>Dhaka
+                  Regency Hotel & Resort
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaAddressCard className="text-red-600"></FaAddressCard>Level
+                  6, Tongi Diversion Rd, Dhaka 1229
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaPhoneAlt className="text-red-600"></FaPhoneAlt>01713-332661
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaMailBulk className="text-red-600"></FaMailBulk>
+                  grandiose4774@gmail.com
+                </li>
+              </ul>
+              <div className="flex justify-center pb-16">
+                <button className="btn btn-primary text-white text-md border-2 
+                hover:btn-secondary ">
                   See Details..
                 </button>
               </div>
@@ -242,7 +365,8 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
+                <button className="btn btn-primary text-white text-md border-2 
+                hover:btn-secondary ">
                   See Details..
                 </button>
               </div>
@@ -252,10 +376,12 @@ const OrganizationHomePage = () => {
             <div className="relative w-full h-full">
               <img className="h-full w-full" src={img3} alt="" />
             </div>
-            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 text-center opacity-10">
+            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 
+             text-center opacity-10">
               <h1 className="text-5xl font-bold mt-20">Grandiose Restaurant</h1>
             </div>
-            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
+            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 
+             ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
               <span className="flex">
                 <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
               </span>
@@ -278,7 +404,8 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
+                <button className="btn btn-primary text-white text-md border-2 hover:btn-secondary 
+                 ">
                   See Details..
                 </button>
               </div>
@@ -289,7 +416,7 @@ const OrganizationHomePage = () => {
               <img className="h-full w-full" src={img1} alt="" />
             </div>
             <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 text-center opacity-10">
-              <h1 className="text-5xl font-bold mt-20 animation-pulse">
+              <h1 className="text-5xl font-bold mt-2">
                 Grandiose Restaurant
               </h1>
             </div>
@@ -316,7 +443,7 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
+                <button className="btn btn-primary text-white text-md border-2 hover:btn-secondary ">
                   See Details..
                 </button>
               </div>
@@ -352,7 +479,8 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
+                <button className="btn btn-primary text-white text-md border-2 
+                hover:btn-secondary ">
                   See Details..
                 </button>
               </div>
@@ -367,7 +495,7 @@ const OrganizationHomePage = () => {
             </div>
             <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
               <span className="flex">
-                <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
+                <span className="absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
               </span>
               <h1 className="mt-10 text-3xl font-bold">Grandiose Restaurant</h1>
               <ul className="text-white flex flex-col gap-1 justify-center items-start ml-8 my-5">
@@ -388,125 +516,17 @@ const OrganizationHomePage = () => {
                 </li>
               </ul>
               <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
-                  See Details..
-                </button>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="organization-bg w-96">
-            <div className="relative w-full h-full">
-              <img className="h-full w-full" src={img1} alt="" />
-            </div>
-            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 text-center opacity-10">
-              <h1 className="text-5xl font-bold mt-20 animation-pulse">
-                Grandiose Restaurant
-              </h1>
-            </div>
-            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
-              <span className="flex">
-                <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
-              </span>
-              <h1 className="mt-10 text-3xl font-bold">Grandiose Restaurant</h1>
-              <ul className="text-white flex flex-col gap-1 justify-center items-start ml-8 my-5">
-                <li className="flex items-center gap-2">
-                  <ImLocation2 className="text-red-600"></ImLocation2>Dhaka
-                  Regency Hotel & Resort
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaAddressCard className="text-red-600"></FaAddressCard>Level
-                  6, Tongi Diversion Rd, Dhaka 1229
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaPhoneAlt className="text-red-600"></FaPhoneAlt>01713-332661
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaMailBulk className="text-red-600"></FaMailBulk>
-                  grandiose4774@gmail.com
-                </li>
-              </ul>
-              <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
-                  See Details..
-                </button>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="organization-bg w-96">
-            <div className="relative w-full h-full">
-              <img className="h-full w-full" src={img2} alt="" />
-            </div>
-            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 text-center opacity-10">
-              <h1 className="text-5xl font-bold mt-20">Grandiose Restaurant</h1>
-            </div>
-            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
-              <span className="flex">
-                <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
-              </span>
-              <h1 className="mt-10 text-3xl font-bold">Grandiose Restaurant</h1>
-              <ul className="text-white flex flex-col gap-1 justify-center items-start ml-8 my-5">
-                <li className="flex items-center gap-2">
-                  <ImLocation2 className="text-red-600"></ImLocation2>Dhaka
-                  Regency Hotel & Resort
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaAddressCard className="text-red-600"></FaAddressCard>Level
-                  6, Tongi Diversion Rd, Dhaka 1229
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaPhoneAlt className="text-red-600"></FaPhoneAlt>01713-332661
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaMailBulk className="text-red-600"></FaMailBulk>
-                  grandiose4774@gmail.com
-                </li>
-              </ul>
-              <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
-                  See Details..
-                </button>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="organization-bg w-96">
-            <div className="relative w-full h-full">
-              <img className="h-full w-full" src={img3} alt="" />
-            </div>
-            <div className="organization-name bg-secondary text-white absolute z-10 w-full h-full bottom-0 left-0 text-center opacity-10">
-              <h1 className="text-5xl font-bold mt-20">Grandiose Restaurant</h1>
-            </div>
-            <div className="organization-info bg-secondary text-white absolute z-10 w-full h-full top-0 left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0  hover:rotate-360 text-center">
-              <span className="flex">
-                <span className="animate-ping absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
-              </span>
-              <h1 className="mt-10 text-3xl font-bold">Grandiose Restaurant</h1>
-              <ul className="text-white flex flex-col gap-1 justify-center items-start ml-8 my-5">
-                <li className="flex items-center gap-2">
-                  <ImLocation2 className="text-red-600"></ImLocation2>Dhaka
-                  Regency Hotel & Resort
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaAddressCard className="text-red-600"></FaAddressCard>Level
-                  6, Tongi Diversion Rd, Dhaka 1229
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaPhoneAlt className="text-red-600"></FaPhoneAlt>01713-332661
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaMailBulk className="text-red-600"></FaMailBulk>
-                  grandiose4774@gmail.com
-                </li>
-              </ul>
-              <div className="flex justify-center pb-16">
-                <button className="btn btn-primary text-white text-md animate-pulse border-2 hover:btn-secondary ">
-                  See Details..
+                <button className="border-2 rounded-lg border-purple-600 text-purple-600 p-2 text-lg 
+                        font-semibold hover:bg-purple-600 hover:text-white ease-out duration-150">
+                            View All !!
                 </button>
               </div>
             </div>
           </SwiperSlide>
         </Swiper>
-        <div className="flex justify-center mt-20 animate-bounce">
-          <button className="btn btn-outline btn-secondary text-2xl hover:font-bold">
+        <div className="flex justify-center mt-20">
+          <button className="border-2 rounded-lg border-purple-600 text-purple-600 p-2 text-xl font-semibold 
+           hover:bg-purple-600 hover:text-white ease-out duration-150">
             View All !!
           </button>
         </div>
