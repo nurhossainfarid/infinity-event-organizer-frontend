@@ -39,3 +39,18 @@
 .organizer-bg:hover .organizer-name {
     display: none;
 }
+
+/* pagination */
+.pagination button{
+    background: white;
+    color: black;
+    padding: 5px 10px;
+}
+.pagination .selected {
+    background: rgb(147 51 234);
+    color: white;
+}
+
+/* responsive */
+@media only screen and (max-width: 640px) {
+}

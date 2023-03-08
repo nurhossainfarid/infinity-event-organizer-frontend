@@ -151,7 +151,8 @@ const Header = () => {
               )}
             </ul>
           </div>
-          <div className="navbar-end">
+          {
+            user && <div className="navbar-end">
             <div>
               <div className="flex gap-3">
                 <div className="dropdown dropdown-end">
@@ -189,6 +190,7 @@ const Header = () => {
               </div>
             </div>
           </div>
+          }
         </div>
       </div>
     </nav>

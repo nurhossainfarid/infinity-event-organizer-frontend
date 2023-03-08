@@ -6,7 +6,7 @@ import img1 from '../../../images/banner_bg2.jpg';
 
 const StageDecoration = () => {
     return (
-        <div className="mx-24 grid grid-cols-2 gap-10 mt-5">
+        <div className="lg:mx-24 grid grid-cols lg:grid-cols-2 gap-10 mt-5">
             <div className=" ">
                 <img src={img1} className="w-full h-full" alt="" />
             </div>

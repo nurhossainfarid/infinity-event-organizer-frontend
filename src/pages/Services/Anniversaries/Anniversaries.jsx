@@ -7,7 +7,7 @@ import img2 from '../../../images/couple_banner.jpg';
 
 const Anniversaries = () => {
     return (
-        <div className="mx-24">
+        <div className="lg:mx-24">
             <div className="grid grid-cols-2 gap-10 mt-5">
                 <img src={img1} alt="" />
                 <img src={img2} alt="" />
