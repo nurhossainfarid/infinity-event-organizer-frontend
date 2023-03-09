@@ -22,6 +22,7 @@ import event5 from "../../../images/holiday_events.jpg";
 import event4 from "../../../images/private_party_events.jpg";
 import event6 from "../../../images/socail_events.jpg";
 import event2 from "../../../images/wedding_events.jpg";
+import { Link } from "react-router-dom";
 
 const Events = () => {
   return (
@@ -189,10 +190,11 @@ const Events = () => {
                 </li>
               </ul>
               <div className="flex justify-start mt-3">
-                <button className="border-2 py-2 read-btn btn-outline hover:btn-outline-0 btn-secondary md:w-1/3 
-                w-1/2 text-center rounded-md font-semibold ease-in duration-300 hover:rotate-6 animate-pulse">
+                <Link to={'/events'} className="border-2 py-2 read-btn btn-outline hover:btn-outline-0 
+                btn-secondary md:w-1/3 w-1/2 text-center rounded-md font-semibold ease-in duration-300 
+                 hover:rotate-6 animate-pulse">
                   View More....
-                </button>
+                </Link>
               </div>
             </div>
           </div>

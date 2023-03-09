@@ -38,7 +38,7 @@ const Wedding = () => {
                   <h3>Food Items: {pack.foodMenu}</h3>
                   <h2>{pack.organization.name}</h2>
                   <div className="card-actions justify-end">
-                    <button className="border-2 border-secondary btn text-secondary text-md hover:bg-pink-500 hover:border-pink-500 hover:text-primary animate-bounce ease-in duration-300">
+                    <button className="border-2 border-secondary btn text-secondary text-md hover:bg-pink-500 hover:border-pink-500 hover:text-white animate-bounce ease-in duration-300">
                       Booking Now
                     </button>
                   </div>

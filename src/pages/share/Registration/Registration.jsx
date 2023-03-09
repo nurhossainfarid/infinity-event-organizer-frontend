@@ -6,6 +6,8 @@ import {
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import Lottie from "lottie-react";
+import RegistrationAnimation from "./RegistrationAnimation.json";
 
 // import custom css
 import "./Registration.css";
@@ -73,9 +75,9 @@ const Registration = () => {
         <div className="hero py-16 w-full">
         <div className="hero-content flex-col lg:flex-row-reverse w-full">
             <div className="card flex-shrink-0 shadow-2xl login_glass_bg w-full">
-              <div className="card-body grid grid-cols-2">
+              <div className="card-body grid grid-cols lg:grid-cols-2 p-3 md:p-8">
                 <div>
-                  <h1>Registration</h1>
+                <Lottie loop={true} animationData={RegistrationAnimation}></Lottie>
                 </div>
                 <div>
                   <p className="text-cyan-300 fs-semibold text-md">Already have an account????
@@ -83,17 +85,17 @@ const Registration = () => {
                   <small className='text-white ml-1 fs-bold text-md'>Please 
                   login</small></Link></p>
                   <form onSubmit={handleSubmit(onSubmit)} action="">
-                    <div className="grid grid-cols-2 gap-3 mt-2">
+                    <div className="grid grid-cols md:grid-cols-2 gap-1 md:gap-3 mt-2">
                       {/* first name */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-primary">
+                          <span className="label-text text-white">
                             First Name
                           </span>
                         </label>
                         <input
                           type="text"
-                          className="input input-bordered w-full max-w-xs"
+                          className="input input-bordered w-full max-w-xs text-sm md:text-md"
                           {...register("firstName", {
                             required: {
                               value: true,
@@ -112,7 +114,7 @@ const Registration = () => {
                       {/* last name */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-primary">
+                          <span className="label-text text-white">
                             Last Name
                           </span>
                         </label>
@@ -137,7 +139,7 @@ const Registration = () => {
                       {/* email */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-primary">Email</span>
+                          <span className="label-text text-white">Email</span>
                         </label>
                         <input
                           type="email"
@@ -169,7 +171,7 @@ const Registration = () => {
                       {/* password */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-primary">
+                          <span className="label-text text-white">
                             Password
                           </span>
                         </label>
@@ -203,7 +205,7 @@ const Registration = () => {
                       {/* confirm password */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-primary">
+                          <span className="label-text text-white">
                             Confirm Password
                           </span>
                         </label>
@@ -237,7 +239,7 @@ const Registration = () => {
                       {/* phone */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-primary">Phone</span>
+                          <span className="label-text text-white">Phone</span>
                         </label>
                         <input
                           type="phone"
@@ -262,7 +264,7 @@ const Registration = () => {
                       {/* address */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-primary">Address</span>
+                          <span className="label-text text-white">Address</span>
                         </label>
                         <input
                           type="text"
@@ -285,7 +287,7 @@ const Registration = () => {
                       {/* Role */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-primary">Role</span>
+                          <span className="label-text text-white">Role</span>
                         </label>
                         <select
                           className="select select-bordered w-full max-w-xs"
@@ -310,8 +312,8 @@ const Registration = () => {
                     </div>
                     <div className="form-control flex flex-col justify-center items-center mt-5">
                       <button
-                        className="btn btn-primary w-1/3 hover:bg-pink-500 ease-in duration-300 
-                        hover:scale-105 text-lg"
+                        className="btn btn-white md:w-1/3 hover:bg-pink-500 ease-in duration-300 
+                        hover:scale-105 text-sm md:text-lg"
                         value="registration"
                       >
                         Registration

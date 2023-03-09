@@ -29,7 +29,7 @@ const Welcome = () => {
             </p>
             <div className="flex justify-end">
               {/* The button to open modal */}
-              <Link to="/services" for="#great_service" className="border-2 read-btn btn-outline btn-secondary 
+              <Link to="/services/#great_service" className="border-2 read-btn btn-outline btn-secondary 
                lg:w-1/3 w-1/2 text-center rounded-md font-semibold ease-in duration-300 hover:rotate-6">
                 Read More....
               </Link>

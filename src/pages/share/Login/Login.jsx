@@ -62,8 +62,8 @@ const Login = () => {
       <section>
         <div className="hero py-16">
           <div className="hero-content flex-col lg:flex-row-reverse w-full">
-            <div className="card flex-shrink-0 shadow-2xl login_glass_bg w-3/4">
-              <div className="card-body grid grid-cols-2">
+            <div className="card flex-shrink-0 shadow-2xl login_glass_bg md:w-3/4">
+              <div className="card-body grid grid-cols md:grid-cols-2 gap-5">
                 <div>
                   <Lottie loop={true} animationData={LoginAnimation2}></Lottie>
                 </div>
@@ -75,11 +75,11 @@ const Login = () => {
                   <form onSubmit={handleSubmit(onSubmit)} action="">
                     <div className="form-control">
                       <label className="label">
-                        <span className="label-text text-primary">Email</span>
+                        <span className="label-text text-white">Email</span>
                       </label>
                       <input
                         type="email"
-                        className="input input-bordered w-full max-w-xs"
+                        className="input input-bordered md:w-3/4"
                         {...register("email", {
                           required: {
                             value: true,
@@ -106,11 +106,11 @@ const Login = () => {
                     </div>
                     <div className="form-control">
                       <label className="label">
-                        <span className="label-text text-primary">Password</span>
+                        <span className="label-text text-white">Password</span>
                       </label>
                       <input
                         type="password"
-                        className="input input-bordered w-full max-w-xs"
+                        className="input input-bordered md:w-3/4"
                         {...register("password", {
                           required: {
                             value: true,
@@ -141,7 +141,7 @@ const Login = () => {
                       </label>
                     </div>
                       <button
-                        className="btn btn-primary w-full max-w-xs hover:text-black"
+                        className="btn btn-white md:w-3/4 hover:text-black"
                         value="Login"
                       >
                         Login

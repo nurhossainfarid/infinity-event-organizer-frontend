@@ -24,12 +24,16 @@ const UpdatePackage = () => {
     const updatePackage = {
       name: !data.name ? packageData.name : data.name,
       price: !data.price ? packageData.price : data.price,
-      time: !data.time ? packageData.time : data.time ,
+      time: !data.time ? packageData.time : data.time,
       attend: !data.attend ? packageData.attend : data.attend,
       eventName: !data.eventName ? packageData.eventName : data.eventName,
       organization: {
-        name: !data.organizationName ? packageData.organization.name : data.organizationName,
-        id: !data.organizationId ? packageData.organization.id : data.organizationId,
+        name: !data.organizationName
+          ? packageData.organization.name
+          : data.organizationName,
+        id: !data.organizationId
+          ? packageData.organization.id
+          : data.organizationId,
       },
       foodMenu: !data.foodMenu ? packageData.foodMenu : data.foodMenu,
       status: !data.status ? packageData.status : data.status,
@@ -64,7 +68,9 @@ const UpdatePackage = () => {
         <div className="form-control">
           <div className="flex gap-2">
             <label className="label">
-              <span className="label-text text-black text-lg">Package Name</span>
+              <span className="label-text text-black text-lg">
+                Package Name
+              </span>
             </label>
             <input
               type="text"
@@ -112,7 +118,7 @@ const UpdatePackage = () => {
               type="text"
               Value={packageData?.time}
               className="input input-bordered w-full max-w-xs"
-              {...register("time",)}
+              {...register("time")}
             />
           </div>
           <label className="label">
@@ -135,7 +141,7 @@ const UpdatePackage = () => {
               type="number"
               Value={packageData?.attend}
               className="input input-bordered w-full max-w-xs"
-              {...register("attend",)}
+              {...register("attend")}
             />
           </div>
           <label className="label">
@@ -156,7 +162,7 @@ const UpdatePackage = () => {
               type="text"
               Value={packageData?.eventName}
               className="input input-bordered w-full max-w-xs"
-              {...register("eventName",)}
+              {...register("eventName")}
             />
           </div>
           <label className="label">
@@ -179,7 +185,7 @@ const UpdatePackage = () => {
               type="text"
               Value={packageData?.organization?.name}
               className="input input-bordered w-full max-w-xs"
-              {...register("organizationName",)}
+              {...register("organizationName")}
             />
           </div>
           <label className="label">
@@ -201,7 +207,7 @@ const UpdatePackage = () => {
               type="text"
               Value={packageData?.organization?.id}
               className="input input-bordered w-full max-w-xs"
-              {...register("organizationId",)}
+              {...register("organizationId")}
             />
           </div>
           <label className="label">
@@ -222,7 +228,7 @@ const UpdatePackage = () => {
               type="text"
               Value={packageData?.foodMenu}
               className="input input-bordered w-full max-w-xs"
-              {...register("menu",)}
+              {...register("menu")}
             />
           </div>
           <label className="label">
@@ -243,7 +249,7 @@ const UpdatePackage = () => {
               type="text"
               Value={packageData?.category}
               className="input input-bordered w-full max-w-xs"
-              {...register("category",)}
+              {...register("category")}
             />
           </div>
           <label className="label">
@@ -264,7 +270,7 @@ const UpdatePackage = () => {
               type="text"
               Value={packageData?.status}
               className="input input-bordered w-full max-w-xs"
-              {...register("status",)}
+              {...register("status")}
             />
           </div>
           <label className="label">
@@ -297,9 +303,7 @@ const UpdatePackage = () => {
           </label>
         </div>
         <div>
-          <button className="btn btn-primary w-1/2">
-            Update
-          </button>
+          <button className="btn btn-white w-1/2">Update</button>
         </div>
       </form>
     </div>

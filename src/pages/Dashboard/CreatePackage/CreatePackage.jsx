@@ -317,7 +317,7 @@ const CreatePackage = () => {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary w-1/2" value="registration">
+          <button className="btn btn-white w-1/2" value="registration">
             Add
           </button>
         </div>

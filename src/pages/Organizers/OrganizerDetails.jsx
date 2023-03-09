@@ -20,7 +20,6 @@ const OrganizerDetails = () => {
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data.data);
                 setOrganizerData(data.data);
             })
     }, [organizerData]);

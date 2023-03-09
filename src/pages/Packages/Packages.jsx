@@ -40,10 +40,10 @@ const Packages = () => {
       <div className="packages-bg relative">
         <div className="absolute bg-black w-full h-full opacity-60"></div>
         <div className="relative py-28 flex flex-col justify-center items-center gap-3">
-          <h1 className="text-5xl text-primary uppercase font-semibold">
+          <h1 className="text-5xl text-white uppercase font-semibold">
             Packages
           </h1>
-          <p className="text-primary text-md">What Do You Want!</p>
+          <p className="text-white text-md">What Do You Want!</p>
         </div>
       </div>
       <div>
@@ -70,7 +70,7 @@ const Packages = () => {
         </div>
         <div className="drawer-side mt-10">
           <label for="dashboard-sidebar" className="drawer-overlay"></label>
-          <ul className="menu pl-10 pt-16 overflow-y-auto w-80 text-primary gap-10 ml-28 bg-pink-500">
+          <ul className="menu pl-10 pt-16 overflow-y-auto w-80 text-white gap-10 ml-28 bg-pink-500">
             {/* <!-- Sidebar content here --> */}
             <AboutCustomLink
               className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"

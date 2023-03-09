@@ -16,21 +16,21 @@ const Organizers = () => {
   const navigate = useNavigate();
 
   const navigateOrganizer = (oId) => {
-    navigate(`/organizerDetails/${oId}`)
-  }
+    navigate(`/organizerDetails/${oId}`);
+  };
   useEffect(() => {
     const url = `http://localhost:5000/v1/organization/count`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.data);
         setOrgCount(data.data);
-      })
-  }, [])
+      });
+  }, []);
   const pagesCount = Math.ceil(orgCount / size);
   useEffect(() => {
-    const url =
-      `http://localhost:5000/v1/organization/?page=${page+1}&limit=${size}`;
+    const url = `http://localhost:5000/v1/organization/?page=${
+      page + 1
+    }&limit=${size}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -44,10 +44,12 @@ const Organizers = () => {
       <div className="organizer-header-bg relative">
         <div className="absolute bg-black w-full h-full opacity-60"></div>
         <div className="relative py-40 flex flex-col justify-center items-center gap-3">
-          <h1 className="text-3xl md:text-5xl text-primary uppercase font-semibold">
+          <h1 className="text-3xl md:text-5xl text-white uppercase font-semibold">
             Organization
           </h1>
-          <p className="text-primary text-sm md:text-md">Choose Your Best Organization</p>
+          <p className="text-white text-sm md:text-md">
+            Choose Your Best Organization
+          </p>
         </div>
       </div>
       {/* show organizers */}
@@ -57,31 +59,46 @@ const Organizers = () => {
             Best Organizers in Bangladesh
           </h1>
           <p className="text-sm md:text-md text-gray-600 pt-5 text-center lg:w-2/3 mx-auto">
-          এখানে পাচ্ছেন বাংলাদেশের সব ধরনের অর্গানাইজার গুলোকে। যেখান থেকে আপনি চাইলে আপনার পছন্দ অনুযায়ী 
-           অর্গানাইজারের প্যাকেজগুলো বুকিং করতে পারেন অথবা কাস্টম ভাবে তৈরি করতে পারেন। এছাড়াও আপনি চাইলে আপনার 
+            এখানে পাচ্ছেন বাংলাদেশের সব ধরনের অর্গানাইজার গুলোকে। যেখান থেকে
+            আপনি চাইলে আপনার পছন্দ অনুযায়ী অর্গানাইজারের প্যাকেজগুলো বুকিং করতে
+            পারেন অথবা কাস্টম ভাবে তৈরি করতে পারেন। এছাড়াও আপনি চাইলে আপনার
             অনুষ্ঠানের জন্য খাবার ও সাজসজ্জা জন্য ওডার করতে পারবেন।
           </p>
         </div>
         <div className="flex justify-center mt-6 md:mt-16 lg:mt-32 gap-2 pagination mb-10 lg:mb-16">
-          {
-            page === 0 ? <button className="btn" disabled  >«</button> :
-              <button className="btn" onClick={() => setPage(page - 1)} >«</button>
-          }
-          {
-            [...Array(pagesCount).keys()].map(num =>
-              <>
-                <button className={page === num ? 'selected' : ''} onClick={() => setPage(num)}>{num + 1} 
-                </button>
-              </>
-            )
-          }
-          {
-            page === pagesCount - 1 ? <button className="btn" disabled >»</button> :
-              <button className="btn" onClick={() => setPage(page + 1)}>»</button>
-          }
-          <select onChange={e => setSize(e.target.value)}>
+          {page === 0 ? (
+            <button className="btn" disabled>
+              «
+            </button>
+          ) : (
+            <button className="btn" onClick={() => setPage(page - 1)}>
+              «
+            </button>
+          )}
+          {[...Array(pagesCount).keys()].map((num) => (
+            <>
+              <button
+                className={page === num ? "selected" : ""}
+                onClick={() => setPage(num)}
+              >
+                {num + 1}
+              </button>
+            </>
+          ))}
+          {page === pagesCount - 1 ? (
+            <button className="btn" disabled>
+              »
+            </button>
+          ) : (
+            <button className="btn" onClick={() => setPage(page + 1)}>
+              »
+            </button>
+          )}
+          <select onChange={(e) => setSize(e.target.value)}>
             <option value="5">5</option>
-            <option value="10" selected>10</option>
+            <option value="10" selected>
+              10
+            </option>
             <option value="15">15</option>
             <option value="20">20</option>
           </select>
@@ -92,8 +109,10 @@ const Organizers = () => {
               <div>
                 <img className="" src={img} alt="" />
               </div>
-              <div className="organizer-info bg-secondary text-white absolute z-10 w-full md:h-76 lg:h-full top-0 
-               left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0 hover:rotate-360 text-center">
+              <div
+                className="organizer-info bg-secondary text-white absolute z-10 w-full md:h-76 lg:h-full top-0 
+               left-0 ease-in duration-300 scale-50 hover:scale-100 rotate-0 hover:rotate-360 text-center"
+              >
                 <span className="flex">
                   <span className="absolute inline-flex h-full w-full bg-gray-800 opacity-50"></span>
                 </span>
@@ -116,38 +135,58 @@ const Organizers = () => {
                   </li>
                 </ul>
                 <div className="flex justify-center pb-16">
-                  <button className="btn btn-primary text-purple-600 hover:bg-purple-700 hover:text-white text-md 
-                   animate-pulse border-2 hover:border-purple-700 " 
-                   onClick={() => navigateOrganizer(organizer?._id)}>
+                  <button
+                    className="btn btn-white text-purple-600 hover:bg-purple-700 hover:text-white text-md 
+                   animate-pulse border-2 hover:border-purple-700 "
+                    onClick={() => navigateOrganizer(organizer?._id)}
+                  >
                     See Details..
                   </button>
                 </div>
               </div>
-              <h1 className="text-xl lg:text-2xl mt-2 font-semibold text-purple-600 hover:text-fuchsia-600 
-              ease-in duration-200 uppercase">{organizer.name}</h1>
+              <h1
+                className="text-xl lg:text-2xl mt-2 font-semibold text-purple-600 hover:text-fuchsia-600 
+              ease-in duration-200 uppercase"
+              >
+                {organizer.name}
+              </h1>
             </div>
           ))}
         </div>
         <div className="flex justify-center mt-16 lg:mt-32 gap-2 pagination mb-10 lg:mb-16">
-          {
-            page === 0 ? <button className="btn" disabled  >«</button> :
-              <button className="btn" onClick={() => setPage(page - 1)} >«</button>
-          }
-          {
-            [...Array(pagesCount).keys()].map(num =>
-              <>
-                <button className={page === num ? 'selected' : ''} onClick={() => setPage(num)}>{num + 1} 
-                </button>
-              </>
-            )
-          }
-          {
-            page === pagesCount - 1 ? <button className="btn" disabled >»</button> :
-              <button className="btn" onClick={() => setPage(page + 1)}>»</button>
-          }
-          <select onChange={e => setSize(e.target.value)}>
+          {page === 0 ? (
+            <button className="btn" disabled>
+              «
+            </button>
+          ) : (
+            <button className="btn" onClick={() => setPage(page - 1)}>
+              «
+            </button>
+          )}
+          {[...Array(pagesCount).keys()].map((num) => (
+            <>
+              <button
+                className={page === num ? "selected" : ""}
+                onClick={() => setPage(num)}
+              >
+                {num + 1}
+              </button>
+            </>
+          ))}
+          {page === pagesCount - 1 ? (
+            <button className="btn" disabled>
+              »
+            </button>
+          ) : (
+            <button className="btn" onClick={() => setPage(page + 1)}>
+              »
+            </button>
+          )}
+          <select onChange={(e) => setSize(e.target.value)}>
             <option value="5">5</option>
-            <option value="10" selected>10</option>
+            <option value="10" selected>
+              10
+            </option>
             <option value="15">15</option>
             <option value="20">20</option>
           </select>
