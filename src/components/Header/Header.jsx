@@ -4,7 +4,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import CustomLink from "./CustomLink";
-import { FcBusinessman } from "react-icons/fc";
 import "./Header.css";
 
 const Header = () => {
@@ -14,24 +13,24 @@ const Header = () => {
   const [collectUser, setCollectUser] = useState();
 
   useEffect(() => {
-      const email = user?.email;
-      if (email) {
-          fetch(`https://infinity-event-organizer-backend.vercel.app/v1/user/role/${email}`, {
-              method: 'GET',
-              headers: {
-                  'content-type': 'application/json',
-                  authorization: `Bear ${localStorage.getItem('accessToken')}`
-              },
-          })
-              .then(res => res.json())
-              .then(data => {
-                setCollectUser(data.data);
-              })
-      }
+    const email = user?.email;
+    if (email) {
+      fetch(`https://event-api.nurhossainfarid.com/v1/user/role/${email}`, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bear ${localStorage.getItem("accessToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setCollectUser(data.data);
+        });
+    }
   }, [user]);
   // const str = 'The quick brown fox jumps over the lazy dog.';
   // console.log(str.slice(0, 2));
-  const firstNm = collectUser?.firstName.slice(0,1);
+  const firstNm = collectUser?.firstName.slice(0, 1);
   const lastNm = collectUser?.lastName.slice(0, 1);
 
   const logout = () => {
@@ -107,7 +106,10 @@ const Header = () => {
                 )}
               </ul>
             </div>
-            <Link to="/home" className="bg-none normal-case text-md md:text-xl font-semibold">
+            <Link
+              to="/home"
+              className="bg-none normal-case text-md md:text-xl font-semibold"
+            >
               Infinity Event Organizer
             </Link>
           </div>
@@ -131,18 +133,16 @@ const Header = () => {
               <li>
                 <CustomLink to="/events">Events</CustomLink>
               </li>
-              {
-                !user &&
+              {!user && (
                 <li>
-                    <CustomLink to="/login">Login</CustomLink>
+                  <CustomLink to="/login">Login</CustomLink>
                 </li>
-              }
-              {
-                !user &&
+              )}
+              {!user && (
                 <li>
                   <CustomLink to="/registration">Registration</CustomLink>
                 </li>
-              }
+              )}
 
               {user && (
                 <li>
@@ -151,46 +151,49 @@ const Header = () => {
               )}
             </ul>
           </div>
-          {
-            user && <div className="navbar-end">
-            <div>
-              <div className="flex gap-3">
-                <div className="dropdown dropdown-end">
-                  <label
-                    tabIndex="0"
-                    className="btn btn-circle avatar border-none"
-                  >
-                    <div className="bg-white text-neutral-content rounded-full w-full"> 
-                      {!user ? <p className="text-3xl mt-1"></p> : <p className="text-3xl mt-1">{firstNm + 
-                       lastNm}</p>}
-                    </div>
-                  </label>
-                  <ul
-                    tabIndex="0"
-                    className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52"
-                  >
-                    <li>
-                      <Link to="/profile" className="justify-between">
-                        Profile
-                        <span className="badge">Update</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <a>Settings</a>
-                    </li>
-                    <li>
-                      {user && (
-                        <button className="btn btn-ghost" onClick={logout}>
-                          Sign Out
-                        </button>
-                      )}
-                    </li>
-                  </ul>
+          {user && (
+            <div className="navbar-end">
+              <div>
+                <div className="flex gap-3">
+                  <div className="dropdown dropdown-end">
+                    <label
+                      tabIndex="0"
+                      className="btn btn-circle avatar border-none"
+                    >
+                      <div className="bg-white text-neutral-content rounded-full w-full">
+                        {!user ? (
+                          <p className="text-3xl mt-1"></p>
+                        ) : (
+                          <p className="text-3xl mt-1">{firstNm + lastNm}</p>
+                        )}
+                      </div>
+                    </label>
+                    <ul
+                      tabIndex="0"
+                      className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-secondary rounded-box w-52"
+                    >
+                      <li>
+                        <Link to="/profile" className="justify-between">
+                          Profile
+                          <span className="badge">Update</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <a>Settings</a>
+                      </li>
+                      <li>
+                        {user && (
+                          <button className="btn btn-ghost" onClick={logout}>
+                            Sign Out
+                          </button>
+                        )}
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          }
+          )}
         </div>
       </div>
     </nav>

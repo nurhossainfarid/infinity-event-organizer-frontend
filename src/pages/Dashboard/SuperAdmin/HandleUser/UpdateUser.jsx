@@ -7,7 +7,7 @@ const UpdateUser = () => {
   const [userData, setUserData] = useState([]);
 
   useEffect(() => {
-    const url = `https://infinity-event-organizer-backend.vercel.app/v1/user/${userId}`;
+    const url = `https://event-api.nurhossainfarid.com/v1/user/${userId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -31,7 +31,7 @@ const UpdateUser = () => {
       status: !data.status ? userData.status : data.status,
     };
     console.log(updateUser);
-    let url = `https://infinity-event-organizer-backend.vercel.app/v1/user/${userId}`;
+    let url = `https://event-api.nurhossainfarid.com/v1/user/${userId}`;
     fetch(url, {
       method: "PATCH",
       headers: {

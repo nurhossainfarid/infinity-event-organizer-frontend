@@ -5,12 +5,12 @@ import { toast } from "react-toastify";
 const UserHistory = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    const url = "https://infinity-event-organizer-backend.vercel.app/v1/user";
+    const url = "https://event-api.nurhossainfarid.com/v1/user";
     fetch(url)
-    .then((res) => res.json())
-    .then((data) => {
-      setUsers(data.data);
-    });
+      .then((res) => res.json())
+      .then((data) => {
+        setUsers(data.data);
+      });
   }, [users]);
 
   // navigate router
@@ -21,7 +21,7 @@ const UserHistory = () => {
 
   // delete user
   const handleDelete = (id) => {
-    const url = `https://infinity-event-organizer-backend.vercel.app/v1/user/${id}`;
+    const url = `https://event-api.nurhossainfarid.com/v1/user/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {
@@ -31,9 +31,9 @@ const UserHistory = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.status === "success") {
-          toast.success('User deleted successfully')
+          toast.success("User deleted successfully");
         } else {
-          toast.error("User could not be deleted successfully")
+          toast.error("User could not be deleted successfully");
         }
       });
   };
@@ -41,14 +41,14 @@ const UserHistory = () => {
   // make super admin
   const makeSuperAdmin = (id) => {
     const updateRole = {
-      role: 'super admin'
-    }
-    fetch(`https://infinity-event-organizer-backend.vercel.app/v1/user/${id}`, {
+      role: "super admin",
+    };
+    fetch(`https://event-api.nurhossainfarid.com/v1/user/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updateRole)
+      body: JSON.stringify(updateRole),
     })
       .then((res) => {
         res.json();
@@ -61,14 +61,14 @@ const UserHistory = () => {
   // make organizer admin
   const makeOrganizerAdmin = (id) => {
     const updateRole = {
-      role: 'organizerAdmin'
-    }
-    fetch(`https://infinity-event-organizer-backend.vercel.app/v1/user/${id}`, {
+      role: "organizerAdmin",
+    };
+    fetch(`https://event-api.nurhossainfarid.com/v1/user/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(updateRole)
+      body: JSON.stringify(updateRole),
     })
       .then((res) => {
         res.json();
@@ -108,16 +108,22 @@ const UserHistory = () => {
                 <td>{user.role}</td>
                 <td>{user.status}</td>
                 <td className="flex flex-col gap-2">
-                  <button className="btn btn-xs hover:btn-secondary" onClick={() => navigateUser(user?._id)}>
+                  <button
+                    className="btn btn-xs hover:btn-secondary"
+                    onClick={() => navigateUser(user?._id)}
+                  >
                     Update
                   </button>
-                  <button onClick={() => handleDelete(user._id)} className="btn btn-xs hover:btn-secondary">
+                  <button
+                    onClick={() => handleDelete(user._id)}
+                    className="btn btn-xs hover:btn-secondary"
+                  >
                     Delete
                   </button>
                 </td>
                 <td className="">
-                  <div >
-                    {(user.role === "user") &&  (
+                  <div>
+                    {user.role === "user" && (
                       <div className="flex flex-col gap-2">
                         <button
                           onClick={() => makeSuperAdmin(user._id)}
@@ -125,14 +131,15 @@ const UserHistory = () => {
                         >
                           super Admin
                         </button>
-                        <button className="btn btn-xs hover:btn-secondary" onClick={() => 
-                          makeOrganizerAdmin(user._id)}>
-                         Organizer Admin
+                        <button
+                          className="btn btn-xs hover:btn-secondary"
+                          onClick={() => makeOrganizerAdmin(user._id)}
+                        >
+                          Organizer Admin
                         </button>
                       </div>
-                    )
-                    }
-                    {(user.role === "organizeradmin") &&  (
+                    )}
+                    {user.role === "organizeradmin" && (
                       <div className="flex flex-col gap-2">
                         <button
                           onClick={() => makeSuperAdmin(user._id)}
@@ -141,8 +148,7 @@ const UserHistory = () => {
                           super Admin
                         </button>
                       </div>
-                    )
-                    } 
+                    )}
                   </div>
                 </td>
               </tr>

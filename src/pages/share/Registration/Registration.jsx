@@ -1,12 +1,9 @@
+import Lottie from "lottie-react";
 import React from "react";
-import {
-  useCreateUserWithEmailAndPassword,
-  useSignInWithGoogle,
-} from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
-import Lottie from "lottie-react";
 import RegistrationAnimation from "./RegistrationAnimation.json";
 
 // import custom css
@@ -36,7 +33,7 @@ const Registration = () => {
     };
     console.log(userData);
     if (data.password === data.confirmPassword) {
-      let url = "https://infinity-event-organizer-backend.vercel.app/v1/user";
+      let url = "https://event-api.nurhossainfarid.com/v1/user";
       fetch(url, {
         method: "POST",
         headers: {
@@ -73,17 +70,24 @@ const Registration = () => {
       </section>
       <section>
         <div className="hero py-16 w-full">
-        <div className="hero-content flex-col lg:flex-row-reverse w-full">
+          <div className="hero-content flex-col lg:flex-row-reverse w-full">
             <div className="card flex-shrink-0 shadow-2xl login_glass_bg w-full">
               <div className="card-body grid grid-cols lg:grid-cols-2 p-3 md:p-8">
                 <div>
-                <Lottie loop={true} animationData={RegistrationAnimation}></Lottie>
+                  <Lottie
+                    loop={true}
+                    animationData={RegistrationAnimation}
+                  ></Lottie>
                 </div>
                 <div>
-                  <p className="text-cyan-300 fs-semibold text-md">Already have an account????
-                    <Link to={'/login'}> 
-                  <small className='text-white ml-1 fs-bold text-md'>Please 
-                  login</small></Link></p>
+                  <p className="text-cyan-300 fs-semibold text-md">
+                    Already have an account????
+                    <Link to={"/login"}>
+                      <small className="text-white ml-1 fs-bold text-md">
+                        Please login
+                      </small>
+                    </Link>
+                  </p>
                   <form onSubmit={handleSubmit(onSubmit)} action="">
                     <div className="grid grid-cols md:grid-cols-2 gap-1 md:gap-3 mt-2">
                       {/* first name */}

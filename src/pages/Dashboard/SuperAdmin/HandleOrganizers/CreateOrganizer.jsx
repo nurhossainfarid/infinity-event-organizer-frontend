@@ -19,8 +19,7 @@ const CreateOrganizer = () => {
       image: data.image,
       status: data.status,
     };
-    let url =
-      "https://infinity-event-organizer-backend.vercel.app/v1/organization";
+    let url = "https://event-api.nurhossainfarid.com/v1/organization";
     fetch(url, {
       method: "POST",
       headers: {

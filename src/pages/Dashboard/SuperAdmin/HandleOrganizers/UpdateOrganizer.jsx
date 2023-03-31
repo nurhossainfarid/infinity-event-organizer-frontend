@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -8,7 +7,7 @@ const UpdateOrganizer = () => {
   const { orgId } = useParams();
   const [orgData, setOrgData] = useState();
   useEffect(() => {
-    const url = `https://infinity-event-organizer-backend.vercel.app/v1/organization/${orgId}`;
+    const url = `https://event-api.nurhossainfarid.com/v1/organization/${orgId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -34,7 +33,7 @@ const UpdateOrganizer = () => {
       image: !data.image ? orgData.image : data.image,
       status: !data.status ? orgData.status : data.status,
     };
-    let url = `https://infinity-event-organizer-backend.vercel.app/v1/organization/${orgId}`;
+    let url = `https://event-api.nurhossainfarid.com/v1/organization/${orgId}`;
     fetch(url, {
       method: "PATCH",
       headers: {

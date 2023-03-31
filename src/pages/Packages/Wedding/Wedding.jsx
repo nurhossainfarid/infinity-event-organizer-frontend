@@ -5,8 +5,7 @@ const Wedding = () => {
   const [packageData, setPackageData] = useState([]);
 
   useEffect(() => {
-    const url =
-      "https://infinity-event-organizer-backend.vercel.app/v1/package";
+    const url = "https://event-api.nurhossainfarid.com/v1/package";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {

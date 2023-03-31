@@ -9,12 +9,12 @@ const Packages = () => {
   // const [treatment, setTreatment] = useState([]);
 
   // const { isLoading, refetch, data: booking } = useQuery('packaging', () => {
-  //     fetch(`https://infinity-event-organizer-backend.vercel.app/v1/package`)
+  //     fetch(`https://event-api.nurhossainfarid.com/v1/package`)
   //     .then(res => res.json())
   // }
   // )
   // const packageData = booking.data;
-  // fetch(`https://infinity-event-organizer-backend.vercel.app/v1/package`)
+  // fetch(`https://event-api.nurhossainfarid.com/v1/package`)
   // .then(res => res.json())
   // .then(data => {
   //     let packageData = data.data;
@@ -24,7 +24,7 @@ const Packages = () => {
   // const [packageData, setPackageData] = useState([]);
 
   // useEffect(() => {
-  //     const url = 'https://infinity-event-organizer-backend.vercel.app/v1/package';
+  //     const url = 'https://event-api.nurhossainfarid.com/v1/package';
   //     fetch(url)
   //         .then(res => res.json())
   //         .then(data => {

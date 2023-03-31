@@ -22,6 +22,9 @@ import Background6 from "../../../images/banner_bg6.jpg";
 import Background8 from "../../../images/banner_bg7.jpg";
 import Background7 from "../../../images/organization7-min.jpg";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import birthdayParty from "./birthdayParty.json";
+import weddingAnimation from "./wedding2.json";
 
 const Banner = () => {
   return (
@@ -45,10 +48,10 @@ const Banner = () => {
         <SwiperSlide className="relative">
           <img className="w-full banner_img" src={Background1} alt="" />
           <div
-            className="absolute md:w-2/5 w-11/12 lg:top-48 md:top-24 top-20 text-white lg:left-16 
-          md:left-10 left-4"
+            className="absolute lg:top-48 md:top-24 top-20 text-white lg:left-16 
+          md:left-10 left-4 flex gap-20 banner_slide"
           >
-            <div className="slider-title p-5">
+            <div className="slider-title p-5 w-1/2">
               <div
                 className="title md:text-2xl lg:text-4xl text-white"
                 data-swiper-parallax="-300"
@@ -83,6 +86,9 @@ const Banner = () => {
                   </button>
                 </Link>
               </div>
+            </div>
+            <div className="w-1/3 lg:-mt-36">
+              <Lottie loop={true} animationData={birthdayParty}></Lottie>
             </div>
           </div>
         </SwiperSlide>
@@ -157,51 +163,56 @@ const Banner = () => {
         <SwiperSlide className="relative">
           <img className="w-full banner_img" src={Background6} alt="" />
           <div
-            className="absolute md:w-2/5 w-11/12 lg:top-48 md:top-24 top-20 text-white lg:left-16 md:left-10 
-           left-4"
+            className="absolute lg:top-48 md:top-24 top-20 text-white lg:left-16 md:left-10 
+           left-4 flex flex-col md:flex-row gap-20"
           >
-            <div className="slider-title p-5">
-              <div
-                className="title md:text-2xl lg:text-4xl text-white"
-                data-swiper-parallax="-300"
-              >
-                অর্ডার পদ্ধতি
-              </div>
-              <div
-                className="subtitle md:text-lg lg:text-2xl my-4 text-white"
-                data-swiper-parallax="-200"
-              >
-                যেকোনো ধরনের অনুষ্ঠানের জন্য খাবার অর্ডার
-              </div>
-              <div
-                className="text md:text-md lg:text-lg"
-                data-swiper-parallax="-100"
-              >
-                <p>
-                  আমাদের মাধ্যমে আপনি চাইলে যেকোন জায়গায় বসে আপনার যেকোন ধরনের
-                  অনুষ্ঠানের জন্য খাবার অর্ডার করতে পারেন আপনার পছন্দের
-                  অরগানাইজেশন বা সংস্থা থেকে। এখানে আপনি সংস্থা বা অরগানাইজেশন
-                  গুলোর তৈরিকৃত খাবারের প্যাকেজ অর্ডার করতে পারেন অথবা আপনি
-                  চাইলে আপনার চাহিদা অনুযায়ী নতুন করে খাবারের প্যাকেজ তৈরি করে
-                  অর্ডার করতে পারেন।
-                </p>
-              </div>
-              <div className="lg:mt-10 md:mt-4 mt-2 flex gap-4 justify-end ">
-                <button
-                  className="btn btn-outline bg-secondary text-white hover:bg-white 
-                text-sm md:text-md lg:text-lg border-none hover:text-purple-600 normal-case ease-in duration-300 
-                hover:rotate-6 "
+            <div className="slider-title p-5 w-5/12">
+              <div>
+                <div
+                  className="title md:text-2xl lg:text-4xl text-white"
+                  data-swiper-parallax="-300"
                 >
-                  Custom Order
-                </button>
-                <button
-                  className="btn btn-outline bg-secondary text-white hover:bg-white 
-                text-sm md:text-md lg:text-lg border-none rounded-md hover:text-purple-600 normal-case ease-in
-                duration-300 hover:rotate-6"
+                  অর্ডার পদ্ধতি
+                </div>
+                <div
+                  className="subtitle md:text-lg lg:text-2xl my-4 text-white"
+                  data-swiper-parallax="-200"
                 >
-                  Order
-                </button>
+                  যেকোনো ধরনের অনুষ্ঠানের জন্য খাবার অর্ডার
+                </div>
+                <div
+                  className="text md:text-md lg:text-lg"
+                  data-swiper-parallax="-100"
+                >
+                  <p>
+                    আমাদের মাধ্যমে আপনি চাইলে যেকোন জায়গায় বসে আপনার যেকোন ধরনের
+                    অনুষ্ঠানের জন্য খাবার অর্ডার করতে পারেন আপনার পছন্দের
+                    অরগানাইজেশন বা সংস্থা থেকে। এখানে আপনি সংস্থা বা অরগানাইজেশন
+                    গুলোর তৈরিকৃত খাবারের প্যাকেজ অর্ডার করতে পারেন অথবা আপনি
+                    চাইলে আপনার চাহিদা অনুযায়ী নতুন করে খাবারের প্যাকেজ তৈরি করে
+                    অর্ডার করতে পারেন।
+                  </p>
+                </div>
+                <div className="lg:mt-10 md:mt-4 mt-2 flex gap-4 justify-end ">
+                  <button
+                    className="btn btn-outline bg-secondary text-white hover:bg-white 
+                  text-sm md:text-md lg:text-lg border-none hover:text-purple-600 normal-case ease-in duration-300 
+                  hover:rotate-6 "
+                  >
+                    Custom Order
+                  </button>
+                  <button
+                    className="btn btn-outline bg-secondary text-white hover:bg-white 
+                  text-sm md:text-md lg:text-lg border-none rounded-md hover:text-purple-600 normal-case ease-in
+                  duration-300 hover:rotate-6"
+                  >
+                    Order
+                  </button>
+                </div>
               </div>
+            </div>
+            <div className="w-1/3">
+              <Lottie loop={true} animationData={weddingAnimation}></Lottie>
             </div>
           </div>
         </SwiperSlide>

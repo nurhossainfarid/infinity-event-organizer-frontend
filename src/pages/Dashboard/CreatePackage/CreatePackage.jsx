@@ -25,7 +25,7 @@ const CreatePackage = () => {
       status: data.status,
       category: data.category,
     };
-    let url = "https://infinity-event-organizer-backend.vercel.app/v1/package";
+    let url = "https://event-api.nurhossainfarid.com/v1/package";
     fetch(url, {
       method: "POST",
       headers: {

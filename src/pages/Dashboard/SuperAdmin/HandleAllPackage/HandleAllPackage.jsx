@@ -6,8 +6,7 @@ const HandlePackages = () => {
   const [packagesData, setPackagesData] = useState([]);
 
   useEffect(() => {
-    const url =
-      "https://infinity-event-organizer-backend.vercel.app/v1/package";
+    const url = "https://event-api.nurhossainfarid.com/v1/package";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -21,7 +20,7 @@ const HandlePackages = () => {
   };
 
   const handleDelete = (id) => {
-    const url = `https://infinity-event-organizer-backend.vercel.app/v1/package/${id}`;
+    const url = `https://event-api.nurhossainfarid.com/v1/package/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {
@@ -31,9 +30,9 @@ const HandlePackages = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.status.toLowerCase() === "success") {
-            toast.success(`Package was deleted successfully`);
+          toast.success(`Package was deleted successfully`);
         } else {
-            toast.error(`Failed delete`)
+          toast.error(`Failed delete`);
         }
       });
   };

@@ -8,7 +8,7 @@ const UpdatePackage = () => {
   const [packageData, setPackageData] = useState([]);
 
   useEffect(() => {
-    const url = `https://infinity-event-organizer-backend.vercel.app/v1/package/${packageId}`;
+    const url = `https://event-api.nurhossainfarid.com/v1/package/${packageId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -40,7 +40,7 @@ const UpdatePackage = () => {
       category: !data.category ? packageData.category : data.category,
     };
     console.log(updatePackage);
-    let url = `https://infinity-event-organizer-backend.vercel.app/v1/package/${packageId}`;
+    let url = `https://event-api.nurhossainfarid.com/v1/package/${packageId}`;
     fetch(url, {
       method: "PUT",
       headers: {
