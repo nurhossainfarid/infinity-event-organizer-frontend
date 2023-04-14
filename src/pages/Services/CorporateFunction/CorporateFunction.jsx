@@ -11,8 +11,7 @@ const CorporateFunction = () => {
                 <img src={img1} className="w-full h-full" alt="" />
             </div>
             <div>
-                <h1 className="text-3xl font-semibold">Engaging event attendees can be difficult – and blowing 
-                 them away is even harder.</h1>
+                <h1 className="text-3xl font-semibold">Corporate Events</h1>
                 <p className="mt-5">Lorem ipsum dolor sit amet, eos alia alterum efficiendi ut, te essent 
                  albucius conclusionemque his. Cums suasas eligendi perfecto te. Eos posse semper officiis an. 
                   Qui ex tale partiendo, his te affert mediocrem molestiae, eama vide appetere ne. Qui ex tale 

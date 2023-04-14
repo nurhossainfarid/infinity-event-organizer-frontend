@@ -23,8 +23,6 @@ import Background8 from "../../../images/banner_bg7.jpg";
 import Background7 from "../../../images/organization7-min.jpg";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
-import birthdayParty from "./birthdayParty.json";
-import weddingAnimation from "./wedding2.json";
 
 const Banner = () => {
   return (
@@ -86,9 +84,6 @@ const Banner = () => {
                   </button>
                 </Link>
               </div>
-            </div>
-            <div className="w-1/3 lg:-mt-36">
-              <Lottie loop={true} animationData={birthdayParty}></Lottie>
             </div>
           </div>
         </SwiperSlide>
@@ -210,9 +205,6 @@ const Banner = () => {
                   </button>
                 </div>
               </div>
-            </div>
-            <div className="w-1/3">
-              <Lottie loop={true} animationData={weddingAnimation}></Lottie>
             </div>
           </div>
         </SwiperSlide>

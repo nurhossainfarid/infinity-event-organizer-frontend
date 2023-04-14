@@ -2,8 +2,9 @@ import Lottie from "lottie-react";
 import React from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import { toast } from "react-toastify";
 import RegistrationAnimation from "./RegistrationAnimation.json";
 
 // import custom css
@@ -19,6 +20,7 @@ const Registration = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const navigate = useNavigate();
 
   const onSubmit = async (data) => {
     const userData = {
@@ -42,8 +44,15 @@ const Registration = () => {
         body: JSON.stringify(userData),
       })
         .then((res) => res.json())
-        .then((result) => console.log(result));
+        .then((result) => {
+          if (result.status.toLowerCase() === 'success') {
+            toast.success("You are Successfully complete your registration");
+            navigate('/home');
+          }
+        });
       await createUserWithEmailAndPassword(data.email, data.password);
+    } else {
+      toast.error("Password doesn't matched! Please check your password.");
     }
     // await updateProfile({ displayName: data.name });
     // alert('Updated profile');
@@ -93,13 +102,14 @@ const Registration = () => {
                       {/* first name */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-white">
+                          <span className="label-text text-white text-base">
                             First Name
                           </span>
                         </label>
                         <input
                           type="text"
-                          className="input input-bordered w-full max-w-xs text-sm md:text-md"
+                          className="input input-bordered w-full max-w-xs text-sm md:text-md bg-transparent 
+                           border-white text-white"
                           {...register("firstName", {
                             required: {
                               value: true,
@@ -118,13 +128,14 @@ const Registration = () => {
                       {/* last name */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-white">
+                          <span className="label-text text-white text-base">
                             Last Name
                           </span>
                         </label>
                         <input
                           type="text"
-                          className="input input-bordered w-full max-w-xs"
+                          className="input input-bordered w-full max-w-xs bg-transparent 
+                          border-white text-white"
                           {...register("lastName", {
                             required: {
                               value: true,
@@ -143,11 +154,12 @@ const Registration = () => {
                       {/* email */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-white">Email</span>
+                          <span className="label-text text-white text-base">Email</span>
                         </label>
                         <input
                           type="email"
-                          className="input input-bordered w-full max-w-xs"
+                          className="input input-bordered w-full max-w-xs bg-transparent 
+                          border-white text-white"
                           {...register("email", {
                             required: {
                               value: true,
@@ -175,13 +187,14 @@ const Registration = () => {
                       {/* password */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-white">
+                          <span className="label-text text-white text-base">
                             Password
                           </span>
                         </label>
                         <input
                           type="password"
-                          className="input input-bordered w-full max-w-xs"
+                          className="input input-bordered w-full max-w-xs bg-transparent 
+                          border-white text-white"
                           {...register("password", {
                             required: {
                               value: true,
@@ -209,13 +222,14 @@ const Registration = () => {
                       {/* confirm password */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-white">
+                          <span className="label-text text-white text-base">
                             Confirm Password
                           </span>
                         </label>
                         <input
                           type="password"
-                          className="input input-bordered w-full max-w-xs"
+                          className="input input-bordered w-full max-w-xs bg-transparent 
+                           border-white text-white"
                           {...register("confirmPassword", {
                             required: {
                               value: true,
@@ -243,11 +257,12 @@ const Registration = () => {
                       {/* phone */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-white">Phone</span>
+                          <span className="label-text text-white text-base">Phone</span>
                         </label>
                         <input
                           type="phone"
-                          className="input input-bordered w-full max-w-xs"
+                          className="input input-bordered w-full max-w-xs bg-transparent 
+                           border-white text-white"
                           {...register("phone", {
                             required: {
                               value: true,
@@ -268,11 +283,12 @@ const Registration = () => {
                       {/* address */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-white">Address</span>
+                          <span className="label-text text-white text-base">Address</span>
                         </label>
                         <input
                           type="text"
-                          className="input input-bordered w-full max-w-xs"
+                          className="input input-bordered w-full max-w-xs bg-transparent 
+                           border-white text-white"
                           {...register("address", {
                             required: {
                               value: true,
@@ -291,10 +307,11 @@ const Registration = () => {
                       {/* Role */}
                       <div className="form-control">
                         <label className="label">
-                          <span className="label-text text-white">Role</span>
+                          <span className="label-text text-white text-base">Role</span>
                         </label>
                         <select
-                          className="select select-bordered w-full max-w-xs"
+                          className="select select-bordered w-full max-w-xs bg-transparent 
+                           border-white text-white"
                           {...register("role", {
                             required: {
                               value: true,
@@ -316,8 +333,8 @@ const Registration = () => {
                     </div>
                     <div className="form-control flex flex-col justify-center items-center mt-5">
                       <button
-                        className="btn btn-white md:w-1/3 hover:bg-pink-500 ease-in duration-300 
-                        hover:scale-105 text-sm md:text-lg"
+                        className="btn btn-white bg-purple-600 text-white md:w-1/3 hover:bg-pink-500 ease-in 
+                         duration-300 hover:scale-105 text-sm md:text-lg border-none"
                         value="registration"
                       >
                         Registration

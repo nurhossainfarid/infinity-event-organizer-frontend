@@ -33,10 +33,10 @@ import CreateCustomPackage from './pages/Dashboard/CreateCustomPackage/CreateCus
 import UserBookingHistory from './pages/Dashboard/User/UserBookingHistory/UserBookingHistory';
 import WhoWeAre from './pages/About/WhoWeAre/WhoWeAre';
 import Mission from './pages/About/Mission/Mission';
-import Vision from './pages/About/Vision/Vision';
 import HonorAward from './pages/About/HonorAward/HonorAward';
 import Footer from './components/Footer/Footer';
 import Anniversaries from './pages/Services/Anniversaries/Anniversaries';
+import ServiceWedding from './pages/Services/ServiceWedding/ServiceWedding'
 import HolidayParties from './pages/Services/HolidayParties/HolidayParties';
 import CorporateFunction from './pages/Services/CorporateFunction/CorporateFunction';
 import ConferencePlanning from './pages/Services/ConferencePlanning/ConferencePlanning';
@@ -61,6 +61,7 @@ import RequireSuperAdmin from './pages/share/Require/RequireSuperAdmin';
 import RequireOrganizerAdmin from './pages/share/Require/RequireOrganizerAdmin';
 import OrganizerDetails from './pages/Organizers/OrganizerDetails';
 import BookingPackage from './pages/BookingPackage/BookingPackage';
+import OrderPackage from './pages/share/OrderPackage/OrderPackage';
 
 
 function App() {
@@ -80,18 +81,19 @@ function App() {
         <Route path="/registration" element={<Registration></Registration>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="/bookingPackage" element={<BookingPackage></BookingPackage>}></Route>
+        <Route path="/orderPackage/:packageId" element={<OrderPackage></OrderPackage>} ></Route>
 
         {/* --------------------------------- All nested routes -------------------------------------- */}
         {/* all about routes */}
         <Route path="/about" element={<About></About>}>
           <Route index element={<WhoWeAre></WhoWeAre>}></Route>
           <Route path="mission" element={<Mission></Mission>}></Route>
-          <Route path="vision" element={<Vision></Vision>}></Route>
           <Route path="honorAward" element={<HonorAward></HonorAward>}></Route>
         </Route>
         {/* all service routes */}
         <Route path="/services" element={<Services></Services>}>
           <Route index element={<Anniversaries></Anniversaries>}></Route>
+          <Route path="serviceWedding" element={<ServiceWedding></ServiceWedding>}></Route>
           <Route path="holidayParties" element={<HolidayParties></HolidayParties>}></Route>
           <Route path="corporateFunction" element={<CorporateFunction></CorporateFunction>}></Route>
           <Route path="fashionConcert" element={<FashionConcert></FashionConcert>}></Route>

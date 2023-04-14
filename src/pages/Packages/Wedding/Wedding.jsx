@@ -17,7 +17,7 @@ const Wedding = () => {
       <h1 className="text-3xl text-center text-secondary font-semibold animate-pulse">
         Wedding Packages
       </h1>
-      <div className="mt-8 grid grid-cols-2 gap-16">
+      <div className="mt-8 grid grid-cols-3 gap-16">
         {packageData.map((pack) =>
           pack.eventName === "wedding" ? (
             <div>

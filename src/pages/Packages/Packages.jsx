@@ -70,56 +70,73 @@ const Packages = () => {
         </div>
         <div className="drawer-side mt-10">
           <label for="dashboard-sidebar" className="drawer-overlay"></label>
-          <ul className="menu pl-10 pt-16 overflow-y-auto w-80 text-white gap-10 ml-28 bg-pink-500">
+          <ul className="menu pt-5 overflow-y-auto w-80 text-white ml-28 flex flex-col justify-center 
+          items-center bg-pink-500">
             {/* <!-- Sidebar content here --> */}
-            <AboutCustomLink
-              className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
-              to="/packages"
-            >
-              Wedding
-            </AboutCustomLink>
-            <AboutCustomLink
-              className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
-              to="/packages/birthdayParties"
-            >
-              Birthday Parties
-            </AboutCustomLink>
-            <AboutCustomLink
-              className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
-              to="/packages/holidayPartiesPackages"
-            >
-              Holiday Parties
-            </AboutCustomLink>
-            <AboutCustomLink
-              className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
-              to="/packages/privateParties"
-            >
-              Private Parties
-            </AboutCustomLink>
-            <AboutCustomLink
-              className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
-              to="/packages/corporateFunction"
-            >
-              Corporate Function
-            </AboutCustomLink>
-            <AboutCustomLink
-              className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
-              to="/packages/concerts"
-            >
-              Concerts
-            </AboutCustomLink>
-            <AboutCustomLink
-              className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
-              to="/packages/anniversariesPackages"
-            >
-              Anniversaries
-            </AboutCustomLink>
-            <AboutCustomLink
-              className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
-              to="/packages/comparePackage"
-            >
-              Compare Package
-            </AboutCustomLink>
+            <li>
+              <AboutCustomLink
+                className="py-3 rounded-none text-lg font-semibold about-custom-button"
+                to="/packages"
+              >
+                Wedding
+              </AboutCustomLink>
+            </li>
+            <li>
+              <AboutCustomLink
+                className="py-3 rounded-none text-lg font-semibold about-custom-button"
+                to="/packages/birthdayParties"
+              >
+                  Birthday Parties
+              </AboutCustomLink>
+            </li>
+            <li>
+              <AboutCustomLink
+                className="py-3 rounded-none text-lg font-semibold about-custom-button"
+                to="/packages/holidayPartiesPackages"
+              >
+                Holiday Parties
+              </AboutCustomLink>
+            </li>
+            <li>
+              <AboutCustomLink
+                className="py-3 rounded-none text-lg font-semibold about-custom-button"
+                to="/packages/privateParties"
+              >
+                Private Parties
+              </AboutCustomLink>
+            </li>
+            <li>
+              <AboutCustomLink
+                className="py-3 rounded-none text-lg font-semibold about-custom-button"
+                to="/packages/corporateFunction"
+              >
+                Corporate Function
+              </AboutCustomLink>
+            </li>
+            <li>
+              <AboutCustomLink
+                className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
+                to="/packages/concerts"
+              >
+                Concerts
+              </AboutCustomLink>
+            </li>
+            <li>
+              <AboutCustomLink
+                className="px-10 py-3 rounded-none text-lg font-semibold about-custom-button"
+                to="/packages/anniversariesPackages"
+              >
+                Anniversaries
+              </AboutCustomLink>
+            </li>
+            <li>
+              <AboutCustomLink
+                className="py-3 rounded-none text-lg font-semibold about-custom-button"
+                to="/packages/comparePackage"
+              >
+                Compare Package
+              </AboutCustomLink>
+            </li>
           </ul>
         </div>
       </div>

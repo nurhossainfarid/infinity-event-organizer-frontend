@@ -7,3 +7,7 @@
 .packages-header {
     font-family: 'Playball', cursive;
 }
+.about-custom-button {
+    width: 200px;
+    text-align: center;
+}

@@ -15,28 +15,19 @@ const WhoWeAre = () => {
         </div>
         <div>
           <p className="text-lg text-gray-700">
-            In the era of Digital Bangladesh, we have to solve every problem
-            Digitally. In the present days we face many kinds of problem to
-            organize an event. First of all we can not get any free space in
-            party center or community center at our desired days. On the other
-            hand many time party center take extra payment because we have not
-            any chance to compare their service and payment with other community
-            center. So this online website customer can compare between multiple
-            party center service and fees. Infinity Event Organizer offers a
-            web-based solution to the customers difficulties that saves time,
-            minimize hassle, best service in his budget and get solution
-            quickly. Infinity Event Organizer is an online event management
-            system that provide the information about all party center or
-            community center details information with their updated schedule to
-            the customers.
+          ইনফিনিটি অ্যালগো স্টেশন এক ধরনের সফটওয়্যার ফার্ম। আপনার প্রয়োজন অনুযায়ী আমরা যেকোনো ধরনের সফটওয়্যার   
+           সমাধান প্রদান করি। আমাদের প্রথম লক্ষ্য ক্লায়েন্ট সন্তুষ্টি অর্জন করা হয়. আমরা সব আপডেট প্রযুক্তি দিয়ে আমাদের 
+            সফটওয়্যার তৈরি করি। আমরা আমাদের ক্লায়েন্টকে যেকোন ধরনের ওয়েব অ্যাপ, ওয়েবসাইট এবং অ্যান্ড্রয়েড অ্যাপ দিয়ে 
+             থাকি। শীঘ্রই আমরা আপনাকে ওয়েব নিরাপত্তা এবং অ্যাপ নিরাপত্তা প্রদান করব। ক্লায়েন্টের চাহিদা পূরণ করার জন্য 
+              আমাদের একটি নিবেদিত পরিশ্রমী দল রয়েছে।
           </p>
           <div className="card-actions justify-start mt-10">
-            <button
+            <a href="https://infinityalgostation.com/" target="_blank"
               className="border-2 border-secondary px-5 py-2 text-xl text-secondary font-semibold 
                      hover:bg-secondary hover:text-white ease-in duration-300"
             >
-              Read More
-            </button>
+              Visit Our Official Site
+            </a>
           </div>
         </div>
       </div>

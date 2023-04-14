@@ -11,31 +11,17 @@ const HolidayParties = () => {
                 <img src={img1} className=" lg:w-1/2" alt="" />
             </div>
             <div>
-                <h1 className="text-3xl font-semibold mt-8">Engaging event attendees can be difficult – and 
-                 blowing them away is even harder.</h1>
-                <p className="mt-5">Lorem ipsum dolor sit amet, eos alia alterum efficiendi ut, te essent 
-                 albucius conclusionemque his. Cums suasas eligendi perfecto te. Eos posse semper officiis an. 
-                  Qui ex tale partiendo, his te affert mediocrem molestiae, eama vide appetere ne. Qui ex tale 
-                   partiendo, his te affert mediocrem molestiae.
-                    At Cole, Scott & Kissane, P.A. our commitment to a diverse law firm and inclusive work 
-                     environment is paramount to the success of our firm and our communities.</p>
-                <ul className="my-5">
-                    <li className="text-xl mb-2 fs-bold flex gap-3 items-center"><BsCheckCircleFill 
-                     className="text-green-600"></BsCheckCircleFill>User can easily find party center by using 
-                      this website.</li>
-                    <li className="text-xl mb-2 fs-bold flex gap-2 items-center"><BsCheckCircleFill 
-                     className="text-green-600"></BsCheckCircleFill>User can compare any package with multiple 
-                      party center package.</li>
-                    <li className="text-xl mb-2 fs-bold flex gap-2 items-center"><BsCheckCircleFill 
-                     className="text-green-600"></BsCheckCircleFill>User can give feedback about party center 
-                      service.</li>
-                    <li className="text-xl mb-2 fs-bold flex gap-2 items-center"><BsCheckCircleFill 
-                     className="text-green-600"></BsCheckCircleFill>Party center management can promote their 
-                      package.</li>
-                    <li className="text-xl mb-2 fs-bold flex gap-2 items-center"><BsCheckCircleFill 
-                     className="text-green-600"></BsCheckCircleFill>Party center management can improve their 
-                      service.</li>
-                </ul>
+                <h1 className="text-3xl font-semibold mt-8">Holiday Plane</h1>
+                <p className="mt-5">অফিস ছুটির পার্টি কখনও কখনও ভয়ঙ্কর হয়. এটিকে একটি দুর্দান্ত ইভেন্টে পরিণত করার 
+                 জন্য একটি কোম্পানির সর্বোত্তম প্রচেষ্টা থাকা সত্ত্বেও, অনেকগুলি কেবল সাধারণ বিরক্তিকর বা ভয়ঙ্করভাবে ভুল হয়ে 
+                  যায়৷ ইনফিনিটি ইভেন্ট অর্গানাইজার ওয়েডিং এবং ইভেন্ট ম্যানেজমেন্ট নিয়োগ করে বিরক্তিকর এবং ভয়ঙ্কর এড়িয়ে 
+                    চলুন যাতে এটি এমন একটি ইভেন্টে পরিণত হয় যা আপনার স্টাফদের নতুন বছরে ভালভাবে গুঞ্জন করা হবে।
+                    <br /> <br />
+                    আমাদের পেশাদার ইভেন্ট সমন্বয়কারী হবেন আপনার ডেডিকেটেড ইভেন্ট প্ল্যানার। একটি ক্যাটার করা আনুষ্ঠানিক 
+                     সিট-ডাউন ডিনার থেকে একটি নৈমিত্তিক এবং আরামদায়ক হ্যাঙ্গআউট পর্যন্ত, আমাদের কাছে যে কোনও 
+                      ধরণের ইভেন্ট আয়োজন করার দক্ষতা রয়েছে। একটি নিখুঁত ছুটির পার্টি তৈরি করতে আমরা আপনার 
+                       কোম্পানির বাজেটের মধ্যে কাজ করব।
+                </p>
             </div>
         </div>
     );

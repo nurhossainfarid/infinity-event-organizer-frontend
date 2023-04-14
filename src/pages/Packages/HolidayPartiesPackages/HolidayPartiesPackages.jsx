@@ -6,7 +6,7 @@ const HolidayPartiesPackages = () => {
       <h1 className="text-3xl text-center text-secondary font-semibold animate-pulse">
         Holiday Packages
       </h1>
-      <div className="mt-8 grid grid-cols-2 gap-10">
+      <div className="mt-8 grid grid-cols-3 gap-10">
         <div className="card card-compact bg-base-100 shadow-xl">
           <figure>
             <img

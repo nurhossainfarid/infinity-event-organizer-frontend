@@ -14,14 +14,16 @@ const HonorAward = () => {
           <img src={img1} alt="Album" />
         </div>
         <div className="order-1">
-          <p className="text-lg text-gray-700">Updated</p>
+          <p className="text-2xl text-gray-700 ">
+            Updating...
+          </p>
           <div className="card-actions justify-start mt-10">
-            <button
+            {/* <button
               className="border-2 border-secondary px-5 py-2 text-xl text-secondary font-semibold 
                      hover:bg-secondary hover:text-white ease-in duration-300"
             >
               Read More
-            </button>
+            </button> */}
           </div>
         </div>
       </div>

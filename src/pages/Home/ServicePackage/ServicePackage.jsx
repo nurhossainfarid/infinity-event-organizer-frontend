@@ -30,7 +30,7 @@ const ServicePackage = () => {
       {/* service */}
       <section>
         <div className="mx-4 md:mx-10 lg:mx-28">
-          <div className="flex justify-between items-center gap-10">
+          <div className="">
             <div>
               <h1 className="md:text-5xl text-3xl event-planner font-bold lg:pt-5">
                 Our Greatest Service
@@ -40,42 +40,38 @@ const ServicePackage = () => {
                 কিভাবে আপনাকে সব থেকে ভালো সেবা দিতে পারি।
               </p>
             </div>
-            <div className="lg:flex hidden">
-              <button
-                className="border-2 p-2 btn-outline btn-secondary rounded-sm text-lg 
-                            font-semibold hover:text-white ease-in duration-300 animate-bounce"
-              >
-                More Service..
-              </button>
-            </div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 lg:absolute z-20 lg:mr-28">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:absolute z-20 lg:mr-28">
             <div className="card bg-base-100 shadow-xl rounded-none">
               <figure>
-                <img className="service-img" src={img1} alt="birthday" />
+                <img className="service-img w-full" src={img1} alt="birthday" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title text-xl md:text-3xl fond-semibold">
                   Perfect Venues
                 </h2>
                 <p className="text-md md:text-lg">
-                  আপনার অনুষ্ঠানের ভেন্যুর জন্য, আপনি পাচ্ছেন বাংলাদেশের সব থেকে
-                  বেস্ট কোয়ালিটির অর্গানাইজার গুলো। তাই আপনি আপনার অনুষ্ঠানের
-                  ধরণ অনুযায়ী বেঁচে নিতে পারেন পারফেক্ট ভেন্যু{" "}
+                আপনার অনুষ্ঠানের ভেন্যুর জন্য, আপনি পাচ্ছেন বাংলাদেশের সব থেকে বেস্ট কোয়ালিটির অর্গানাইজার....
                 </p>
                 <div className="card-actions justify-center">
-                  <button
-                    className="p-2 btn-outline btn-secondary rounded-sm text-lg 
-                                font-semibold hover:text-white hover:scale-110 ease-out duration-300"
-                  >
-                    Read More..
-                  </button>
+                  <label htmlFor="my-modal" className="p-2 btn-outline btn-secondary rounded-sm text-lg 
+                  font-semibold  hover:text-white hover:scale-110 ease-out duration-300">Read More..</label>
+                </div>
+                <input type="checkbox" id="my-modal" className="modal-toggle" />
+                <div className="modal bg-transparent text-white">
+                  <div className="modal-box w-11/12 max-w-5xl bg-purple-600">
+                  <label htmlFor="my-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="font-bold text-lg">Perfect Venues</h3>
+                    <p className="py-4">আপনার অনুষ্ঠানের ভেন্যুর জন্য, আপনি পাচ্ছেন বাংলাদেশের সব থেকে বেস্ট 
+                     কোয়ালিটির অর্গানাইজার গুলো। তাই আপনি আপনার অনুষ্ঠানের ধরণ অনুযায়ী বেঁচে নিতে পারেন পারফেক্ট 
+                      ভেন্যু</p>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="card bg-slate-50 shadow-xl rounded-none">
               <figure>
-                <img className="service-img" src={img2} alt="party" />
+                <img className="service-img w-full" src={img2} alt="party" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title text-xl md:text-3xl fond-semibold">
@@ -87,18 +83,29 @@ const ServicePackage = () => {
                   পারেন। এছাড়াও....
                 </p>
                 <div className="card-actions justify-center">
-                  <button
-                    className="p-2 btn-outline btn-secondary rounded-sm text-lg font-semibold 
-                                 hover:text-white hover:scale-110 ease-out duration-300"
-                  >
-                    Read More..
-                  </button>
+                  <label htmlFor="my-modal2" className="p-2 btn-outline btn-secondary rounded-sm text-lg 
+                  font-semibold  hover:text-white hover:scale-110 ease-out duration-300">Read More..</label>
+                </div>
+                <input type="checkbox" id="my-modal2" className="modal-toggle" />
+                <div className="modal bg-transparent text-white">
+                  <div className="modal-box w-11/12 max-w-5xl bg-purple-600">
+                  <label htmlFor="my-modal2" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="font-bold text-lg">Satisfaction</h3>
+                    <p className="py-4">আপনার কাছে আছে বাংলাদেশের বেস্ট অর্গানাইজার গুলো এবং ওদের প্যাকেজগুলো। 
+                     আপনি চাইলে আপনার নিজের মত করে প্যাকেজ তৈরি করতে পারেন এবং প্যাকেজ গুলোর মধ্যে কম্পেয়ার 
+                      করে সবচেয়ে বেস্ট প্যাকেজ বাছাই করতে পারে। এদিক থেকে অর্গানাইজার গুলো আপনাকে দিচ্ছে সম্পূর্ণ 
+                       স্বাধীনতা। আপনি আপনার ইচ্ছামত আপনার ইভেন্টগুলো কে সাজাতে পারেন। এছাড়াও প্রতিনিয়ত আমাদের 
+                        ব্লগ গুলো অনুসরণ করলে আপনি ইভেন্ট সম্পর্কে নতুন নতুন আইডিয়া পাবেন এবং আপনার এই 
+                         ইভেন্টগুলোকে আরও সুন্দর করতে পারবেন। এবং প্রত্যেক সপ্তাহে আপনাদের জন্য থাকবে একটি পুরস্কারের 
+                          ব্যবস্থা। আপনি আপনার ইভেন্টের ছবি গুলো আমাদের সাথে শেয়ার করে জিতে নিতে পারেন এই পুরস্কার 
+                           গুলো। আপনাদের সন্তুষ্টি হচ্ছে আমাদের প্রধান উদ্দেশ্য</p>
+                  </div>
                 </div>
               </div>
             </div>
             <div className="card bg-base-100 shadow-xl rounded-none">
               <figure>
-                <img className="service-img" src={img3} alt="holiday" />
+                <img className="service-img w-full" src={img3} alt="holiday" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title text-xl md:text-3xl fond-semibold">
@@ -111,12 +118,27 @@ const ServicePackage = () => {
                   অর্গানাইজারের প্যাকেজগুলোর....
                 </p>
                 <div className="card-actions justify-center">
-                  <button
-                    className="p-2 btn-outline btn-secondary rounded-sm text-lg font-semibold 
-                                 hover:text-white hover:scale-110 ease-out duration-300"
-                  >
-                    Read More..
-                  </button>
+                  <label htmlFor="my-modal3" className="p-2 btn-outline btn-secondary rounded-sm text-lg 
+                  font-semibold  hover:text-white hover:scale-110 ease-out duration-300">Read More..</label>
+                </div>
+                <input type="checkbox" id="my-modal3" className="modal-toggle" />
+                <div className="modal bg-transparent text-white">
+                  <div className="modal-box w-11/12 max-w-5xl bg-purple-600">
+                  <label htmlFor="my-modal3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <h3 className="font-bold text-lg">Save Time & Money</h3>
+                    <p className="py-4">খুব অল্প সময়ের মধ্যে আপনি পেয়ে যাচ্ছেন আপনার পছন্দের অর্গানাইজার গুলোর বেস্ট 
+                     প্যাকেজ। এছাড়াও আপনি চাইলে আপনার সাধ্যর মধ্যে প্যাকেজ বুকিং করতে পারেন এবং অন্যান্য 
+                      অর্গানাইজারের প্যাকেজগুলোর মধ্যে তুলনা করে আপনার পছন্দের প্যাকেজ বেঁচে নিতে পারেন। এখন প্রশ্ন 
+                       থেকে যায়, আমাদের প্ল্যাটফর্মের মাধ্যমে কিভাবে আপনার টাকা ও সময় বাঁচবে?
+                       প্রথমে বলতে চাই, আমাদের প্লাটফর্মের মাধ্যমে আপনি খুব সহজে বাংলাদেশের যেকোনো অর্গানাইজারের সাথে 
+                        যোগাযোগ করতে পারবেন।  এতে করে আপনাকে ফিজিক্যালি কোনো কষ্ট করতে হবে না এবং বাংলাদেশের 
+                         সব থেকে বড় সমস্যা যানজটের সম্মুখী হতে হবে না, আপনি খুব সহজে যেকোনো অর্গানাইজারের সাথে 
+                          আপনার ইভেন্টের বেপারে কথা বলতে পারবেন।
+                         দ্বিতীয়ত, আপনি সব অর্গানাইজারের প্যাকেজগুলো ডিটেইলসে দেখতে পারবেন এবং চাইলে প্যাকেজগুলোর 
+                          মধ্যে তুলনা করতে পারবেন। এতে করে আপনার জন্য পারফেক্ট প্যাকেজ বেছে নিতে পারবেন। কেউ 
+                          আপনাকে ঠকাবে বা আপনি কারো কাছে ঠকবেন এর কোনো সম্বাবনা এই নাই। এইদিক থেকে আমরা 
+                           আপনাকে নিশ্চয়তা দিতে পারি</p>
+                  </div>
                 </div>
               </div>
             </div>

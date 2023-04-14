@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 // react icons
 import { GiGlassCelebration } from "react-icons/gi";
@@ -43,28 +43,21 @@ const About = () => {
                   className="px-3 md:px-10 py-1 md:py-3 rounded-none text-md md:text-lg font-semibold 
                   about-custom-button"
                 >
-                  Who We Are!
+                  আমরা কে
                 </AboutCustomLink>
                 <AboutCustomLink
                   to="/about/mission"
                   className="px-3 md:px-10 py-1 md:py-3 rounded-none text-md md:text-lg font-semibold 
                   about-custom-button"
                 >
-                  Our Mission
-                </AboutCustomLink>
-                <AboutCustomLink
-                  to="/about/vision"
-                  className="px-3 md:px-10 py-1 md:py-3 rounded-none text-md md:text-lg font-semibold 
-                  about-custom-button"
-                >
-                  Our Vision
+                  আমাদের লক্ষ্য
                 </AboutCustomLink>
                 <AboutCustomLink
                   to="/about/honorAward"
                   className="px-3 md:px-10 py-1 md:py-3 rounded-none text-md md:text-lg font-semibold 
                   about-custom-button"
                 >
-                  Honor & Award
+                  আমাদের অর্জন
                 </AboutCustomLink>
               </ul>
             </div>
@@ -79,8 +72,7 @@ const About = () => {
           Our Working Process
         </h2>
         <p className="text-center text-gray-500 mt-3 text-md mx-6 md:mx-10 lg:mx-28">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry’type specimen book.
+          যে পদ্ধতিতে আমরা আমাদের অরগানাইজাদের ও ব্যবহারকারীদের সাথে কাজ করি
         </p>
         <div
           className="grid grid-cols md:grid-cols-2 lg:flex gap-10 mx-6 md:mx-10 lg:mx-28 justify-center 
@@ -96,12 +88,13 @@ const About = () => {
               </div>
             </div>
             <h1 className="text-2xl font-bold mt-5">
-              Find The Perfect Venue For Free
+              Find The Perfect Venue
             </h1>
           </div>
           <div>
             <div className="w-1/2 mx-auto">
-              <div className="bg-secondary icon-width flex justify-center items-center rounded-full border-4 border-accent hover:bg-accent ease-in duration-300">
+              <div className="bg-secondary icon-width flex justify-center items-center rounded-full border-4 
+               border-accent hover:bg-accent ease-in duration-300">
                 <GiGlassCelebration className="text-5xl text-white"></GiGlassCelebration>
               </div>
             </div>
@@ -111,7 +104,8 @@ const About = () => {
           </div>
           <div>
             <div className="w-1/2 mx-auto">
-              <div className="bg-secondary icon-width flex justify-center items-center rounded-full border-4 border-accent hover:bg-accent ease-in duration-300">
+              <div className="bg-secondary icon-width flex justify-center items-center rounded-full border-4 
+               border-accent hover:bg-accent ease-in duration-300">
                 <MdCelebration className="text-5xl text-white"></MdCelebration>
               </div>
             </div>
@@ -121,7 +115,8 @@ const About = () => {
           </div>
           <div>
             <div className="w-1/2 mx-auto">
-              <div className="bg-secondary icon-width flex justify-center items-center rounded-full border-4 border-accent hover:bg-accent ease-in duration-300">
+              <div className="bg-secondary icon-width flex justify-center items-center rounded-full border-4 
+               border-accent hover:bg-accent ease-in duration-300">
                 <GiGlassCelebration className="text-5xl text-white"></GiGlassCelebration>
               </div>
             </div>
@@ -131,11 +126,12 @@ const About = () => {
           </div>
         </div>
         <div className="flex gap-20 justify-center items-center pb-20 pt-10">
+          <Link to="/packages" className="bg-secondary hover:bg-accent ease-in-out duration-300 text-white px-4 
+           py-2 text-xl">
+            বুকিং প্যাকেজ
+          </Link>
           <button className="bg-secondary hover:bg-accent ease-in-out duration-300 text-white px-4 py-2 text-xl">
-            Book Events
-          </button>
-          <button className="bg-secondary hover:bg-accent ease-in-out duration-300 text-white px-4 py-2 text-xl">
-            Gallery
+            গ্যালারি
           </button>
         </div>
       </div>
