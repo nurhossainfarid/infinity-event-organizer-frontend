@@ -99,6 +99,9 @@ const Header = () => {
                 <li>
                   <CustomLink to="/events">Events</CustomLink>
                 </li>
+                <li>
+                  <CustomLink to="/gallery">Gallery</CustomLink>
+                </li>
                 {user && (
                   <li>
                     <CustomLink to={"/dashBoard"}>DashBoard</CustomLink>
@@ -132,6 +135,9 @@ const Header = () => {
               </li>
               <li>
                 <CustomLink to="/events">Events</CustomLink>
+              </li>
+              <li>
+                  <CustomLink to="/gallery">Gallery</CustomLink>
               </li>
               {!user && (
                 <li>

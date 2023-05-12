@@ -31,15 +31,11 @@ const UpdatePackage = () => {
         name: !data.organizationName
           ? packageData.organization.name
           : data.organizationName,
-        id: !data.organizationId
-          ? packageData.organization.id
-          : data.organizationId,
       },
       foodMenu: !data.foodMenu ? packageData.foodMenu : data.foodMenu,
       status: !data.status ? packageData.status : data.status,
       category: !data.category ? packageData.category : data.category,
     };
-    console.log(updatePackage);
     let url = `https://event-api.nurhossainfarid.com/v1/package/${packageId}`;
     fetch(url, {
       method: "PUT",
@@ -192,28 +188,6 @@ const UpdatePackage = () => {
             {errors.organizationName?.type === "required" && (
               <span className="label-text-alt text-red-500">
                 {errors.organizationName.message}
-              </span>
-            )}
-          </label>
-        </div>
-        <div className="form-control">
-          <div className="flex gap-2">
-            <label className="label">
-              <span className="label-text text-black text-lg">
-                Organization ID
-              </span>
-            </label>
-            <input
-              type="text"
-              Value={packageData?.organization?.id}
-              className="input input-bordered w-full max-w-xs"
-              {...register("organizationId")}
-            />
-          </div>
-          <label className="label">
-            {errors.organizationId?.type === "required" && (
-              <span className="label-text-alt text-red-500">
-                {errors.organizationId.message}
               </span>
             )}
           </label>

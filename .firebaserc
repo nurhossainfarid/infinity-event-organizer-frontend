@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "infinity-event-organizer-4747"
-  }
+    "default": "infinity-event-organizer-4747",
+    "run build": "infinity-event-organizer-4747"
+  },
+  "targets": {}
 }

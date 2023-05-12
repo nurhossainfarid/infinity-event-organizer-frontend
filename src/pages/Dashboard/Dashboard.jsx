@@ -51,7 +51,7 @@ const Dashboard = () => {
         </div>
         <div className="drawer-side mt-16">
           <label for="dashboard-sidebar" className="drawer-overlay"></label>
-          <ul className="menu md:p-4 overflow-y-auto w-1/2 md:w-80 bg-secondary text-white">
+          <ul className="menu md:p-4 overflow-y-auto w-1/2 md:w-64 bg-secondary text-white">
             <label
               htmlFor="dashboard-sidebar"
               className="btn btn-sm btn-circle absolute right-2 
@@ -109,6 +109,11 @@ const Dashboard = () => {
                 <li>
                   <Link to="/dashboard/userBookingHistory">
                     Booking History
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/feedbackHistory">
+                    Feedback History
                   </Link>
                 </li>
                 <li>

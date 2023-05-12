@@ -1,19 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 
 const CreateCustomPackage = () => {
+  const [user] = useAuthState(auth)
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
+  const [customPackage, setCustomPackage] = useState([]);
+
   const onSubmit = async (data) => {
-    console.log(data);
+    const packageData = {
+      name: data.name,
+      email: data.email,
+      phone: data.phone,
+      address: data.address,
+      eventCategory: data.eventCategory,
+      foodItems: data.foodItems,
+      attend: data.attend,
+      organizerName: data.organizerName,
+      location: data.location,
+      date: data.date,
+      time: data.time,
+      extraService: data.extraService,
+    } 
+    console.log(packageData);
+    const url = "http://localhost:5000/v1/customPackage";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(packageData),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.status.toLowerCase() === "success") {
+          toast.success("Your package booking Successfully");
+        } else {
+          toast.error(result.error);
+        }
+      })
   };
   return (
-    <div>
-      <div className="flex justify-between my-5">
+    <div className="pb-10">
+      <div className="flex justify-between my-5 pb-10">
         <h1 className="text-3xl text-center dashboard-header">
           Custom Package
         </h1>
@@ -26,7 +62,7 @@ const CreateCustomPackage = () => {
         {/* name */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text text-black text-lg">User Name</span>
+            <span className="label-text text-black text-lg">Your Name</span>
           </label>
           <input
             type="text"
@@ -49,10 +85,11 @@ const CreateCustomPackage = () => {
         {/* email */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text text-black text-lg">User Email</span>
+            <span className="label-text text-base">Email</span>
           </label>
           <input
             type="email"
+            Value={user?.email}
             className="input input-bordered w-full max-w-xs"
             {...register("email", {
               required: {
@@ -78,27 +115,25 @@ const CreateCustomPackage = () => {
             )}
           </label>
         </div>
-        {/* password */}
+        {/* Phone */}
         <div className="form-control">
           <label className="label">
             <span className="label-text text-black text-lg">Phone</span>
           </label>
           <input
-            type="text"
+            type="number"
             className="input input-bordered w-full max-w-xs"
-            {...register("Phone", {
+            {...register("phone", {
               required: {
                 value: true,
-                message: "Phone is require",
+                message: "phone is require",
               },
-              maxLength: 11,
-              minLength: 11,
             })}
           />
           <label className="label">
-            {errors.address?.type === "required" && (
+            {errors.phone?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.address.message}
+                {errors.phone.message}
               </span>
             )}
           </label>
@@ -126,38 +161,56 @@ const CreateCustomPackage = () => {
             )}
           </label>
         </div>
+        {/* Event Category */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text text-black text-lg">Time</span>
+            <span className="label-text text-black text-lg">Event Category</span>
           </label>
-          <input
-            type="password"
-            className="input input-bordered w-full max-w-xs"
-            {...register("password", {
+          <select
+            className="select select-bordered w-full max-w-xs"
+            {...register("eventCategory", {
               required: {
                 value: true,
-                message: "Password is require",
-              },
-              minLength: {
-                value: 6,
-                message: "Must be use 6 characters password",
+                message: "Event category is require",
               },
             })}
-          />
+          >
+            <option>wedding</option>
+            <option selected>birthday</option>
+            <option>private party</option>
+          </select>
           <label className="label">
-            {errors.password?.type === "required" && (
+            {errors.eventCategory?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.password.message}
-              </span>
-            )}
-            {errors.password?.type === "minLength" && (
-              <span className="label-text-alt text-red-500">
-                {errors.password.message}
+                {errors.eventCategory.message}
               </span>
             )}
           </label>
         </div>
-        {/* phone */}
+        {/* Food Items */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Food Items</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("foodItems", {
+              required: {
+                value: true,
+                message: "Food items is require",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.foodItems?.type === "required" && (
+              <span className="label-text-alt text-red-500">
+                {errors.foodItems.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Attendant people */}
         <div className="form-control">
           <label className="label">
             <span className="label-text text-black text-lg">
@@ -165,101 +218,143 @@ const CreateCustomPackage = () => {
             </span>
           </label>
           <input
-            type="text"
+            type="number"
             className="input input-bordered w-full max-w-xs"
-            {...register("Phone", {
+            {...register("attend", {
               required: {
                 value: true,
-                message: "Phone is require",
+                message: "Attend is require",
               },
-              maxLength: 11,
-              minLength: 11,
             })}
           />
           <label className="label">
-            {errors.address?.type === "required" && (
+            {errors.attend?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.address.message}
+                {errors.attend.message}
               </span>
             )}
           </label>
         </div>
-        {/* address */}
+        {/* Organization Name */}
         <div className="form-control">
           <label className="label">
             <span className="label-text text-black text-lg">
-              Organizer Name
+              Organization Name
             </span>
           </label>
           <input
             type="text"
             className="input input-bordered w-full max-w-xs"
-            {...register("address", {
+            {...register("organizerName", {
               required: {
                 value: true,
-                message: "Address is require",
+                message: "Organizer Name is require",
               },
             })}
           />
           <label className="label">
-            {errors.address?.type === "required" && (
+            {errors.organizerName?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.address.message}
+                {errors.organizerName.message}
               </span>
             )}
           </label>
         </div>
+        {/* Location*/}
         <div className="form-control">
           <label className="label">
-            <span className="label-text text-black text-lg">
-              Select Location
-            </span>
+            <span className="label-text text-black text-lg">Location</span>
           </label>
           <input
             type="text"
             className="input input-bordered w-full max-w-xs"
-            {...register("address", {
+            {...register("location", {
               required: {
                 value: true,
-                message: "Address is require",
+                message: "Location is require",
               },
             })}
           />
           <label className="label">
-            {errors.address?.type === "required" && (
+            {errors.location?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.address.message}
+                {errors.location.message}
               </span>
             )}
           </label>
         </div>
+        {/* Date */}
         <div className="form-control">
           <label className="label">
-            <span className="label-text text-black text-lg">
-              Needed Extra Service
-            </span>
+            <span className="label-text text-black text-lg">Date</span>
           </label>
           <input
             type="text"
             className="input input-bordered w-full max-w-xs"
-            {...register("name", {
+            {...register("date", {
               required: {
                 value: true,
-                message: "Name is require",
+                message: "Date category is require",
               },
             })}
           />
           <label className="label">
-            {errors.name?.type === "required" && (
+            {errors.date?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.name.message}
+                {errors.date.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* time */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Time</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("time", {
+              required: {
+                value: true,
+                message: "Time is require",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.time?.type === "required" && (
+              <span className="label-text-alt text-red-500">
+                {errors.time.message}
+              </span>
+            )}
+          </label>
+        </div>
+        {/* Extra Service */}
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text text-black text-lg">Extra Service(optional)</span>
+          </label>
+          <input
+            type="text"
+            className="input input-bordered w-full max-w-xs"
+            {...register("extraService", {
+              required: {
+                value: true,
+                message: "Extra service is require",
+              },
+            })}
+          />
+          <label className="label">
+            {errors.extraService?.type === "required" && (
+              <span className="label-text-alt text-red-500">
+                {errors.extraService.message}
               </span>
             )}
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-white w-1/2" value="registration">
-            Add
+          <button className="btn btn-white w-1/2" value="booking">
+            Booking
           </button>
         </div>
       </form>

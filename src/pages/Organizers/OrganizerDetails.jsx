@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -13,7 +13,9 @@ import { Autoplay, EffectCube, Pagination } from "swiper";
 
 const OrganizerDetails = () => {
   const { oId } = useParams();
+  const [queryPrice, setQueryPrice] = useState(0);
   const [organizerData, setOrganizerData] = useState();
+  const navigate = useNavigate();
   useEffect(() => {
     const url = `https://event-api.nurhossainfarid.com/v1/organization/${oId}`;
     fetch(url)
@@ -22,6 +24,9 @@ const OrganizerDetails = () => {
         setOrganizerData(data.data);
       });
   }, [organizerData]);
+  const navigatePackage = (packageId) => {
+    navigate(`/bookingPackage/${packageId}`)
+  }
   return (
     <div className="mx-28 mt-28 mb-10">
       <section className="grid md:grid-cols-2">
@@ -102,9 +107,14 @@ const OrganizerDetails = () => {
         <h1 className="text-3xl text-center uppercase mb-10">
           {organizerData?.name} All Packages
         </h1>
+        <div className="flex flex-col items-end mr-40 gap-2">
+          <input type="text" placeholder="Search Your Budget Package"
+            className="input mb-10 w-1/4" onChange={(e) => 
+           setQueryPrice(e.target.value)} />
+        </div>
         <div className="grid grid-cols-3 gap-5">
           {organizerData?.packages.map((pack) => (
-            <div className="card card-compact w-96 bg-fuchsia-600 shadow-xl text-white">
+            <div key={pack._id} className="card card-compact w-96 bg-fuchsia-600 shadow-xl text-white">
               <div className="card-body">
                 <h2 className="card-title">{pack?.name}</h2>
                 <p className="text-lg">Price: ${pack?.price}</p>
@@ -116,13 +126,13 @@ const OrganizerDetails = () => {
                 <p className="text-lg">Status: {pack?.status}</p>
                 <div className="card-actions justify-end mt-4">
                   <button
-                    className="btn bg-white hover:bg-white text-white 
+                    className="btn bg-white hover:bg-white 
                                 hover:text-fuchsia-600"
                   >
                     Custom Package
                   </button>
-                  <button
-                    className="btn bg-white hover:bg-white text-white 
+                  <button onClick={() => navigatePackage(pack._id)}
+                    className="btn bg-white hover:bg-white 
                                 hover:text-fuchsia-600"
                   >
                     Booking Now

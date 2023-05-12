@@ -4,7 +4,7 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import { FcGoogle } from "react-icons/fc";
 import Lottie from "lottie-react";
@@ -21,7 +21,7 @@ const Login = () => {
 
   // sign in with email and password
   const [signInWithEmailAndPassword, user, loading, error] =
-    useSignInWithEmailAndPassword(auth);
+    useSignInWithEmailAndPassword(auth)
 
   const {
     register,
@@ -29,11 +29,15 @@ const Login = () => {
     handleSubmit,
   } = useForm();
 
+  const navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   // react hooks form
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password);
   };
-
+  
   let signInError;
   if (loading) {
     return (
@@ -49,6 +53,7 @@ const Login = () => {
       </p>
     );
   }
+  navigate(from, { replace: true })
   return (
     <div className="login-bg relative">
       <section className="">

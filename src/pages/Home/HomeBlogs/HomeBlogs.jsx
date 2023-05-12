@@ -14,6 +14,11 @@ import img1 from "../../../images/kids-birthday.jpg";
 import img2 from "../../../images/party-plane.jpg";
 import img3 from "../../../images/holiday_events.jpg";
 
+// reveal animation
+import Bounce from 'react-reveal/Bounce';
+import Slide from 'react-reveal/Slide';
+import Flip from 'react-reveal/Flip';
+
 // import custom css
 import "./HomeBlogs.css";
 
@@ -26,7 +31,9 @@ const HomeBlogs = () => {
           className="blogs-header text-secondary text-center text-xl md:text-3xl lg:text-5xl 
                 animate-bounce"
         >
-          Our Latest News/Blogs
+          <Bounce top cascade>
+            Our Latest News/Blogs
+          </Bounce>
         </h1>
         <p
           className="text-sm md:text-md lg:text-lg text-gray-500 mx-auto py-3 lg:py-5 lg:w-1/2 

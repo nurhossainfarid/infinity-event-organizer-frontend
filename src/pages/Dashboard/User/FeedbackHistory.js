@@ -1,11 +1,15 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
 
-const HandleClientFeedback = () => {
+const FeedbackHistory = () => {
     const [feedbackData, setFeedbackData] = useState([]);
+    const [user] = useAuthState(auth);
+    const {email} = user;
     useEffect(() => {
-      const url = `http://localhost:5000/v1/feedback`;
+      const url = `http://localhost:5000/v1/feedback/email/${email}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => {
@@ -93,4 +97,4 @@ const HandleClientFeedback = () => {
     );
 };
 
-export default HandleClientFeedback;
+export default FeedbackHistory;

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import './OrderPackage.css';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import './BookingPackage.css';
 
-const OrderPackage = () => {
+const BookingPackage = () => {
     const { packageId } = useParams();
     const [packageData, setPackageData] = useState([]);
   
@@ -16,7 +16,6 @@ const OrderPackage = () => {
           setPackageData(data.data);
         });
     }, [packageData]);
-  console.log(packageData);
     const {
         register,
         formState: { errors },
@@ -24,19 +23,19 @@ const OrderPackage = () => {
       } = useForm();
     
       const onSubmit = (data) => {
-        console.log(data);
         const orderPackage = {
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          address: data.address,
+          customerName: data.name,
+          customerEmail: data.email,
+          customerNumber: data.phone,
+          customerAddress: data.address,
           packageName: data.packageName,
           packagePrice: data.packagePrice,
           organizerName: data.organizerName,
           date: data.date,
           time: data.time,
         };
-        let url = "http://localhost:5000/v1/orderPackage";
+        console.log(data);
+        let url = "https://event-api.nurhossainfarid.com/v1/booking";
         fetch(url, {
           method: "POST",
           headers: {
@@ -44,14 +43,15 @@ const OrderPackage = () => {
           },
           body: JSON.stringify(orderPackage),
         })
-          .then((res) => res.json())
+        .then((res) => res.json())
           .then((result) => {
-            if (result.status.toLowerCase() === "success") {
-              toast.success("Package order Successfully");
-            } else {
-              toast.error("Package count not order successfully");
-            }
-          });
+          console.log(result);
+          if (result.status.toLowerCase() === "success") {
+            toast.success("Package booking Successfully");
+          } else {
+            toast.error("Package could not booking successfully");
+          }
+        });
       };
     return (
         <div className=" bg-slate-100 pb-10">
@@ -60,9 +60,9 @@ const OrderPackage = () => {
             <div className="absolute bg-black w-full h-full opacity-60"></div>
             <div className="relative py-28 flex flex-col justify-center items-center gap-3">
                 <h1 className="text-5xl text-white uppercase font-semibold">
-                Order
+                Booking
                 </h1>
-                <p className="text-white text-md">Order Your Package</p>
+                <p className="text-white text-md">Booking Your Package</p>
             </div>
             </div>
         <div className='md:mx-10 lg:mx-28'>        
@@ -154,7 +154,7 @@ const OrderPackage = () => {
             </span>
           </label>
           <input
-            type="number"
+            type="text"
             className="input input-bordered w-full max-w-xs"
             {...register("address", {
               required: {
@@ -230,7 +230,7 @@ const OrderPackage = () => {
             type="text"
             value={packageData?.organization?.name}
             className="input input-bordered w-full max-w-xs"
-            {...register("organizationName", {
+            {...register("organizerName", {
               required: {
                 value: true,
                 message: "Organization Name is require",
@@ -238,9 +238,9 @@ const OrderPackage = () => {
             })}
           />
           <label className="label">
-            {errors.organizationName?.type === "required" && (
+            {errors.organizerName?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.organizationName.message}
+                {errors.organizerName.message}
               </span>
             )}
           </label>
@@ -303,4 +303,4 @@ const OrderPackage = () => {
     );
 };
 
-export default OrderPackage;
+export default BookingPackage;

@@ -38,7 +38,7 @@ const CreatePackage = () => {
         if (result.status.toLowerCase() === "success") {
           toast.success("Package Added Successfully");
         } else {
-          toast.error("Package count not added successfully");
+          toast.error("Package could not added successfully");
         }
       });
   };

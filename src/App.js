@@ -40,7 +40,6 @@ import ServiceWedding from './pages/Services/ServiceWedding/ServiceWedding'
 import HolidayParties from './pages/Services/HolidayParties/HolidayParties';
 import CorporateFunction from './pages/Services/CorporateFunction/CorporateFunction';
 import ConferencePlanning from './pages/Services/ConferencePlanning/ConferencePlanning';
-import FashionConcert from './pages/Services/FashionConcert/FashionConcert';
 import StageDecoration from './pages/Services/StageDecoration/StageDecoration';
 import Organizers from './pages/Organizers/Organizers';
 import Wedding from './pages/Packages/Wedding/Wedding';
@@ -60,18 +59,35 @@ import RequireAuth from './pages/share/Require/RequireAuth';
 import RequireSuperAdmin from './pages/share/Require/RequireSuperAdmin';
 import RequireOrganizerAdmin from './pages/share/Require/RequireOrganizerAdmin';
 import OrganizerDetails from './pages/Organizers/OrganizerDetails';
-import BookingPackage from './pages/BookingPackage/BookingPackage';
-import OrderPackage from './pages/share/OrderPackage/OrderPackage';
+import BookingPackage from './pages/share/BookingPackage/BookingPackage';
+import ProfileEdit from './pages/share/Profile/ProfileEdit';
+import { useEffect } from 'react';
+import Gallery from './pages/Gallery/Gallery.';
+import BirthdayParty from './pages/Services/BirthdayParty/BirthdayParty';
+import RandomPackage from './pages/Dashboard/User/RandomPackage.jsx';
+import CustomPackage from './pages/Dashboard/User/CustomPackage.jsx';
+import HandleRandomPackage from './pages/Dashboard/SuperAdmin/BookingHistory/HandleRandomPackage';
+import HandleCustomPackage from './pages/Dashboard/SuperAdmin/BookingHistory/HandleCustomPackage';
+import PrivateParty from './pages/Services/PrivateParty/PrivateParty';
+import Feedback from './pages/Dashboard/User/Feedback';
+import FeedbackHistory from './pages/Dashboard/User/FeedbackHistory';
 
 
 function App() {
+  useEffect(() => {
+    document.title = "Infinity Event Organizer";
+  },[])
   return (
     <div className="relative h-screen">
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/organizers" element={<Organizers></Organizers>}></Route>
+        <Route path="/organizers" element={
+          <RequireAuth>
+            <Organizers></Organizers>
+          </RequireAuth>
+        }></Route>
         <Route path="/events" element={<Events></Events>}></Route>
         <Route path="/organizerDetails/:oId" element={<OrganizerDetails></OrganizerDetails>}></Route>
         <Route path="/updatePackage/:packageId" element={<UpdatePackage></UpdatePackage>}></Route>
@@ -80,8 +96,10 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/registration" element={<Registration></Registration>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
-        <Route path="/bookingPackage" element={<BookingPackage></BookingPackage>}></Route>
-        <Route path="/orderPackage/:packageId" element={<OrderPackage></OrderPackage>} ></Route>
+        <Route path="/bookingPackage/:packageId" element={<BookingPackage></BookingPackage>} ></Route>
+        <Route path="/profileEdit/:userId" element={<ProfileEdit></ProfileEdit>} ></Route>
+        <Route path="/gallery" element={<Gallery></Gallery>}></Route>
+        <Route path="/feedback/:bookingRefId" element={<Feedback></Feedback>}></Route>
 
         {/* --------------------------------- All nested routes -------------------------------------- */}
         {/* all about routes */}
@@ -96,7 +114,8 @@ function App() {
           <Route path="serviceWedding" element={<ServiceWedding></ServiceWedding>}></Route>
           <Route path="holidayParties" element={<HolidayParties></HolidayParties>}></Route>
           <Route path="corporateFunction" element={<CorporateFunction></CorporateFunction>}></Route>
-          <Route path="fashionConcert" element={<FashionConcert></FashionConcert>}></Route>
+          <Route path="privateParty" element={<PrivateParty></PrivateParty>}></Route>
+          <Route path="birthdayParty" element={<BirthdayParty></BirthdayParty>}></Route>
           <Route path="conferencePlanning" element={<ConferencePlanning></ConferencePlanning>}></Route>
           <Route path="stageDecoration" element={<StageDecoration></StageDecoration>}></Route>
         </Route>
@@ -130,9 +149,13 @@ function App() {
           }></Route>
           <Route path="bookingHistory" element={
             <RequireSuperAdmin>
-              <BookingHistory></BookingHistory>
+              <BookingHistory>
+              </BookingHistory>
             </RequireSuperAdmin>
-          }></Route>
+          }>
+            <Route index element={<HandleRandomPackage></HandleRandomPackage>}></Route>
+            <Route path="handleCustomPackage" element={<HandleCustomPackage></HandleCustomPackage>}></Route>
+          </Route>
           <Route path="handleOrganizer" element={
             <RequireSuperAdmin>
               <HandleOrganizers></HandleOrganizers>
@@ -178,8 +201,12 @@ function App() {
             </RequireOrganizerAdmin>
           }></Route>
 
-          {/* require for all */}
-          <Route path="userBookingHistory" element={<UserBookingHistory></UserBookingHistory>}></Route>
+          {/* require for user */}
+          <Route path="userBookingHistory" element={<UserBookingHistory></UserBookingHistory>}>
+            <Route index element={<RandomPackage></RandomPackage>}></Route>
+            <Route path="customPackage" element={<CustomPackage></CustomPackage>}></Route>
+          </Route>
+          <Route path="feedbackHistory" element={<FeedbackHistory></FeedbackHistory>}></Route>
           <Route path="createCustomPackage" element={<CreateCustomPackage></CreateCustomPackage>}></Route>
         </Route>
       </Routes>

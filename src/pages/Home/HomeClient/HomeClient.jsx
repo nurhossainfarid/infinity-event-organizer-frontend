@@ -12,18 +12,51 @@ import img2 from "../../../images/feedback2.jpg";
 import img3 from "../../../images/feedback3.jpg";
 import img4 from "../../../images/party-plane.jpg";
 
+// reveal animation
+import Bounce from 'react-reveal/Bounce';
+import Slide from 'react-reveal/Slide';
+
 // custom css
 import "./HomeClient.css";
 
 // import required modules
 import { Autoplay } from "swiper";
+import { useForm } from "react-hook-form";
+import { useEffect } from "react";
+import auth from "../../../firebase.init";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const HomeClient = () => {
+  const [randomBooking, setRandomBooking] = useState([]);
+  const [user] = useAuthState(auth);
+  // const { email } = user;
+  const { register, handleSubmit } = useForm();
+  // let bookingId;
+  const onSubmit = data => {
+    // bookingId = data._id;
+  };
+  // useEffect(() => {
+  //   const url = `http://localhost:5000/v1/booking/email/${email}`;
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setRandomBooking(data.data);
+  //     });
+  // }, [randomBooking]);
+  // const result = randomBooking.map((book) => {
+  //   if (book._id === bookingId) {
+  //     toast.success(`congratulation your Booking Ref. id correct`);
+  //   }
+  // })
+  // console.log(result);
+
   return (
     <div className="lg:grid grid-cols-2 pb-40 bg-slate-100">
       <section className="client-feedback-bg relative">
         <div className="absolute bg-secondary opacity-60 h-full w-full"></div>
-        <div className="ml-6 md:ml-10 lg:ml-28 relative py-10 lg:py-20">
+        <div className="ml-6 md:ml-10 lg:ml-28 relative py-10 lg:pt-20">
           <div>
             <h1 className="text-3xl md:text-5xl text-white client-feedback-header">
               Client Feedback
@@ -99,10 +132,16 @@ const HomeClient = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-        </div>
+          <Link to="/dashboard/userBookingHistory" className="btn mt-10 bg-fuchsia-600 border-none text-white hover:bg-fuchsia-600"
+            htmlFor="modal-feedback"> 
+          Send FeedBack</Link>
+          {/* Put this part before </body> tag */}
+            </div>
       </section>
       <section className="lg:absolute lg:block hidden left-1/2 -ml-20 mt-10">
-        <img src={img4} alt="" />
+        <Slide right>
+          <img src={img4} alt="" />
+        </Slide>
       </section>
     </div>
   );

@@ -33,7 +33,6 @@ const Registration = () => {
       address: data.address,
       role: data.role,
     };
-    console.log(userData);
     if (data.password === data.confirmPassword) {
       let url = "https://event-api.nurhossainfarid.com/v1/user";
       fetch(url, {
